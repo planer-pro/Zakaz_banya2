@@ -1,0 +1,37 @@
+ .r-4-st3 {
+    fill: #683;
+    background: #683;
+}
+
+.resistor{
+    max-width: 500px;
+}
+.r-table-4{
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    grid-column-gap: 10px;
+}
+
+.r-table-4 div{
+    color: aliceblue; 
+    font-weight: 700;
+    text-align: center;
+    padding: 3px 0px;
+}
+
+
+.color-0{
+    background-color:#111;
+}
+.color-1{
+    background-color: #683C11;
+}
+.color-2{
+    background-color:#e62424;
+}
+.color-3{
+    background-color:#F39200;
+}
+.color-3{
+    background-color:#FCEA10;
+}

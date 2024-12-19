@@ -1,0 +1,42 @@
+#include <ModbusMaster.h>
+
+// Инициализация объекта ModbusMaster
+ModbusMaster node;
+
+void setup() {
+  // Настройка Serial порта для связи с датчиком
+  Serial.begin(9600);
+
+  // Настройка Modbus RTU
+  node.begin(1, Serial); // Адрес устройства (1) и Serial порт
+
+  // Опционально: настройка скорости передачи данных (если требуется)
+  node.setBaud(9600);
+}
+
+void loop() {
+  // Чтение данных с регистров датчика
+  uint16_t temperature, humidity, co2;
+
+  if (node.readHoldingRegisters(0x0000, 3) == node.ku8MBSuccess) {
+    temperature = node.getResponseBuffer(0);
+    humidity = node.getResponseBuffer(1);
+    co2 = node.getResponseBuffer(2);
+
+    // Вывод данных в Serial Monitor
+    Serial.print("Температура: ");
+    Serial.print(temperature / 10.0); // Делим на 10 для получения десятичной части
+    Serial.println("°C");
+
+    Serial.print("Влажность: ");
+    Serial.print(humidity / 10.0);
+    Serial.println("%");
+
+    Serial.print("Уровень CO2: ");
+    Serial.print(co2);
+    Serial.println(" ppm");
+  }
+
+  delay(1000); // Пауза между запросами
+}
+ 

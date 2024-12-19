@@ -1,0 +1,251 @@
+.hoverTop{
+    overflow: visible;
+    height: 55px;
+}
+.hoverTop .logo{
+    float: left;
+    margin-top: 12px;
+    margin-left: 20px;
+}
+.hoverTop .logo img{
+    overflow: visible;
+    height: 32px;
+    cursor: pointer;
+}
+
+.hoverTop .menuButtonMob{
+    display: none;
+}
+.hoverTop .cartButtonMob{
+    display: none;
+}
+
+
+.hoverTop .menu{
+    overflow: hidden;
+    float: left;
+}
+.hoverTop .menu li{
+    float: left;
+    list-style-type: none;
+    overflow: hidden;
+}
+.hoverTop .menu li a{
+    float: left;
+    margin: 0px 20px;
+    font-size: 24px;
+    line-height: 55px;
+    color: #7b7b7b;
+    font-weight: 700;
+    text-decoration: none;
+}
+.hoverTop .menu li .hover, .hoverTop .menu li a:hover{
+    color: #111;
+}
+.hoverTop .info{
+color: #7b7b7b;
+font-size: 14px;
+line-height: 18px;
+float: left;
+padding: 8px;
+}
+.hoverTop .cart{
+    padding: 10px 20px;
+    background-color: #00547e;
+    border-bottom-right-radius: 8px;
+    border-bottom-left-radius: 8px;
+    float: right;
+    overflow: hidden;
+    cursor: pointer;
+    margin-right: 15px;
+    transition:  .5s;
+}
+.hoverTop .cart:hover{
+    box-shadow: 0 0 10px 5px rgba(221, 221, 221, 1);
+    background-color:   #00496d;
+}
+.hoverTop .cart .img{
+   display: none;
+}
+.hoverTop .cart .name{
+color: #ffffff;
+font-family: "PT Sans";
+font-size: 31px;
+font-weight: 700;
+line-height: 37.11px;
+text-align: center;
+}
+.hoverTop .cart .count{
+color: #ffffff;
+font-family: "PT Sans";
+font-size: 18px;
+font-weight: 400;
+line-height: 21.6px;
+text-align: center;
+}
+@media screen and (min-width:1000px) and (max-width:1200px) { 
+    .hoverTop .menu{
+margin-left: 20px;
+    }
+    .hoverTop .menu li a{
+        font-size: 18px;
+        margin: 0px 10px;
+        
+    }
+    .hoverTop .info{
+       font-size: 12px;
+    }
+
+}
+@media screen and (min-width:700px) and (max-width:1000px) { 
+    .hoverTop .menu{
+margin-left: 20px;
+    }
+    .hoverTop .menu li a{
+        font-size: 18px;
+        margin: 0px 10px;
+        line-height: 55px;
+    }
+    .hoverTop .info{
+       display: none;
+    }
+    #topButtonYoutube::before {
+        width: 24px!important;
+        height: 13px!important;
+        top:6px!important;
+        right: -8px!important;
+        background: url('/img/new24.png') no-repeat right center!important;
+    }
+}
+
+
+@media screen and (min-width:360px) and (max-width:700px) { 
+    .hoverTop{
+        height: 55px;
+        display: grid;
+        grid-template-columns: auto auto auto;
+    }
+
+    .hoverTop .logo{
+        text-align: center;
+        margin: 0px;
+        float: none;
+    }
+    .hoverTop .logo img{
+        overflow: visible;
+        height: 32px;
+        padding-top: 10px;
+    }
+    .hoverTop .menuButtonMob{
+        text-align: center;
+        display: block;
+        padding-top: 11px;
+    }
+    .hoverTop .menuButtonMob img{
+        height: 32px;
+        cursor: pointer;
+    }
+    .hoverTop .cartButtonMob{
+        text-align: center;
+        display: block;
+        padding-top: 11px;
+    }
+    .hoverTop .cartButtonMob img{
+        height: 32px;
+        cursor: pointer;
+    }
+    .hoverTop .menu {
+        display: none;
+    }
+    .hoverTop .info{
+        display: none;
+    }
+    .hoverTop .cart{
+        display: none;
+    }
+}
+
+
+
+
+.MobileMenu{
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    padding: 10px;
+    background-color: #333333;
+    transition: all 0.25s;
+    width: 340px;
+    z-index: 999999;
+    box-shadow: 0 0 200px 200px rgba(221, 221, 221, 0.4);
+    display: none;
+}
+
+.MobileMenu .Level1{
+margin-left: 20px;
+}
+.MobileMenu .Level1 li{
+    list-style: none;
+}
+.MobileMenu .Level1 li a{
+    font-weight: 700;
+    color: #fff;
+    font-size: 26px;
+    line-height: 40px;
+    text-decoration: none;
+    
+}
+.MobileMenu .Level2{
+
+}
+.MobileMenu .Level2 li{
+    margin-left: 40px;
+    list-style: none;
+}
+.MobileMenu .Level2 li a{
+    color: #fff;
+    font-size: 24px;
+    line-height: 36px;
+    text-decoration: none;
+}
+
+.MobileMenu .close{
+    float: right;
+    width: 32px;
+    height: 32px;
+    opacity: 0.5;
+    position: relative;
+    margin-top: 10px;
+    margin-right: 10px;
+    cursor: pointer;
+}
+.MobileMenu .close:hover {
+    opacity: 1;
+}
+.MobileMenu .close:before, .close:after {
+    position: absolute;
+    left: 15px;
+    content: ' ';
+    height: 33px;
+    width: 2px;
+    background-color: #fff;
+ }
+.MobileMenu .close:before {
+    transform: rotate(45deg);
+}
+.MobileMenu .close:after {
+    transform: rotate(-45deg);
+}
+#topButtonYoutube::before {
+    content: ""; 
+    display: block;
+    position: absolute;
+    width: 30px;
+    height: 16px;
+top:6px;
+right: -15px;;
+    background: url('/img/new30.png') no-repeat right center;
+}
+#topButtonYoutube {
+    position: relative;
+}

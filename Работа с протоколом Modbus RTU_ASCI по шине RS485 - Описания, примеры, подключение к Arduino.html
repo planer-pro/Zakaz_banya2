@@ -1,0 +1,1072 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Работа с протоколом Modbus RTU/ASCI по шине RS485 - Описания, примеры, подключение к Arduino</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" media="screen" href="/style/main.css?1703292596" />
+    <link rel="stylesheet" type="text/css" media="screen" href="/style/old/main.css?1703292596" />
+    <link rel="stylesheet" type="text/css" media="screen" href="/style/old/hoverTop.css?1703292596" />
+    <link rel="stylesheet" type="text/css" media="screen" href="/style/old/hoverMenu.css?1703292596" />
+    <link rel="stylesheet" type="text/css" media="screen" href="/style/old/linkBar.css?1703292596" />
+    <script charset="UTF-8" src="//cdn.sendpulse.com/js/push/d7b3bf1cfb948557e6c9e8189d1a8732_1.js" async></script>
+    <link rel="stylesheet" type="text/css" media="screen" href="/style/calc.css?1703292596" />
+
+    <link rel="stylesheet" type="text/css" media="screen" href="/style/old/linkBar.css?1703292596" />
+
+
+    
+    <link rel="stylesheet" type="text/css" media="screen" href="https://iarduino.ru/style/redactor_text.css?1703292596" />
+    <script src="https://cdn.rawgit.com/google/code-prettify/master/loader/run_prettify.js"></script>
+    <link href="https://fonts.googleapis.com/css?family=PT+Sans:400,700&amp;subset=cyrillic" rel="stylesheet">
+
+    
+
+    <link rel="stylesheet" href="https://iarduino.ru/style/owl.carousel.min.css">
+    <link rel="stylesheet" href="https://iarduino.ru/style/owl.theme.default.min.css">
+
+
+
+    <script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.1/jquery.min.js'></script>
+    <script type="text/javascript" src="https://iarduino.ru/js/jqueryjson-2.4.min.js?22"></script>
+
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+    <script src="https://unpkg.com/vue-select@2.6.0/dist/vue-select.js"></script>
+
+    <script src="https://cdn.jsdelivr.net/npm/lodash@4.13.1/lodash.min.js"></script>
+    <script src="https://iarduino.ru/js/owl.carousel.min.js"></script>
+    <script src="/js/main.js"></script>
+
+          
+</head>
+<body>
+
+<div class='width100 backgroundGrey'>
+    <div class='width1366 hoverTop'>
+        <div class='menuButtonMob'>
+            <img src='https://iarduino.ru/img/show-menu-button.svg' id='menuButtonMob'>
+        </div>
+
+        <div class='logo'><img src='https://iarduino.ru/img/logo.svg' onclick="window.location.href ='https://iarduino.ru/' " ></div>
+
+        <div class='cartButtonMob'>
+            <img class='img' src='https://iarduino.ru/img/shopping.svg' onclick="window.location.href ='/user/cart' ">
+        </div>
+        <div class='cart' onclick="window.location.href ='https://iarduino.ru/user/cart' ">
+            <div class='name'>КОРЗИНА</div>
+            <div class='count'>магазина</div>
+        </div>
+ 
+        <ul class='menu'>
+            <li ><a href="https://www.youtube.com/channel/UCRfNkq8F8rxmDa3sPoEQv1w" target="_blank" class='hover1' id='topButtonYoutube'>ВИДЕО</a></li>
+            <li><a href='https://lesson.iarduino.ru' target="_blank">УРОКИ</a></li>
+            <li><a href='https://iarduino.ru' target="_blank">МАГАЗИН</a></li>
+            <li><a href='https://iarduino.ru/file/'>ФАЙЛЫ</a></li>
+        </ul>
+
+        <div class='info'>
+            8 (499) 500-14-56 | ПН. - ПТ. 12:00-18:00<br>
+            ЛЕСНОРЯДСКИЙ ПЕРЕУЛОК, 18С2, БЦ "ДМ-ПРЕСС"
+        </div>
+
+    </div>
+</div>
+
+<div style='clear:both'></div><div style='clear:both'></div>
+<div class='width100'  >
+    <div class='width1366'>
+        <div class='LinkBar'>
+                    </div>
+    </div>
+</div><div style='clear:both'></div>
+
+
+
+<div class="width100">
+    <div class="width1366">
+       <h1>Работа с протоколом Modbus RTU/ASCI по шине RS485</h1>
+    </div>
+</div>
+<div class="width100">
+    <div class="width1366">
+        <div class="LinkBar">
+        <a href="/" class="link">ГЛАВНАЯ</a>
+        <span class="text">/</span>
+        <a href="/" class="link">КАтегории</a>
+    <span class="text">/</span> Работа с протоколом Modbus RTU/ASCI по шине RS485 </div>
+    </div>
+</div>
+
+
+<div class='width100'>
+    <div class='width1366 pageWiki'>
+        <div>
+
+             
+
+            <div id="content" class="redactor-styles">
+                                <h2 id='h3_0'>Описание протокола Modbus:</h2>
+<p>Перед тем как приступить к описанию протокола, давайте разберёмся с терминами.</p>
+<div class="alert alert-info"><em class="fa fa-microchip fa-2x " aria-hidden="true"></em><p><strong>Шина</strong> – канал связи, служащий для передачи данных, используя предписанные электрические (физические) и логические (управляющие) уровни. </p></div>
+<p>Шина это нечно физическое (дорожки на плате, провода, шлейфы и т.д.). Шина определяет граничные значения скорости, максимальную дальность, напряжения логических уровней, допустимые емкости между линиями, форму сигналов на линиях и т.д.</p>
+<div class="alert alert-info"><em class="fa fa-microchip fa-2x " aria-hidden="true"></em><p><strong>Протокол</strong> – набор правил и действий (очерёдности действий), позволяющий осуществлять соединение и обмен данными.</p></div>
+<p>Протокол это правила по которым осуществляется передача данных. Данные между двумя устройствами передаются по шине в соответствии с протоколом.</p>
+<div class="alert alert-info"><em class="fa fa-microchip fa-2x " aria-hidden="true"></em><p><strong>Интерфейс</strong> – совокупность средств и правил, обеспечивающих логическое и физическое взаимодействие устройств и (или) программ системы.</p></div>
+<p>Интерфейс это шина + протокол + устройство или программа отвечающая за передачу данных.</p>
+<div class="alert alert-info"><em class="fa fa-microchip fa-2x " aria-hidden="true"></em><p><strong>Протокол Modbus</strong> – коммуникационный протокол, основанный на архитектуре ведущий-ведомый.</p></div>
+<p>Протокол Modbus разработан для шин: RS-485, RS-422, RS-232, и интерфейса&nbsp;Ethernet сети TCP/IP, но при желании его можно использовать для связи и по другим шинам или даже радиоканалам.</p>
+<p>Протокол Modbus предусматривает наличие одного ведущего и до 247 ведомых устройств. Количество ведомых устройств может быть ограничено физическими возможностями шины.</p>
+<p>Для ведущего устройства (master) в протоколе Modbus используется термин - client. Для ведомого устройства (slave) в протоколе Modbus используется термин - server. Да, это не опечатка, ведущий – клиент, ведомый – сервер. Думаю не будет ошибкой, если далее в статье мы будем пользоваться более привычными терминами: ведущий (master), ведомый (slave).</p>
+<p>В соответствии с протоколом Modbus связь всегда начинает мастер, а ведомые устройства могут только отвечать на запросы мастера. Связь осуществляется посылкой пакета запроса (от мастера к ведомому) и посылкой ответного пакета (от ведомого к мастеру).</p>
+<h3>Типы протоколов Modbus:</h3>
+<ul><li><strong>Modbus RTU:</strong><br>Данные передаются в двоичном формате, разделителем пакетов служит отсутствие данных в течении времени при котором можно передать более 3,5 байт.<br>Протокол предназначен для шин: RS-485, RS-422, RS-232.</li><li><strong>Modbus ASCII:</strong><br>Данные передаются символами из таблицы ASCII в шестнадцатеричном формате, разделителями пакетов служат символы начала и конца пакета.<br>Каждый пакет начинается символом двоеточия, в кодировке ASCII и заканчивается символами возврата каретки &#39;\r&#39;, и переноса строки &#39;\n&#39;.<br>Например, для передачи адреса 10 в протоколе Modbus RTU будет передан байт 0x0A, а в протоколе Modbus ASCII будет передан байт символа &#39;0&#39; и байт символа &#39;A&#39;, в кодировке ASCII.<br>Протокол предназначен для шин: RS-485, RS-422, RS-232.</li><li><strong>Modbus TCP:</strong><br>Данные передаются в двоичном формате и упаковываются в обычный TCP-пакет, для передачи по IP-сетям. Отличием данного протокола является отсутствие проверки целостности (CRC-16), так как TCP уже имеет собственный механизм контроля целостности.<br>Протокол предназначен для сетей TCP/IP.</li></ul>
+<h3>Состав пакета Modbus RTU:</h3>
+<p>Состав пакета запроса от мастера к ведомому, аналогичен составу ответного пакета ведомого.</p>
+<table style="border-width: 2px; border-style: solid; border-color: #000000; background: #ccf3ff;">
+<tbody>
+<tr>
+<td colspan="4" align="center" style="border-width: 2px; border-style: solid; border-color: #007dbc;">
+<strong>ADU</strong> (до 256 байт)
+</td>
+</tr>
+<tr>
+<td rowspan="2" align="center" style="border-width: 2px; border-style: solid; border-color: #007dbc;">
+<strong>АДРЕС</strong><br>(1 байт)
+</td>
+<td colspan="2" align="center" style="border-width: 2px; border-style: solid; border-color: #007dbc;">
+<strong>PDU</strong> (до 253 байт)
+</td>
+<td rowspan="2" align="center" style="border-width: 2px; border-style: solid; border-color: #007dbc;">
+<strong>CRC-16</strong><br>(2 байта)
+</td>
+</tr>
+<tr>
+<td align="center" style="border-width: 2px; border-style: solid; border-color: #007dbc;"><strong>КОМАНДА</strong><br>(1 байт)</td>
+<td align="center" style="border-width: 2px; border-style: solid; border-color: #007dbc;"><strong>ДАННЫЕ</strong> (до 252 байт)<br>количество байт зависит от команды</td>
+</tr>
+<tr>
+<td align="center" style="border-width: 2px; border-style: solid; border-color: #007dbc;">0...247</td>
+<td align="center" style="border-width: 2px; border-style: solid; border-color: #007dbc;">1...127</td>
+<td align="center" style="border-width: 2px; border-style: solid; border-color: #007dbc;"></td>
+<td align="center" style="border-width: 2px; border-style: solid; border-color: #007dbc;">0...65535</td>
+</tr>
+</tbody>
+</table>
+<ul><li><strong>ADU</strong> (Application Data Unit) – пакет Modbus целиком.</li><li><strong>PDU</strong> (Protocol Data Unit) – основная часть пакета, состоит из команды и данных.</li><li><strong>АДРЕС</strong> – адрес ведомого устройства которому адресован пакет запроса, или от которого отправлен пакет ответа. Ведомые устройства могут иметь адреса от 1 до 247. Пакет запроса отправленный с адресом 0 является широковещательным, он адресован всем ведомым на шине, они обязаны выполнить запрос, но не должны на него отвечать.</li><li><strong>КОМАНДА</strong> – указывает какие действия должен выполнить ведомый. Команда в запросе может иметь значение от 1 до 127. Этот диапазон соответствует байту у которого сброшен старший бит. Если ведомый выполнил запрос мастера, то в ответном пакете он указывает тот же номер команды, без изменений. Если ведомый обнаружил ошибку в запросе, или не может его выполнить, то в ответном пакете он указывает номер команды с установленным старшим битом. То есть номер команды будет лежать в диапазоне от 129 до 255.</li><li><strong>ДАННЫЕ</strong> – состав и количество данных в запросе и ответе зависят от номера команды. Если ведомый обнаружил ошибку в запросе, или не может его выполнить, то в ответном пакете, в поле данных, он указывает код ошибки.</li><li><strong>CRC-16</strong> – проверка целостности пакета, два байта передаются младшим байтом вперёд.<br>Для протокола Modbus значение CRC-16 рассчитывается используя реверсивный сдвиг, начальное значение равно 0xFFFF, порождающий полином равен 0xA001.</li></ul>
+<h2 id='h3_1'>Регистры ведомых устройств:</h2>
+<p>Данные ведомых устройств хранятся в регистрах. Существует 4 типа регистров:</p>
+<table>
+<thead>
+<tr>
+<th>Адрес:</th>
+<th colspan="2">Название:</th>
+<th colspan="3">Назначение:</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>0...0x270E</td>
+<td>(DI)</td>
+<td>Discrete Input</td>
+<td>1 бит</td>
+<td>Цифровые входы</td>
+<td>R</td>
+</tr>
+<tr>
+<td>0...0x270E</td>
+<td>(DO)</td>
+<td>Discrete Output Coils</td>
+<td>1 бит</td>
+<td>Цифровые выходы<br>(регистры флагов)</td>
+<td>RW</td>
+</tr>
+<tr>
+<td>0...0x270E</td>
+<td>(AI)</td>
+<td>Analog Input Registers</td>
+<td>16 бит</td>
+<td>Аналоговые входы</td>
+<td>R</td>
+</tr>
+<tr>
+<td>0...0x270E</td>
+<td>(AO)</td>
+<td>Analog Output Holding Registers</td>
+<td>16 бит</td>
+<td>Аналоговые выходы<br>(регистры хранения)</td>
+<td>RW</td>
+</tr>
+</tbody>
+</table>
+<p>Данные в регистрах не обязательно связаны со значениями на входах и выходах ведомых устройств. Каждый регистр DI/DO хранит 1 бит. Каждый регистр AI/AO хранит 16 бит (2 байта).</p>
+<p>Например, регистры AI и AO могут хранить входные данные и результаты вычислений, а регистры DI и DO флаги настроек, и биты состояний.</p>
+<h2 id='h3_2'>Команды протокола Modbus:</h2>
+<table>
+<thead>
+<tr>
+<th colspan="2" align="center">Номер:</th>
+<th rowspan="2" align="center">Название:</th>
+<th rowspan="2" align="center">Назначение:</th>
+</tr>
+<tr>
+<th>hex</th>
+<th>dec</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>0x01</td>
+<td>1</td>
+<td>Read Coil Status</td>
+<td>Чтение значений из нескольких регистров «DO»</td>
+</tr>
+<tr>
+<td>0x02</td>
+<td>2</td>
+<td>Read Discrete Inputs.</td>
+<td>Чтение значений из нескольких регистров «DI».</td>
+</tr>
+<tr>
+<td>0x03</td>
+<td>3</td>
+<td>Read Holding Registers.</td>
+<td>Чтение значений из нескольких регистров «AO».</td>
+</tr>
+<tr>
+<td>0x04</td>
+<td>4</td>
+<td>Read Input Registers.</td>
+<td>Чтение значений из нескольких регистров «AI».</td>
+</tr>
+<tr>
+<td>0x05</td>
+<td>5</td>
+<td>Force Single Coil.</td>
+<td>Запись значения в один регистр «DO».</td>
+</tr>
+<tr>
+<td>0x06</td>
+<td>6</td>
+<td>Preset Single Register.</td>
+<td>Запись значения в один регистр «AO».</td>
+</tr>
+<tr>
+<td>0x07</td>
+<td>7</td>
+<td>Read Exception Status.</td>
+<td>Чтение сигналов состояния статусных выходов.</td>
+</tr>
+<tr>
+<td>0x08</td>
+<td>8</td>
+<td>Diagnostic.</td>
+<td>Диагностика.</td>
+</tr>
+<tr>
+<td>0x09</td>
+<td>9</td>
+<td rowspan="2">-<br>-</td>
+<td rowspan="2">Команда не стандартизирована,<br>но уже используется в различных устройствах.</td>
+</tr>
+<tr>
+<td>0x0A</td>
+<td>10</td>
+</tr>
+<tr>
+<td>0x0B</td>
+<td>11</td>
+<td>Get Com Event Counter.</td>
+<td>Чтение счетчика событий.</td>
+</tr>
+<tr>
+<td>0x0C</td>
+<td>12</td>
+<td>Get Com Event Log.</td>
+<td>Чтение журнала событий.</td>
+</tr>
+<tr>
+<td>0x0D</td>
+<td>13</td>
+<td rowspan="2">-<br>-</td>
+<td rowspan="2">Команда не стандартизирована,<br>но уже используется в различных устройствах.</td></tr>
+<tr>
+<td>0x0E</td>
+<td>14</td>
+</tr>
+<tr>
+<td>0x0F</td>
+<td>15</td>
+<td>Force Multiple Coils.</td>
+<td>Запись значений в несколько регистров «DO».</td>
+</tr>
+<tr>
+<td>0x10</td>
+<td>16</td>
+<td>Preset Multiple Registers.</td>
+<td>Запись значений в несколько регистров «AO».</td>
+</tr>
+<tr>
+<td>0x11</td>
+<td>17</td>
+<td>Report Slave ID.</td>
+<td>Чтение информации об устройстве.</td>
+</tr>
+
+<tr>
+<td>0x12</td>
+<td>18</td>
+<td rowspan="2">-<br>-</td>
+<td rowspan="2">-<br>-</td></tr>
+<tr>
+<td>0x13</td>
+<td>19</td>
+</tr>
+<tr>
+<td>0x14</td>
+<td>20</td>
+<td>Read File Record.</td>
+<td>Чтение из файла.</td>
+</tr>
+<tr>
+<td>0x15</td>
+<td>21</td>
+<td>Write File Record.</td>
+<td>Запись в файл.</td>
+</tr>
+<tr>
+<td>0x16</td>
+<td>22</td>
+<td>Mask Write Register.</td>
+<td>Запись значения в регистр «AO» с масками И и ИЛИ.</td>
+</tr>
+<tr>
+<td>0x17</td>
+<td>23</td>
+<td>Read/Write Multiple Registers.</td>
+<td>Чтение и запись нескольких регистров «AO».</td>
+</tr>
+<tr>
+<td>0x18</td>
+<td>24</td>
+<td>Read FIFO Queue.</td>
+<td>Чтение данных из буфера FIFO.</td>
+</tr>
+</tbody>
+</table>
+<p>Все перечисленные команды (кроме работы с файлами и буфером FIFO) реализованы в библиотеке <a href="https://iarduino.ru/file/591.html">iarduino_Modbus</a>.</p>
+<h3>Библиотека iarduino_Modbus:</h3>
+<p>Библиотека <a href="https://iarduino.ru/file/591.html">iarduino_Modbus</a>&nbsp;позволяет работать с устройствами по шине RS485 используя протокол Modbus RTU или Modbus ASCII. Так как у большинства плат Arduino и ESP нет шины RS485, библиотека использует аппаратную или программную шину UART. Сигналы шины UART необходимо преобразовать в сигналы шины RS485 при помощи конвертирующего модуля UART-RS485, например, <a href="https://iarduino.ru/shop/Expansion-payments/max485-konvertiruyuschiy-modul-dlya-arduiny.html">на базе микросхемы на MAX485</a>.</p>
+<p>Конвертер подключается к выводам TX и RX шины UART, а так же назначается вывод разрешающий работу передатчика DE.</p>
+<h2 id='h3_3'>Подключение к шине RS485:</h2>
+<ul><li>Для подключения конвертера к микроконтроллеру используется вывод DE и выводы UART.</li><ul><li><strong>TX</strong> - вывод шины UART микроконтроллера для передачи данных к конвертеру.</li><li><strong>RX</strong> - вывод шины UART микроконтроллера для получения данных от конвертера.</li><li><strong>DI</strong> - вывод шины UART конвертера для получения данных от микроконтроллера.</li><li><strong>RO</strong> - вывод шины UART конвертера для передачи данных к микроконтроллеру.</li><li><strong>DE</strong> - вывод конвертера разрешающий работу его передатчика на шине RS485.</li><li><strong>~RE</strong> - вывод конвертера разрешающий работу его приёмника на шине RS485.</li></ul><li>Для подключения устройств к шине RS485 используются выводы A, B и GND.</li><ul><li><strong>A</strong>, <strong>B</strong> - витая пара для передачи/приёма данных.</li><li><strong>GND</strong> - линия шины RS485 для выравнивания потенциалов.</li></ul><li>Источники питания могут быть разные для каждого устройства, или один на все, если напряжение питания устройств совпадают.</li></ul>
+<h3>Подключение к программной шине Piranha UNO:</h3>
+<p>Вместо выводов 2, 8 и 9 платы Piranha UNO можно использовать любые выводы, указав их номера в скетче.</p>
+<pre class="prettyprint C">SoftwareSerial  rs485(8, 9);      // Создаём объект для работы с программной шиной UART указывая выводы RX, TX.
+   ModbusClient modbus(rs485, 2); // Создаём объект для работы по протоколу Modbus указав объект программной шины UART и номер вывода DE конвертера UART-RS485.
+// ModbusClient modbus(rs485);    // Если вывод DE не используется, то он и не указывается.
+</pre>
+<figure><img src="http://iarduino.ru/img/upload/66f571c929e1484b5b51f4327f5cefad.png" data-image="55aftiiez0vu"></figure>
+<h3>Подключение к аппаратной шине Piranha ULTRA:</h3>
+<p>В примере используется аппаратная шина UART1 использующая выводы 8 и 9. Вместо вывода 2 можно использовать любой вывод платы Piranha ULTRA, указав его номер в скетче. Если вывод DE конвертера не используется, то он и не указывается в скетче.</p>
+<pre class="prettyprint C">   ModbusClient modbus(Serial1, 2); // Создаём объект для работы по протоколу Modbus указав класс Serial1 и номер вывода DE конвертера UART-RS485.
+// ModbusClient modbus(Serial1);    // Если вывод DE не используется, то он и не указывается.
+</pre>
+<figure><img src="http://iarduino.ru/img/upload/cb8b5246b5f68a70d67752c773f55d09.png" data-image="tzjt0j7pkv89"></figure>
+<h3>Подключение к аппаратной шине Piranha ESP32:</h3>
+<p>В примере используется аппаратная шина UART2 работающая на выводах 16 и 17. Вместо вывода 22 можно использовать любой вывод платы Piranha ESP32, указав его номер в скетче.&nbsp;Если вывод DE конвертера не используется, то он и не указывается в скетче.</p>
+<pre class="prettyprint C">   ModbusClient modbus(Serial2, 22); // Создаём объект для работы по протоколу Modbus указав класс Serial2 и номер вывода DE конвертера UART-RS485.
+// ModbusClient modbus(Serial2);     // Если вывод DE не используется, то он и не указывается.
+</pre>
+<figure><img src="http://iarduino.ru/img/upload/5d991e6c2949dbb5caf2b2326f566ad0.png" data-image="c02ju2pxbh0z"></figure>
+<h2 id='h3_4'>Описание функций библиотеки:</h2>
+<p>В данном разделе описаны функции <a href="https://iarduino.ru/file/578.html">библиотеки iarduino_Modbus</a> для работы с шиной RS485 по протоколу Modbus.<br></p>
+<p>Синтаксис функций библиотеки iarduino_Modbus совместим с библиотекой ArduinoModbus.</p>
+<h3>Подключение библиотеки:</h3>
+<p>В примерах вход DE конвертера подключён к выводу D2 Arduino. Вместо вывода D2 можно использовать любой выход Arduino. Если конвертер не имеет вывода DE, или он не подключён к Arduino,&nbsp;то номер вывода DE&nbsp;не указывается при создании объекта.</p>
+<ul>
+<li>Если используется аппаратная шина UART:</li>
+</ul>
+<pre class="prettyprint C">#include &lt;iarduino_Modbus.h&gt;       // Подключаем библиотеку для работы по протоколу Modbus.
+   ModbusClient modbus(Serial, 2); // Создаём объект для работы по протоколу Modbus указав класс Serial и номер вывода DE конвертера UART-RS485.
+// ModbusClient modbus(Serial);    // Если вывод DE не используется, то создаём объект не указывая его.
+</pre>
+<p>Если используется аппаратная шина UART-1, то вместо класса Serial указываем Serial1, для шины UART2 указываем Serial2 и т.д.</p>
+<ul>
+<li>Если используется программная реализация шины UART:</li>
+</ul>
+<pre class="prettyprint C">#include &lt;SoftwareSerial.h&gt;       // Подключаем библиотеку для работы с программной шиной UART.
+#include &lt;iarduino_Modbus.h&gt;      // Подключаем библиотеку для работы по протоколу Modbus.
+                                  //
+   SoftwareSerial rs485(8, 9);    // Создаём объект для работы с программной шиной UART указывая выводы RX, TX.
+   ModbusClient modbus(rs485, 2); // Создаём объект для работы по протоколу Modbus указав объект программной шины UART и номер вывода DE конвертера UART-RS485.
+// ModbusClient modbus(rs485);    // Если вывод DE не используется, то создаём объект не указывая его.
+</pre>
+<p>Для программной реализации шины UART необходимо указать выводы которые будут использоваться как RX и TX, в примере указаны выводы 8, и 9 соответственно. При создании объекта modbus указывается не класс Serial, а объект для работы с программной шиной UART.</p>
+<ul>
+<li>Если используются две и более шины:</li>
+</ul>
+<pre class="prettyprint C">#include &lt;iarduino_Modbus.h&gt;       // Подключаем библиотеку для работы по протоколу Modbus.
+ModbusClient modbus1(Serial1, 2);  // Создаём объект для работы по протоколу Modbus указав класс Serial1 и номер вывода DE конвертера UART1-RS485_1.
+ModbusClient modbus2(Serial2, 3);  // Создаём объект для работы по протоколу Modbus указав класс Serial2 и номер вывода DE конвертера UART2-RS485_2.
+ModbusClient modbus3(Serial3);     // Создаём объект для работы по протоколу Modbus указав класс Serial3, вывод DE не используется.
+</pre>
+<p>В примере созданы три объекта для работы по трём аппаратным шинам UART. К двум первым шинам подключены конвертеры с выводом DE и в примере указаны номера выводов Arduino которые управляют этими выводами, а для третьей шины вывод DE не указан, значит этого вывода нет у конвертера третьей шины.&nbsp;Количество создаваемых объектов ограничено количеством шин и памятью микроконтроллера. Можно добавить еще и программную шину, подключив библиотеку SoftwareSerial как в примере выше.</p>
+<p>Скорость передачи данных по шине Modbus равна скорости шины UART.</p>
+<h3>Функция begin();</h3>
+<ul>
+<li>Назначение: Инициализация работы по протоколу Modbus.</li>
+<li>Синтаксис: begin();</li>
+<li>Параметры: Нет.</li>
+<li>Возвращаемое значение: Нет.</li>
+<li>Примечание:</li><ul><li>Протокол будет инициирован на той шине UART, которая указана при создании объекта.<br></li><li>Функцию достаточно вызвать 1 раз в коде Setup(), до обращения к остальным функциям библиотеки.</li></ul>
+<li>Пример:</li>
+</ul>
+<pre class="prettyprint C">modbus.begin(); // Инициируем работу по протоколу Modbus.
+</pre>
+<h3>Функция setTypeMB();</h3>
+<ul>
+<li>Назначение: Указание типа протокола Modbus.</li>
+<li>Синтаксис: setTypeMB( ТИП );</li>
+<li>Параметр: ТИП - может принимать значение MODBUS_RTU или MODBUS_ASCII.</li>
+<li>Возвращаемое значение: Нет.</li>
+<li>Примечание: Тип протокола по умолчанию MODBUS_RTU.</li>
+<li>Пример:</li>
+</ul>
+<pre class="prettyprint C">modbus.setTypeMB( MODBUS_RTU ); // Указываем тип протокола Modbus: MODBUS_RTU (по умолчанию), или MODBUS_ASCII.
+</pre>
+<h3>Функция setTimeout();</h3>
+<ul>
+<li>Назначение: Указание максимального времени ожидания ответа от ведомых устройств.</li>
+<li>Синтаксис: setTimeout( ВРЕМЯ );</li>
+<li>Параметр: ВРЕМЯ uint32_t - количество миллисекунд.</li>
+<li>Возвращаемое значение: Нет.</li>
+<li>Примечание:</li><ul><li>Максимальное время ожидания устанавливается, как для типа RTU, так и для ASCII.</li><li>Максимальное время ожидания по умолчанию 10 мс.</li><li>Библиотека не ждёт завершение времени ожидания, если модуль ответил раньше.</li></ul>
+<li>Пример:</li>
+</ul>
+<pre class="prettyprint C">modbus.setTimeout( 15 ); // Указываем жать ответ от модулей не более 15 мс.
+</pre>
+<h3>Функция setDelay();</h3>
+<ul>
+<li>Назначение: Указание паузы до отправки сообщения.</li>
+<li>Синтаксис: setDelay( ВРЕМЯ );</li>
+<li>Параметр: ВРЕМЯ uint32_t - количество миллисекунд.</li>
+<li>Возвращаемое значение: Нет.</li>
+<li>Примечание:</li><ul><li>Пауза до отправки сообщения устанавливается только для протокола Modbus RTU.</li><li>Пауза до отправки сообщения по умолчанию 3 мс.</li><li>Пауза устанавливается между пакетами. Если после получения/отправки последнего пакета прошло больше времени, то новый пакет будет отправлен без паузы.</li></ul>
+<li>Пример:</li>
+</ul>
+<pre class="prettyprint C">modbus.setDelay( 5 ); // Указываем выдерживать паузу между пакетами в 5 мс.
+</pre>
+<h3>Функция coilRead();</h3>
+<ul>
+<li>Назначение: Чтение одного регистра "Coil" (он же "Discrete Output").</li>
+<li>Синтаксис: coilRead( [ АДРЕС_МОДУЛЯ ] , АДРЕС_РЕГИСТРА );</li>
+<li>Параметры:</li><ul><li>АДРЕС_МОДУЛЯ: uint8_t - значение от 1 до 247.</li><li>АДРЕС_РЕГИСТРА: uint16_t - значение от 0 до 9999.</li></ul>
+<li>Возвращаемое значение: int8_t - прочитанное значение (0/1), или -1 при неудаче.</li>
+<li>Примечание: Если адрес модуля не указан, команда будет отправлена всем устройствам.</li>
+<li>Пример без проверки чтения:</li>
+</ul>
+<pre class="prettyprint C">bool i = modbus.coilRead(9, 0); // Читаем из модуля с адресом 9, значение регистра "Coil" с адресом 0.
+</pre>
+<ul><li>Пример с проверкой:</li></ul>
+<pre class="prettyprint C">bool i;
+int8_t j = modbus.coilRead(9, 0);      // Читаем из модуля с адресом 9, значение регистра "Coil" с адресом 0.
+if( j&gt;=0 ){ i=j; }                     // Сохраняем прочитанное значение в переменную i.
+else      { Serial.println("Error"); } // Выводим сообщение о ошибке чтения.
+</pre>
+<h3>Функция discreteInputRead();</h3>
+<ul>
+<li>Назначение: Чтение одного регистра "Discrete Input".</li>
+<li>Синтаксис: discreteInputRead( [ АДРЕС_МОДУЛЯ ] , АДРЕС_РЕГИСТРА );</li>
+<li>Параметры:</li><ul><li>АДРЕС_МОДУЛЯ: uint8_t - значение от 1 до 247.</li><li>АДРЕС_РЕГИСТРА: uint16_t - значение от 0 до 9999.</li></ul>
+<li>Возвращаемое значение: int8_t - прочитанное значение (0/1), или -1 при неудаче.</li>
+<li>Примечание: Если адрес модуля не указан, команда будет отправлена всем устройствам.</li>
+<li>Пример без проверки чтения:</li>
+</ul>
+<pre class="prettyprint C">bool i = modbus.discreteInputRead(9, 0); // Читаем из модуля с адресом 9, значение регистра "Discrete Input" с адресом 0.
+</pre>
+<ul><li>Пример с проверкой:</li></ul>
+<pre class="prettyprint C">bool i;
+int8_t j = modbus.discreteInputRead(9, 0); // Читаем из модуля с адресом 9, значение регистра "Discrete Input" с адресом 0.
+if( j&gt;=0 ){ i=j; }                         // Сохраняем прочитанное значение в переменную i.
+else      { Serial.println("Error"); }     // Выводим сообщение о ошибке чтения.
+</pre>
+<h3>Функция holdingRegisterRead();</h3>
+<ul>
+<li>Назначение: Чтение одного регистра "Holding Register" (он же "Analog Output").</li>
+<li>Синтаксис: holdingRegisterRead( [ АДРЕС_МОДУЛЯ ] , АДРЕС_РЕГИСТРА );</li>
+<li>Параметры:</li><ul><li>АДРЕС_МОДУЛЯ: uint8_t - значение от 1 до 247.</li><li>АДРЕС_РЕГИСТРА: uint16_t - значение от 0 до 9999.</li></ul>
+<li>Возвращаемое значение: int32_t - прочитанное значение (0...65535), или -1 при неудаче.</li>
+<li>Примечание: Если адрес модуля не указан, команда будет отправлена всем устройствам.</li>
+<li>Пример без проверки чтения:</li>
+</ul>
+<pre class="prettyprint C">uint16_t i = modbus.holdingRegisterRead(9, 0); // Читаем из модуля с адресом 9, значение регистра "Holding Register" с адресом 0.
+</pre>
+<ul><li>Пример с проверкой:</li></ul>
+<pre class="prettyprint C">uint16_t i;
+int32_t j = modbus.holdingRegisterRead(9, 0); // Читаем из модуля с адресом 9, значение регистра "Holding Register" с адресом 0.
+if( j&gt;=0 ){ i=j; }                            // Сохраняем прочитанное значение в переменную i.
+else      { Serial.println("Error"); }        // Выводим сообщение о ошибке чтения.
+</pre>
+<h3>Функция inputRegisterRead();</h3>
+<ul>
+<li>Назначение: Чтение одного регистра "Input Register" (он же "Analog Input").</li>
+<li>Синтаксис: inputRegisterRead( [ АДРЕС_МОДУЛЯ ] , АДРЕС_РЕГИСТРА );</li>
+<li>Параметры:</li><ul><li>АДРЕС_МОДУЛЯ: uint8_t - значение от 1 до 247.</li><li>АДРЕС_РЕГИСТРА: uint16_t - значение от 0 до 9999.</li></ul>
+<li>Возвращаемое значение: int32_t - прочитанное значение (0...65535), или -1 при неудаче.</li>
+<li>Примечание: Если адрес модуля не указан, команда будет отправлена всем устройствам.</li>
+<li>Пример без проверки чтения:</li>
+</ul>
+<pre class="prettyprint C">uint16_t i = modbus.inputRegisterRead(9, 0); // Читаем из модуля с адресом 9, значение регистра "Input Register" с адресом 0.
+</pre>
+<ul><li>Пример с проверкой:</li></ul>
+<pre class="prettyprint C">uint16_t i;
+int32_t j = modbus.inputRegisterRead(9, 0); // Читаем из модуля с адресом 9, значение регистра "Input Register" с адресом 0.
+if( j&gt;=0 ){ i=j; }                          // Сохраняем прочитанное значение в переменную i.
+else      { Serial.println("Error"); }      // Выводим сообщение о ошибке чтения.
+</pre>
+<h3>Функция coilWrite();</h3>
+<ul>
+<li>Назначение: Запись в один регистр  "Coil" (он же "Discrete Output").</li>
+<li>Синтаксис: coilWrite( [ АДРЕС_МОДУЛЯ ] , АДРЕС_РЕГИСТРА , ДАННЫЕ );</li>
+<li>Параметры:</li><ul><li>АДРЕС_МОДУЛЯ: uint8_t - значение от 1 до 247.</li><li>АДРЕС_РЕГИСТРА: uint16_t - значение от 0 до 9999.</li><li>ДАННЫЕ: bool - значение для записи 0 или 1.</li></ul>
+<li>Возвращаемое значение: bool - результат записи значения в регистр (true или false).</li>
+<li>Примечание: Если адрес модуля не указан, команда будет отправлена всем устройствам.</li>
+<li>Пример без проверки записи:</li>
+</ul>
+<pre class="prettyprint C">modbus.coilWrite(9, 0, 1); // Для модуля с адресом 9, в регистр "Coil" с адресом 0, записываем значение 1.
+</pre>
+<ul><li>Пример с проверкой:</li></ul>
+<pre class="prettyprint C">bool i = modbus.coilWrite(9, 0, 1); // Для модуля с адресом 9, в регистр "Coil" с адресом 0, записываем значение 1.
+if(i){ Serial.println( "Ok"  ); }   // Выводим сообщение о успешной записи.
+else { Serial.println("Error"); }   // Выводим сообщение о ошибке записи.
+</pre>
+<h3>Функция holdingRegisterWrite();</h3>
+<ul>
+<li>Назначение: Запись в один регистр  "Holding Register" (он же "Analog Output").</li>
+<li>Синтаксис: holdingRegisterWrite( [ АДРЕС_МОДУЛЯ ] , АДРЕС_РЕГИСТРА , ДАННЫЕ );</li>
+<li>Параметры:</li><ul><li>АДРЕС_МОДУЛЯ: uint8_t - значение от 1 до 247.</li><li>АДРЕС_РЕГИСТРА: uint16_t - значение от 0 до 9999.</li><li>ДАННЫЕ: uint16_t - значение для записи от 0 до 65535.</li></ul>
+<li>Возвращаемое значение: bool - результат записи значения в регистр (true или false).</li>
+<li>Примечание: Если адрес модуля не указан, команда будет отправлена всем устройствам.</li>
+<li>Пример без проверки записи:</li>
+</ul>
+<pre class="prettyprint C">modbus.holdingRegisterWrite(9, 0, 1000); // Для модуля с адресом 9, в регистр "Holding Register" с адресом 0, записываем значение 1000.
+</pre>
+<ul><li>Пример с проверкой:</li></ul>
+<pre class="prettyprint C">bool i = modbus.holdingRegisterWrite(9, 0, 1000); // Для модуля с адресом 9, в регистр "Holding Register" с адресом 0, записываем значение 1000.
+if(i){ Serial.println( "Ok"  ); }                 // Выводим сообщение о успешной записи.
+else { Serial.println("Error"); }                 // Выводим сообщение о ошибке записи.
+</pre>
+<h3>Функция registerMaskWrite();</h3>
+<ul>
+<li>Назначение: Запись масок в один регистр  "Holding Register" (он же "Analog Output").</li>
+<li>Синтаксис: registerMaskWrite( [ АДРЕС_МОДУЛЯ ] , АДРЕС_РЕГИСТРА , AND , OR );</li>
+<li>Параметры:</li><ul><li>АДРЕС_МОДУЛЯ: uint8_t - значение от 1 до 247.</li><li>АДРЕС_РЕГИСТРА: uint16_t - значение от 0 до 9999.</li><li>AND: uint16_t - значение маски AND от 0 до 65535.</li><li>OR: uint16_t - значение маски OR от 0 до 65535.</li></ul>
+<li>Возвращаемое значение: bool - результат записи масок в регистр (true или false).</li>
+<li>Примечание:</li><ul><li>Если адрес модуля не указан, команда будет отправлена всем устройствам.</li><li>Результат записи вычисляется по формуле: REG = ( REG & AND ) | ( OR & ~AND ).</li><li>Каждый бит маски AND запрещает менять значение того же бита в регистре.</li><li>Маска OR содержит биты для записи в регистр, если это не запрещено маской AND.</li><li>Пример:</li><ul><li>Допустим сейчас значение регистра = ( 0101 0101 0101 0101 )<sub>2</sub>.</li><li>Если маска AND = ( 0000 0000 1111 1111 )<sub>2</sub>, то она запрещает менять 8 младших битов.</li><li>Для маски OR возьмем значение = ( 0111 0111 0111 0111 )<sub>2</sub>.</li><li>После записи, значение регистра будет = ( 0111 0111 0101 0101 )<sub>2</sub>.</li><li>8 старших битов взяли значение из OR, а 8 младших остались без изменений.</li><li>Так можно менять отдельные биты, без предварительного чтения регистра.</li></ul></ul>
+<li>Пример без проверки записи:</li>
+</ul>
+<pre class="prettyprint C">modbus.registerMaskWrite(9, 0, 0x00FF, 0x7777); // Для модуля с адресом 9, в регистр "Holding Register" с адресом 0, записываем маски AND=0x00FF и OR=0x7777.
+</pre>
+<ul><li>Пример с проверкой:</li></ul>
+<pre class="prettyprint C">bool i = modbus.registerMaskWrite(9, 0, 0x00FF, 0x7777); // Для модуля с адресом 9, в регистр "Holding Register" с адресом 0, записываем маски AND=0x00FF и OR=0x7777.
+if(i){ Serial.println( "Ok"  ); }                        // Выводим сообщение о успешной записи.
+else { Serial.println("Error"); }                        // Выводим сообщение о ошибке записи.
+</pre>
+<h3>Функция beginTransmission();</h3>
+<ul>
+<li>Назначение: Инициализация записи в несколько регистров "Coils" или "Holding Registers".</li>
+<li>Синтаксис: beginTransmission( [ АДРЕС_МОДУЛЯ ], ТИП, АДРЕС_РЕГИСТРА, КОЛИЧЕСТВО);</li>
+<li>Параметры:</li><ul><li>АДРЕС_МОДУЛЯ: uint8_t - значение от 1 до 247.</li><li>ТИП - может принимать значение  COILS или HOLDING_REGISTERS.</li><li>АДРЕС_РЕГИСТРА: uint16_t - адрес первого регистра для записи от 0 до 9999.</li><li>КОЛИЧЕСТВО: uint16_t - количество записываемых регистров.</li></ul>
+<li>Возвращаемое значение: bool - результат инициализации записи (true или false).</li>
+<li>Примечание:</li><ul><li>Если адрес модуля не указан, команда будет отправлена всем устройствам.</li><li>Если задан некорректный диапазон адресов регистров, не будет записан ни один регистр.</li><li>Данные для записи необходимо ставить в очередь функцией write().</li><li>Запись данных поставленных в очередь осуществляется функцией endTransmission().</li></ul><li>Пример для функций beginTransmission(), write() и endTransmission(), указан ниже.</li>
+</ul>
+<h3>Функция write();</h3>
+<ul>
+<li>Назначение: Постановка значения в очередь на запись, после beginTransmission().</li>
+<li>Синтаксис: write( ДАННЫЕ );</li>
+<li>Параметр: ДАННЫЕ uint16_t - значение 0/1 для "Coils", или 0...65535 для "Holding Registers".</li>
+<li>Возвращаемое значение: bool - результат постановки значения в очередь (true или false).</li><li>Пример для функций beginTransmission(), write() и endTransmission(), указан ниже.</li>
+</ul>
+<h3>Функция endTransmission();</h3>
+<ul>
+<li>Назначение: Выполнение инициированной ранее записи.</li>
+<li>Синтаксис: endTransmission();</li>
+<li>Параметр: Нет.</li>
+<li>Возвращаемое значение: bool - результат записи (true или false).</li>
+<li>Пример без проверки записи:</li>
+</ul>
+<pre class="prettyprint C">modbus.beginTransmission(9, COILS, 0, 3);             // Инициируем запись для модуля с адресом 9, в регистры "Coils", начиная с адреса 0, всего 3 значения (3 регистра).
+modbus.write( 0 );                                    // Ставим значение в очередь на запись. Это значение будет записано в регистр, адрес которого был указан в modbus.beginTransmission().
+modbus.write( 1 );                                    // Ставим значение в очередь на запись. Это значение будет записано в следующий регистр по порядку.
+modbus.write( 0 );                                    // Ставим значение в очередь на запись. Это значение будет записано в следующий регистр по порядку.
+modbus.endTransmission();                             // Выполняем запись.
+                                                      //
+modbus.beginTransmission(9, HOLDING_REGISTERS, 5, 2); // Инициируем запись для модуля с адресом 9, в регистры "Holding Registers", начиная с адреса 5, всего 2 значения (2 регистра).
+modbus.write( 11111 );                                // Ставим значение в очередь на запись. Это значение будет записано в регистр, адрес которого был указан в modbus.beginTransmission().
+modbus.write( 22222 );                                // Ставим значение в очередь на запись. Это значение будет записано в следующий регистр по порядку.
+modbus.endTransmission();                             // Выполняем запись.
+</pre>
+<ul><li>Пример с проверкой:</li></ul>
+<pre class="prettyprint C">modbus.beginTransmission(9, HOLDING_REGISTERS, 5, 2); // Инициируем запись для модуля с адресом 9, в регистры "Holding Registers", начиная с адреса 5, всего 2 значения (2 регистра).
+modbus.write( 11111 );                                // Ставим значение в очередь на запись. Это значение будет записано в регистр, адрес которого был указан в modbus.beginTransmission().
+modbus.write( 22222 );                                // Ставим значение в очередь на запись. Это значение будет записано в следующий регистр по порядку.
+bool i = modbus.endTransmission();                    // Выполняем запись.
+if(i){ Serial.println( "Ok"  ); }                     // Выводим сообщение о успешной записи.
+else { Serial.println("Error"); }                     // Выводим сообщение о ошибке записи.
+</pre>
+<h3>Функция requestFrom();</h3>
+<ul>
+<li>Назначение: Чтение из нескольких регистров указанного типа.</li>
+<li>Синтаксис: requestFrom( [ АДРЕС_МОДУЛЯ ], ТИП, АДРЕС_РЕГИСТРА, КОЛИЧЕСТВО);</li>
+<li>Параметры:</li><ul><li>АДРЕС_МОДУЛЯ: uint8_t - значение от 1 до 247.</li><li>ТИП: COILS, или DISCRETE_INPUTS, или HOLDING_REGISTERS, или INPUT_REGISTERS.</li><li>АДРЕС_РЕГИСТРА: uint16_t - адрес первого читаемого регистра от 0 до 9999.</li><li>КОЛИЧЕСТВО: uint16_t - количество читаемых регистров.</li></ul>
+<li>Возвращаемое значение: uint16_t - количество прочитанных регистров, или 0 при неудаче.</li>
+<li>Примечание:</li><ul><li>Если адрес модуля не указан, команда будет отправлена всем устройствам.</li><li>Если задан некорректный диапазон адресов регистров, не будет прочитан ни один регистр.</li><li>Для получения прочитанных данных нужно обращаться к функции read().</li><li>Количество оставшихся доступных данных можно узнать функцией available().</li></ul><li>Пример для функций requestFrom(), available() и read(), указан ниже.</li>
+</ul>
+<h3>Функция available();</h3>
+<ul>
+<li>Назначение: Получение количества значений, доступных для чтения функцией read().</li>
+<li>Синтаксис: available();</li>
+<li>Параметры: Нет.</li>
+<li>Возвращаемое значение: uint16_t - количество значений доступных для чтения read().</li><li>Примечание: При обращении к любой функции библиотеки кроме available() и read(), буфер доступных значений будет очищен или перезаписан.</li><li>Пример для функций requestFrom(), available() и read(), указан ниже.</li>
+</ul>
+<h3>Функция read();</h3>
+<ul>
+<li>Назначение: Получение очередного прочитанного значения.</li>
+<li>Синтаксис: read();</li>
+<li>Параметры: Нет.</li>
+<li>Возвращаемое значение: int32_t - очередное прочитанное значение, или -1 при неудаче.</li><li>Примечание: При обращении к любой функции библиотеки кроме available() и read(), буфер доступных значений будет очищен или перезаписан.</li>
+<li>Пример без проверки чтения:</li>
+</ul>
+<pre class="prettyprint C">modbus.requestFrom(9, COILS, 0, 3);             // Читаем из модуля с адресом 9, регистры "Coils", начиная с адреса 0, всего 3 значения (3 регистра).
+while( modbus.available() ){                    // Пока есть значения доступные для функции read()...
+    Serial.println( modbus.read() );            // Выводим очередное прочитанное значение.
+}                                               // 
+                                                //
+modbus.requestFrom(9, HOLDING_REGISTERS, 5, 2); // Читаем из модуля с адресом 9, регистры "Holding Registers", начиная с адреса 5, всего 2 значения (2 регистра).
+while( modbus.available() ){                    // Пока есть значения доступные для функции read()...
+    Serial.println( modbus.read() );            // Выводим очередное прочитанное значение.
+}                                               // 
+</pre>
+<ul><li>Пример с проверкой:</li></ul>
+<pre class="prettyprint C">if( modbus.requestFrom(9, HOLDING_REGISTERS, 5, 2) ){ // Читаем из модуля с адресом 9, регистры "Holding Registers", начиная с адреса 5, всего 2 значения (2 регистра).
+    while( modbus.available() ){                      // Пока есть значения доступные для функции read()...
+        Serial.println( modbus.read() );              // Выводим очередное прочитанное значение.
+    }                                                 //
+}else{ Serial.println("Error"); }                     // Не удалось прочитать ни одного регистра.
+</pre>
+<h3>Функция end();</h3>
+<ul>
+<li>Назначение: Функция для совместимости с библиотекой ArduinoModbus.</li>
+<li>Синтаксис: end();</li>
+<li>Параметры: Нет</li>
+<li>Возвращаемое значение: Нет.</li>
+<li>Примечание: Функция позволяет перенести код написанный для библиотеки ArduinoModbus в скетч с библиотекой iarduino_Modbus, без сообщений об ошибках, но сама ничего не делает.</li>
+<li>Пример:</li>
+</ul>
+<pre class="prettyprint C">modbus.end(); // Пустая функция.
+Serial.end(); // Отключение шины. Функцию можно применять как к аппаратным шинам UART, так и к программной.
+</pre>
+<h3>Функция exceptionStatusRead();</h3>
+<ul>
+<li>Назначение: Чтение состояния 8 статусных выходов.</li>
+<li>Синтаксис: exceptionStatusRead( [ АДРЕС_МОДУЛЯ ] );</li>
+<li>Параметр: АДРЕС_МОДУЛЯ uint8_t - значение от 1 до 247.</li>
+<li>Возвращаемое значение: int16_t - байт битов, или -1 при неудаче.</li>
+<li>Примечание: Если адрес модуля не указан, команда будет отправлена всем устройствам.</li>
+<li>Пример без проверки чтения:</li>
+</ul>
+<pre class="prettyprint C">uint8_t i = modbus.exceptionStatusRead(9); // Читаем статусные выходы устройства с адресом 9.
+bool pin1 = bitRead(i, 0);                 // Получаем состояние 1 статусного выхода.
+bool pin2 = bitRead(i, 1);                 // Получаем состояние 2 статусного выхода.
+bool pin8 = bitRead(i, 7);                 // Получаем состояние 8 статусного выхода.
+</pre>
+<ul><li>Пример с проверкой:</li></ul>
+<pre class="prettyprint C">int16_t i = modbus.exceptionStatusRead(9); // Читаем статусные выходы устройства с адресом 9.
+if( i&lt;0 ){                                 // Если чтение не выполнено ...
+    Serial.println( "Error"  ); }          // Выводим сообщение о ошибке чтения.
+}else{                                     // Если чтение выполнено ...
+    bool pin1 = bitRead(i, 0);             // Получаем состояние 1 статусного выхода.
+    bool pin2 = bitRead(i, 1);             // Получаем состояние 2 статусного выхода.
+    bool pin8 = bitRead(i, 7);             // Получаем состояние 8 статусного выхода.
+}                                          //
+</pre>
+<h3>Функция getSate();</h3>
+<ul>
+<li>Назначение: Чтение состояния устройства.</li>
+<li>Синтаксис: getSate( [ АДРЕС_МОДУЛЯ ] );</li>
+<li>Параметр: АДРЕС_МОДУЛЯ uint8_t - значение от 1 до 247.</li>
+<li>Возвращаемое значение: int8_t - состояние ( 0-свободно, 1-занято ), или -1 при неудаче.</li>
+<li>Примечание: Если адрес модуля не указан, команда будет отправлена всем устройствам.</li>
+<li>Пример без проверки чтения:</li>
+</ul>
+<pre class="prettyprint C">bool i = modbus.getSate(9); // Читаем состояние устройства с адресом 9.
+if(i){ Serial.println( "Устройство занято"   ); }
+else { Serial.println( "Устройство свободно" ); }
+</pre>
+<ul><li>Пример с проверкой:</li></ul>
+<pre class="prettyprint C">int8_t i = modbus.getSate(9); // Читаем состояние устройства с адресом 9.
+if( i&lt;0  ){ Serial.println( "Ошибка чтения"       ); }
+if( i==0 ){ Serial.println( "Устройство свободно" ); }
+if( i&gt;0  ){ Serial.println( "Устройство занято"   ); }
+</pre>
+<h3>Функция diagnostic();</h3>
+<ul>
+<li>Назначение: Выполнение команды диагностики.</li>
+<li>Синтаксис: diagnostic( АДРЕС_МОДУЛЯ , НОМЕР_ФУНКЦИИ_ДИАГНОСТИКИ [ , ДАННЫЕ ] );</li>
+<li>Параметры:</li><ul><li>АДРЕС_МОДУЛЯ: uint8_t - значение от 1 до 247.</li><li>НОМЕР_ФУНКЦИИ_ДИАГНОСТИКИ: uint16_t - значение от 0 до 65535.</li><ul><li>0 - Проверка связи. Результатом диагностики будет значение аргумента ДАННЫЕ.</li><li>1 - Перезагрузка коммуникаций и диагностика внутренних систем устройства.</li><li>2 - Получить значение регистра диагностики. Каждый бит информирует о ошибке.</li><li>3 - Сменить символ конца пакета ASCII на значение аргумента ДАННЫЕ.</li><li>4 - Включить режим "Только прослушивание" (Listen Only Mode).</li><li>10 - Сбросить все счетчики и регистр диагностики.</li><li>11 - Получить значение счётчика всех запросов на шине.</li><li>12 - Получить значение счётчика запросов с ошибками CRC.</li><li>13 - Получить значение счётчика ответов об ошибках.</li><li>14 - Получить значение счётчика запросов адресованных устройству. </li><li>15 - Получить значение счётчика запросов которые остались без ответа.</li><li>16 - Получить значение счётчика ответов об ошибках CODE_ERR_NAK.</li><li>17 - Получить значение счётчика ответов о «занятости» CODE_ERR_BUSY. </li><li>18 - Получить значение счётчика ошибок переполнения приема символов. </li><li>Остальные номера функций доступны в документации протокола Modbus.</li></ul><li>ДАННЫЕ: uint16_t - необязательное значение от 0 до 65535.</li></ul>
+<li>Возвращаемое значение: int32_t - результат диагностики (0...65535), или -1 при неудаче.</li>
+<li>Примечание:</li><ul><li>Счётчик событий, это счётчик успешно выполненных запросов.<br></li><li>Счётчик не реагирует на успешное выполнение команды чтения его значения.</li></ul>
+<li>Пример:</li>
+</ul>
+<pre class="prettyprint C">uint16_t i = modbus.diagnostic(9, 0, 12345); // Проверка связи устройства с адресом 9.
+if( i!=12345 ){ Serial.println("Error"); }   // Выявлена ошибка связи.
+</pre>
+<ul><li>Пример:</li></ul>
+<pre class="prettyprint C">int32_t i = modbus.diagnostic(9, 2); // Получить значение регистра диагностики устройства с адресом 9.
+if(i&lt;0){ Serial.println( "Ошибка чтения" );                               }else
+if( i ){ Serial.println( "Модуль обнаружил сбои в работе своих систем" ); }else
+       { Serial.println( "Устройство работает без ошибок" );              }
+</pre>
+<h3>Функция getEventCounter();</h3>
+<ul>
+<li>Назначение: Чтение счетчика событий.</li>
+<li>Синтаксис: getEventCounter( [ АДРЕС_МОДУЛЯ ] );</li>
+<li>Параметр: АДРЕС_МОДУЛЯ uint8_t - значение от 1 до 247.</li>
+<li>Возвращаемое значение: int32_t - значение счётчика событий (0...65535), или -1 при неудаче.</li>
+<li>Примечание:</li><ul><li>Если адрес модуля не указан, команда будет отправлена всем устройствам.</li><li>Счётчик событий, это счётчик успешно выполненных запросов.</li><li>Счётчик не реагирует на успешное выполнение команды чтения его значения.</li></ul>
+<li>Пример без проверки чтения:</li>
+</ul>
+<pre class="prettyprint C">uint16_t i = modbus.getEventCounter(9); // Читаем счётчик событий устройства с адресом 9.
+Serial.println( (String) "Устройство успешно выполнило "+i+" запросов." );
+</pre>
+<ul><li>Пример с проверкой:</li></ul>
+<pre class="prettyprint C">int32_t i = modbus.getEventCounter(9); // Читаем счётчик событий устройства с адресом 9.
+if(i&lt;0){ Serial.println( "Ошибка чтения" ); }
+else   { Serial.println( (String) "Устройство успешно выполнило "+i+" запросов." ); }
+</pre>
+<h3>Функция getEventLog();</h3>
+<ul>
+<li>Назначение: Чтение журнала событий.</li>
+<li>Синтаксис: getEventLog( [ АДРЕС_МОДУЛЯ ] );</li>
+<li>Параметр: АДРЕС_МОДУЛЯ uint8_t - значение от 1 до 247.</li>
+<li>Возвращаемое значение: uint8_t - количество данных, доступных для чтения функцией read().</li>
+<li>Примечание:</li><ul><li>Если адрес модуля не указан, команда будет отправлена всем устройствам.</li><li>Для получения прочитанных данных нужно обращаться к функции read().</li><li>Количество оставшихся доступных данных можно узнать функцией available().</li><li>Данные будут получены в следующем порядке:</li><ul><li>uint16_t - слово состояния (0x0000 - устройство свободно, 0xFFFF - устройство занято).</li><li>uint16_t - значение счётчика событий (0...65535).</li><li>uint16_t - значение счётчика всех сообщений на шине (0...65535).</li><li>uint8_t - массив байтов журнала событий (не более 64 байт).</li></ul></ul>
+<li>Пример без проверки чтения:</li>
+</ul>
+<pre class="prettyprint C">modbus.getEventLog(9); // Читаем журнал событий устройства с адресом 9.
+Serial.print( "Слово состояния   = " ); Serial.println( modbus.read() );
+Serial.print( "Счётчик событий   = " ); Serial.println( modbus.read() );
+Serial.print( "Счётчик сообщений = " ); Serial.println( modbus.read() );
+Serial.println( "Байты журнала событий:" );
+while( modbus.available() ){ Serial.println( modbus.read() ); }
+</pre>
+<ul><li>Пример с проверкой:</li></ul>
+<pre class="prettyprint C">if( modbus.getEventLog(9) ){ // Читаем журнал событий устройства с адресом 9.
+    if( modbus.available() ){ Serial.print( "Слово состояния   = " ); Serial.println( modbus.read() ); }
+    if( modbus.available() ){ Serial.print( "Счётчик событий   = " ); Serial.println( modbus.read() ); }
+    if( modbus.available() ){ Serial.print( "Счётчик сообщений = " ); Serial.println( modbus.read() ); }
+    Serial.println( "Байты журнала событий:" );
+    while( modbus.available() ){ Serial.println( modbus.read() ); }
+}else{
+    Serial.println("Error"); // Модуль не поддерживает чтение журнала событий.
+}
+</pre>
+<h3>Функция getInfo();</h3>
+<ul>
+<li>Назначение: Чтение информации об устройстве.</li>
+<li>Синтаксис: getInfo( [ АДРЕС_МОДУЛЯ ] );</li>
+<li>Параметр: АДРЕС_МОДУЛЯ uint8_t - значение от 1 до 247.</li>
+<li>Возвращаемое значение: uint8_t - количество данных, доступных для чтения функцией read().</li>
+<li>Примечание:</li><ul><li>Если адрес модуля не указан, команда будет отправлена всем устройствам.</li><li>Для получения прочитанных данных нужно обращаться к функции read().</li><li>Количество оставшихся доступных данных можно узнать функцией available().</li><li>Данные будут получены в следующем порядке:</li><ul><li>uint8_t - идентификатор линейки устройств.</li><li>uint8_t - индикатор пуска: (0x00 - off, 0xFF - on).</li><li>uint8_t - массив данных об устройстве (количество байт зависит от устройства).<br></li></ul></ul>
+<li>Пример без проверки чтения:</li>
+</ul>
+<pre class="prettyprint C">modbus.getInfo(9); // Читаем информацию о устройстве с адресом 9.
+Serial.print( "Идентификатор линейки = "  ); Serial.println( modbus.read() );
+Serial.print( "Индикатор пуска = "        ); Serial.println( modbus.read() );
+Serial.println( "Остальные байты данных:" );
+while( modbus.available() ){ Serial.println( modbus.read() ); }
+</pre>
+<ul><li>Пример с проверкой:</li></ul>
+<pre class="prettyprint C">if( modbus.getInfo(9) ){ // Читаем информацию о устройстве с адресом 9.
+    if( modbus.available() ){ Serial.print( "Идентификатор линейки = " ); Serial.println( modbus.read() ); }
+    if( modbus.available() ){ Serial.print( "Индикатор пуска = "       ); Serial.println( modbus.read() ); }
+    Serial.println( "Остальные байты данных:" );
+    while( modbus.available() ){ Serial.println( modbus.read() ); }
+}else{
+    Serial.println("Error"); // Модуль не поддерживает чтение информации о устройстве.
+}
+</pre>
+<ul><li>Пример для модулей iarduino:</li></ul>
+<pre class="prettyprint C">if( modbus.getInfo(9) ){ // Читаем информацию о устройстве с адресом 9.
+    if( modbus.available()   ){ Serial.println((String) "Идентификатор линейки "+modbus.read() ); }
+    if( modbus.available()   ){ Serial.println((String) "Индикатор пуска "+modbus.read() ); }
+    if( modbus.available()   ){ Serial.println((String) "Адрес модуля на шине "+modbus.read() ); }
+    if( modbus.available()   ){ Serial.println((String) "Идентификатор устройства "+modbus.read() ); }
+    if( modbus.available()   ){ Serial.println((String) "Версия прошивки "+modbus.read() ); }
+    if( modbus.available()&gt;=2){ Serial.println((String) "Регистр диагностики "+((modbus.read()&lt;&lt;8)|modbus.read()); }
+    if( modbus.available()   ){ Serial.println((String) "Младший байт регистра диагностики "+modbus.read() ); }
+    if( modbus.available()   ){ Serial.println((String) "Количество регистров DO "+modbus.read() ); }
+    if( modbus.available()   ){ Serial.println((String) "Количество регистров DI "+modbus.read() ); }
+    if( modbus.available()   ){ Serial.println((String) "Количество регистров AO "+modbus.read() ); }
+    if( modbus.available()   ){ Serial.println((String) "Количество регистров AI "+modbus.read() ); }
+    if( modbus.available()&gt;=4){ Serial.println((String) "Задержка до ответа в мс"+(uint32_t)((modbus.read()&lt;&lt;24)|(modbus.read()&lt;&lt;16)|(modbus.read()&lt;&lt;8)|modbus.read()) ); }
+    Serial.println( "Остальные байты данных:" );
+    while( modbus.available() ){ Serial.println( modbus.read() ); }
+}else{
+    Serial.println("Error"); // Модуль не поддерживает чтение информации о устройстве.
+}
+</pre>
+<h3>Функция lastError();</h3>
+<ul>
+<li>Назначение: Получение кода причины последней ошибки.</li>
+<li>Синтаксис: lastError();</li>
+<li>Параметры: Нет.</li>
+<li>Возвращаемое значение: uint8_t - код причины последней ошибки.</li><ul><li>ERROR_ILLEGAL_FUNCTION - Команда запроса не поддерживается модулем.</li><li>ERROR_ILLEGAL_ADDRESS - У модуля отсутствует регистр с указанным адресом.</li><li>ERROR_ILLEGAL_VALUE - Недопустимое значение в поле данных запроса.</li><li>ERROR_DEVICE_FAILURE - Любая невосстановимая ошибка кроме первых трёх.</li><li>ERROR_ACKNOWLEDGE - Модуль принял запрос, но на обработку требуется время.</li><li>ERROR_DEVICE_BUSY - Ведомый занят, запрос проигнорирован.</li><li>ERROR_MEMORY_PARITY - Ошибка чтения/записи файла.</li><li>ERROR_GATEWAY_UNAVAILABLE - Шина перегружена данными или не настроена.</li><li>ERROR_GATEWAY_NO_DEVICE - Ведомого устройства нет или от него нет ответа.</li><li>ERROR_SYNTAX - Ошибка синтаксиса.</li><li>ERROR_ADR_IARDUINO - Ошибка назначения или сортировки адресов устройств iarduino.</li><li>ERROR_ADR_RESPONSE - Несовпадение адреса регистра в ответе.</li><li>ERROR_VAL_RESPONSE - Несовпадение данных в ответе.</li><li>ERROR_CRC_RESPONSE - Несовпадение CRC в принятом ответе.</li><li>ERROR_LEN_REQUEST - Размер отправляемого запроса превышает размер буфера.</li><li>ERROR_LEN_RESPONSE - Размер полученного ответа превышает размер буфера.</li></ul>
+<li>Пример:</li>
+</ul>
+<pre class="prettyprint C">int8_t i = modbus.coilRead(9, 100); // Читаем из модуля с адресом 9 регистр "Coil" (DO) с адресом 100.
+if( i&lt;0 ){
+    switch( modbus.lastError() ){
+        case ERROR_ILLEGAL_FUNCTION:    Serial.println( F("Модуль не поддерживает команду или функцию запроса")           ); break;
+        case ERROR_ILLEGAL_ADDRESS:     Serial.println( F("Запрос содержит недопустимый адрес регистра")                  ); break;
+        case ERROR_ILLEGAL_VALUE:       Serial.println( F("Запрос содержит недопустимое значение в поле данных")          ); break;
+        case ERROR_DEVICE_FAILURE:      Serial.println( F("Ошибка запроса не связана с командой, адресом или данными")    ); break;
+        case ERROR_ACKNOWLEDGE:         Serial.println( F("Модуль сообщает что занят и обработает запрос позже")          ); break;
+        case ERROR_DEVICE_BUSY:         Serial.println( F("Модуль сообщает что занят и не будет обрабатывать запрос")     ); break;
+        case ERROR_MEMORY_PARITY:       Serial.println( F("Модуль сообщает что произошла ошибка чтения/записи файла")     ); break;
+        case ERROR_GATEWAY_UNAVAILABLE: Serial.println( F("Шлюз неправильно настроен или перегружен запросами")           ); break;
+        case ERROR_GATEWAY_NO_DEVICE:   Serial.println( F("Модуль которому адресован запрос не отвечает")                 ); break;
+        case ERROR_SYNTAX:              Serial.println( F("Ошибка синтаксиса")                                            ); break;
+        case ERROR_ADR_IARDUINO:        Serial.println( F("Ошибка назначения или сортировки адресов устройств iarduino")  ); break;
+        case ERROR_ADR_RESPONSE:        Serial.println( F("Ответ от модуля содержит недопустимый адрес регистра")         ); break;
+        case ERROR_VAL_RESPONSE:        Serial.println( F("Ответ от модуля содержит недопустимое значение в поле данных") ); break;
+        case ERROR_CRC_RESPONSE:        Serial.println( F("Несовпадение CRC в ответе модуля")                             ); break;
+        case ERROR_LEN_REQUEST:         Serial.println( F("Размер запроса к модулю превышает буфер обмена или ADU")       ); break;
+        case ERROR_LEN_RESPONSE:        Serial.println( F("Размер ответа от модуля превышает буфер обмена")               ); break;
+        default:                        Serial.println( F("Неизвестная ошибка")                                           ); break;
+    }
+}else{ Serial.println( F("Ошибки не обнаружены") ); }
+</pre>
+<h2 id='h3_5'>Функции для работы с адресами:</h2>
+<p>Функции перечисленные в данном разделе предназначены для устройств iarduino.</p>
+<h3>Функция checkID();</h3>
+<ul>
+<li>Назначение: Функция определения принадлежности устройства.</li>
+<li>Синтаксис: checkID( АДРЕС_МОДУЛЯ );</li>
+<li>Параметр: АДРЕС_МОДУЛЯ uint8_t - значение от 1 до 247.</li>
+<li>Возвращаемое значение: uint8_t - принадлежность устройства:</li><ul><li>DEVICE_MB_ABSENT - Устройство с указанным адресом отсутствует на шине.</li><li>DEVICE_MB_DOUBLE - Адрес принадлежит двум и более устройствам.</li><li>DEVICE_MB_IARDUINO - Устройство принадлежит линейке iarduino.</li><li>DEVICE_MB_UNKNOWN - Устройство не принадлежит линейке iarduino.</li></ul>
+<li>Пример:</li>
+</ul>
+<pre class="prettyprint C">uint8_t i = modbus.checkID(9); // Определяем принадлежность устройства с адресом 9.
+Serial.print(F("Адрес 9 на шине Modbus принадлежит "));
+switch(i){
+    case DEVICE_MB_ABSENT:   Serial.println(F("отсутствующему устройству."  )); break;
+    case DEVICE_MB_DOUBLE:   Serial.println(F("двум и более устройствам."   )); break;
+    case DEVICE_MB_IARDUINO: Serial.println(F("устройству линейки iarduino.")); break;
+    case DEVICE_MB_UNKNOWN:  Serial.println(F("устройству не iarduino."     )); break;
+}
+</pre>
+<h3>Функция changeID();</h3>
+<ul>
+<li>Назначение: Функция изменения адреса устройства iarduino на шине.</li>
+<li>Синтаксис: changeID( СТАРЫЙ_АДРЕС , НОВЫЙ_АДРЕС );</li>
+<li>Параметры:</li><ul><li>СТАРЫЙ_АДРЕС: uint8_t - значение от 1 до 247.</li><li>НОВЫЙ_АДРЕС: uint8_t - значение от 1 до 247.</li></ul>
+<li>Возвращаемое значение: bool - результат изменения адреса (true или false).</li>
+<li>Примечание:</li><ul><li>Новый адрес сохраняется в энергонезависимую память устройства.</li><li>Выполнение функции занимает более 120 мс.</li></ul><li>Пример без проверки:</li>
+</ul>
+<pre class="prettyprint C">modbus.changeID(9, 10); // Меняем адрес устройства с 9 на 10.
+</pre>
+<ul><li>Пример с проверкой:</li></ul>
+<pre class="prettyprint C">bool i = modbus.changeID(9, 10);  // Меняем адрес устройства с 9 на 10.
+if(i){ Serial.println( "Ok"  ); } // Выводим сообщение о успешной смене адреса.
+else { Serial.println("Error"); } // Выводим сообщение о ошибке смены адреса.
+</pre>
+<h3>Функция sortID();</h3>
+<ul>
+<li>Назначение: Функция сортировки адресов устройств iarduino по порядку.</li>
+<li>Синтаксис: sortID( ПЕРВЫЙ_АДРЕС_СПИСКА );</li>
+<li>Параметр: ПЕРВЫЙ_АДРЕС_СПИСКА uint8_t - значение от 1 до 247.</li>
+<li>Возвращаемое значение: int16_t - количество изменённых адресов, или -1 при неудаче.</li>
+<li>Примечание:</li><ul><li>Функция присваивает всем устройствам iarduino новые адреса по порядку.</li><li>Функция работает с устройствами iarduino даже если у них одинаковые адреса.</li><li>Функция пропускает адреса принадлежащие устройствам не iarduino.</li><li>Новые адреса сохраняются в энергонезависимую память устройств iaduino.</li><li>Выполнение функции занимает несколько секунд.</li></ul><li>Пример без проверки:</li>
+</ul>
+<pre class="prettyprint C">modbus.sortID(10); // Меняем адреса устройств в список начинающийся с адреса 10 (например, для трёх устройств, адреса станут: 10,11,12).
+</pre>
+<ul><li>Пример с проверкой:</li></ul>
+<pre class="prettyprint C">int i=modbus.sortID(10); // Меняем адреса устройств в список начинающийся с адреса 10 (например, для трёх устройств, адреса станут: 10,11,12).
+if(i&lt;0){Serial.println( "Не удалось отсортировать все адреса устройств" ); }
+else   {Serial.println( (String) "Изменены адреса "+i+" устройств" );      }
+</pre>
+<h3>Функция searchERR();</h3>
+<ul>
+<li>Назначение: Обнаружение устройств iarduino с одинаковыми адресами.</li>
+<li>Синтаксис: searchERR();</li>
+<li>Параметры: Нет.</li>
+<li>Возвращаемое значение: uint8_t - количество адресов, доступных для чтения функцией read().</li>
+<li>Примечание:</li><ul><li>Для получения найденных адресов нужно обращаться к функции read().<br></li><li>Количество оставшихся доступных данных можно узнать функцией available().</li><li>Выполнение функции занимает несколько секунд.</li></ul>
+<li>Пример:</li>
+</ul>
+<pre class="prettyprint C">uint8_t i = modbus.searchERR(); // Ищем адреса принадлежащие двум и более устройствам.
+Serial.println( (String) "На шине есть "+i+" адресов принадлежащих нескольким устройствам" );
+// Выводим найденные адреса:
+while( modbus.available() ){ Serial.println( modbus.read() ); }
+</pre>
+<h3>Функция findID();</h3>
+<ul>
+<li>Назначение: Обнаружение всех адресов ведомых устройств на шине.</li>
+<li>Синтаксис: findID( [ МОДЕЛЬ ] );</li>
+<li>Параметр: МОДЕЛЬ uint8_t - идентификатор искомых устройств (от 1 до 255).</li>
+<li>Возвращаемое значение: uint8_t - количество адресов, доступных для чтения функцией read().</li>
+<li>Примечание:</li><ul><li>Для получения найденных адресов нужно обращаться к функции read().<br></li><li>Количество оставшихся доступных данных можно узнать функцией available().</li><li>Если вызвать функцию без аргумента то будут обнаружены все адреса всех устройств.</li><li>Если вызвать функцию с идентификатором устройства, то будут найдены только те адреса, которые принадлежат устройствам iarduino указанной модели.</li><li>Выполнение функции занимает несколько секунд.</li></ul>
+<li>Пример обнаружения всех адресов:</li>
+</ul>
+<pre class="prettyprint C">uint8_t i = modbus.findID(); // Ищем все адреса всех устройств (даже не iarduino).
+Serial.println( (String) "На шине есть "+i+" устройств с адресами:" );
+// Выводим найденные адреса:
+while( modbus.available() ){ Serial.println( modbus.read() ); }
+</pre>
+<ul><li>Пример обнаружения адресов принадлежащих устройствам iarduino указанной модели:</li></ul>
+<pre class="prettyprint C">uint8_t i = modbus.findID(1); // Ищем адреса устройств iarduino с идентификатором 1.
+Serial.println( (String) "На шине есть "+i+" устройств с адресами:" );
+// Выводим найденные адреса:
+while( modbus.available() ){ Serial.println( modbus.read() ); }
+</pre>
+<ul><li>Пример получения идентификатора (номера модели) устройства iarduino:</li></ul>
+<pre class="prettyprint C">uint8_t i;
+if( modbus.getInfo(9) ){                           // Читаем информацию о устройстве с адресом 9.
+    modbus.read(); modbus.read(); modbus.read();   // Пропускаем ненужные данные.
+    if( modbus.available() ){ i = modbus.read(); } // Получаем идентификатор устройства.
+}
+</pre>
+<h2 id='h3_6'>Ссылки:</h2>
+<ul><li><a href="https://iarduino.ru/file/591.html">Библиотека iarduino_Modbus</a>.</li></ul>            </div>
+        </div>
+        <div>
+            <div class="" style="background: none 0% 0% / auto repeat scroll padding-box border-box rgba(0, 0, 0, 0); background-blend-mode: normal; border: 0px none rgb(0, 0, 0); border-radius: 0px; border-collapse: separate; box-shadow: none; outline: rgb(0, 0, 0) none 0px; outline-offset: 0px; overflow-anchor: auto; overflow-wrap: normal; overflow: visible; padding: 0px; box-sizing: border-box; width: 260px;">
+            <nav class="nav_right">
+                <h3>Оглавление</h3>
+                <ul>
+                <li><a href='#h3_0'>Описание протокола Modbus</a></li><li><a href='#h3_1'>Регистры ведомых устройств</a></li><li><a href='#h3_2'>Команды протокола Modbus</a></li><li><a href='#h3_3'>Подключение к шине RS485</a></li><li><a href='#h3_4'>Описание функций библиотеки</a></li><li><a href='#h3_5'>Функции для работы с адресами</a></li><li><a href='#h3_6'>Ссылки</a></li>                </ul>
+            </nav>
+            <div class="video">
+            <br><br><br>
+                        
+            </div>
+            </div>
+        </div>
+    </div>
+</div>
+<div class='width100'>
+    <div class='width1366 pageWiki'>
+        <div class='commentarii'>
+            <h2>Обсуждение</h2>
+
+            <div style="clear: both;"></div>
+            <div id="hypercomments_widget"></div>
+<script type="text/javascript">
+_hcwp = window._hcwp || [];
+_hcwp.push({widget:"Stream", widget_id: 63201});
+(function() {
+if("HC_LOAD_INIT" in window)return;
+HC_LOAD_INIT = true;
+var lang = (navigator.language || navigator.systemLanguage || navigator.userLanguage || "ru").substr(0, 2).toLowerCase();
+var hcc = document.createElement("script"); hcc.type = "text/javascript"; hcc.async = true;
+hcc.src = "https://w.hypercomments.com/widget/hc/63201/"+lang+"/widget.js";
+var s = document.getElementsByTagName("script")[0];
+s.parentNode.insertBefore(hcc, s.nextSibling);
+})();
+</script>
+
+
+
+              
+        </div>
+    </div>
+</div>
+
+
+<script>
+$(document).ready(function(){
+  var i_max=$('.img_prev_grup').length+1;
+  if(i_max>1){
+    baner_index(1);
+    $('.img_prev_grup:not(#img_prev1)').hide();
+    var timerId = setTimeout (baner_index, 2000); 
+  }
+  function baner_index(id){
+    if(id>0){i_t=id;}
+    for (i = 0; i < i_max; i++) {
+      if(i==i_t){
+        $('#img_prev'+i).show(0);
+        }else{
+        $('#img_prev'+i).hide(0);
+        }
+    }
+
+  i_t++;
+  if(i_t==i_max){i_t=1;}
+    clearTimeout(timerId);
+      timerId = setTimeout (baner_index, 4000);
+  }
+     
+});
+</script>
+
+
+
+
+<div class='MobileMenu' id='MobileMenu'>
+    <div class='close' id='ButtonMobMenuClose'></div>
+    <ul class='Level1'>
+        <li><a href='/'>КАТАЛОГ</a></li>
+    </ul>
+    <ul class='Level2'>
+         <li><a href='/shop/boards/'>Контроллеры</a></li> <li><a href='/shop/Nabor/'>Образовательные наборы и роботы</a></li> <li><a href='/shop/Expansion-payments/'>Модули / Shield</a></li> <li><a href='/shop/Sensory-Datchiki/'>Сенсоры / Датчики</a></li> <li><a href='/shop/displays/'>Дисплеи </a></li> <li><a href='/shop/Mehanika/'>Механика</a></li> <li><a href='/shop/Makety/'>Макетирование</a></li> <li><a href='/shop/Provoda-kabeli/'>Провода и кабели</a></li> <li><a href='/shop/programmers/'>Программаторы</a></li> <li><a href='/shop/radioparts/'>Радиодетали</a></li> <li><a href='/shop/Istochniki-pitanija/'>Источники питания</a></li> <li><a href='/shop/Instrumenty/'>Инструменты</a></li> <li><a href='/shop/case-fastener/'>Корпуса и крепежи</a></li> <li><a href='/shop/Raznoe/'>Разное</a></li>    </ul>
+    <ul class='Level1'>
+            <li><a href='/user/'>ЛИЧНЫЙ КАБИНЕТ</a></li>
+            <li><a href='https://lesson.iarduino.ru'>УРОКИ</a></li>
+            <li><a href='https://wiki.iarduino.ru'>ВИКИ</a></li>
+            <li><a href='/file/'>ФАЙЛЫ</a></li>
+            <li><a href='/delivery'>ДОСТАВКА</a></li>
+            <li><a href='/contacts'>КОНТАКТЫ</a></li>
+            <li><a href='/payment' >ОПЛАТА</a></li>
+            <li><a href='/discount' >СКИДКИ</a></li>
+
+    </ul>
+
+
+</div><div class='width100 backgroundGrey  marginT20px marginB20px'>
+    <div class='width1366  foter padding20px'>
+        <center><a href="/delivery" >Гарантии и возврат</a> <a href="/payment" >Используя сайт Вы соглашаетесь с условями</a></center>
+    </div>
+</div>
+<div class='width100'>
+    <div class='width1366 foter '>
+        <center><img src='/img/dsfvcxvzx1.png'></center>
+    </div>
+</div>
+
+<!-- Yandex.Metrika counter -->
+<script type="text/javascript" >
+   (function(m,e,t,r,i,k,a){m[i]=m[i]||function(){(m[i].a=m[i].a||[]).push(arguments)};
+   m[i].l=1*new Date();k=e.createElement(t),a=e.getElementsByTagName(t)[0],k.async=1,k.src=r,a.parentNode.insertBefore(k,a)})
+   (window, document, "script", "https://mc.yandex.ru/metrika/tag.js", "ym");
+
+   ym(24135370, "init", {
+        clickmap:true,
+        trackLinks:true,
+        accurateTrackBounce:true,
+        webvisor:true,
+        trackHash:true
+   });
+</script>
+<!-- /Yandex.Metrika counter -->
+
+<!--LiveInternet counter--><script type="text/javascript">new Image().src = "//counter.yadro.ru/hit?r" + escape(document.referrer) + ((typeof(screen)=="undefined")?"" : ";s"+screen.width+"*"+screen.height+"*" + (screen.colorDepth?screen.colorDepth:screen.pixelDepth)) + ";u"+escape(document.URL) + ";h"+escape(document.title.substring(0,80)) + ";" +Math.random();</script><!--/LiveInternet--> 
+
+
+
+
+</body>
+</html>
+

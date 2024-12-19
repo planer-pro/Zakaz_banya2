@@ -1,0 +1,257 @@
+.boxMain-2{
+    display: grid;
+    grid-template-columns: minmax(600px, 1fr) minmax(600px, 1fr);
+}
+.boxMain{
+    margin: 10px;
+}
+
+.boxMainCol2{
+    display: grid;
+    grid-template-columns: 200px minmax(40px, 1fr);
+}
+
+h1{
+    color: #444;
+    margin-bottom: 0px!important;
+    font-size: 35px;
+}
+.pageWiki{
+    display: grid;
+    grid-template-columns: 720px minmax(150px, 1fr);
+    margin-top: 50px!important;
+}
+.pageWiki #content{
+    margin: 0px 10px;
+}
+.LinkBar {
+    font-size: 16px!important;
+    line-height: 26px;
+}
+
+
+.boxMain .col1{
+    padding: 10px;
+}
+.boxMain .col2{
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+}
+
+.boxMain .col2 div{
+margin: 15px 5px;
+}
+.boxMain .col2 p{
+margin: 15px 5px;
+}
+
+
+.boxMain .col1 h2{
+    font-size: 24px;
+    margin: 0px;
+    padding: 0px;
+    color: #333333;
+    margin-bottom: 20px;
+}
+.boxMain .col1 picture{
+    width: 150px;
+}
+.boxMain .col1 img{
+width: 150px;
+}
+.boxMain .number{
+    padding: 0px 6px;
+    background-color: #00547e;
+    color: #fff;
+    font-weight: 700;
+}
+.boxMain .ulLink{
+margin-left: 30px;
+}
+.boxMain .ulLink li{
+    margin: 5px 0px;
+    color: #00547e;
+}
+.boxMain .ulLink2{
+    margin-left: 10px;
+}
+.boxMain a{
+    color: #00547e;
+}
+.boxMain a:hover{
+    color: #111;
+    background-color: #ffcc0026;
+}
+
+.boxMain .status-new{
+    padding: 1px 5px;
+    background-color: #CA3D3D;
+    font-weight: 700;
+    font-size: 13px;
+    color: #fff;
+    border-radius: 6px;
+    display: inline-grid;
+}
+
+.textblack{
+    color: black;
+}
+
+.Datasheet{
+    padding: 1px 8px;
+    background-color: #a0a0a0!important;
+    color: #fff!important;
+    border-radius: 4px;
+    display: inline-block;
+    margin-top: 5px;
+}
+.Datasheet:hover{
+    background-color: #0090da!important;
+}
+
+/* Основной блок + навигация справа */
+
+.nav_right{
+	margin-top: 20px;
+	padding-left: 10px;
+	display: block;
+	border-left: 2px solid #1e789b;
+}
+
+.nav_right h3{
+    color: #444;
+	font-size: 30px;
+	font-family: PT Sans Narrow, sans-serif;
+}
+
+.nav_right ul{
+	margin-left: 20px;
+	color: #1e789b;
+}
+
+.nav_right li{
+	margin-left: 0px;
+}
+
+.nav_right a{
+    color: #1e789b;
+	font-size: 14px;
+	display: block;
+	margin-top: 10px;
+	text-indent: 0px; 
+}
+.nav_right a:hover{
+    color: #12465b;
+}
+
+
+
+
+#prev_wiki{
+	overflow: hidden;
+	margin-bottom: 10px;
+	font-size:14px;
+}
+
+#prev_wiki .left{
+	float:left;
+	width:200px;
+	height: 160px;
+}
+#prev_wiki .left .img_prev_grup{
+	max-width: 190px;
+	max-height: 160px;
+}
+#prev_wiki .left .button{
+	display:block;
+	padding:6px;
+	margin-left:10px;
+	margin-bottom:20px;
+	color:#111;
+	font-size:14px;
+	margin-top:-20px;
+
+}
+#prev_wiki .left .button img{
+	margin-top:8px;
+	width:22px;
+	margin-right:10px;
+	margin-left:3px;
+	float:left;
+}
+#prev_wiki .right .title{
+	font-size:15px;
+	font-weight:700;
+	color: #444;
+	margin: 5px 0px;
+}
+#prev_wiki .right .wiki_linl_block{
+margin-left: 5px;
+margin-bottom: 5px;
+}
+#prev_wiki .right .wiki_linl_block span{
+	color: #444;
+	}
+#prev_wiki .right a{
+	color: #1e789b;
+}
+#prev_wiki .right a:hover{
+    color: #12465b;
+}
+#prev_wiki .right{
+	float:left;
+	margin-left:10px;
+}
+
+
+#prev_wiki #wiki-shop-link{
+	margin: 5px 0px;
+	overflow: hidden;
+	padding: 10px;
+	box-shadow: 0 .005em .01em 0 rgba(0,0,0,.12),0 2px 10px 0 rgba(0,0,0,.12)!important;
+}
+#prev_wiki #wiki-shop-link .item{
+	float: left;
+	padding: 5px;
+	width: 120px;
+	color: #fff!important;
+	margin-right: 5px;
+	border: 1px solid #FFF;
+}
+#prev_wiki #wiki-shop-link .item:hover{
+	background-color: #f7f6f6;
+	border: 1px solid #E7E7E7;
+}
+}
+#prev_wiki #wiki-shop-link .item .img{
+
+}
+#prev_wiki #wiki-shop-link .item .img img{
+	width: 120px;
+}
+#prev_wiki #wiki-shop-link .item .name{
+margin-top: 5px;
+font-weight: 700;
+font-size: 14px;
+}
+
+
+.button{
+	display: inline-block;
+	padding: 10px 15px;
+	margin-top: 10px;
+	color: #fff!important;
+    background-color: #d9534f;
+	border-color: #d43f3a;
+	text-decoration: none;
+	cursor: pointer; 
+}
+.button:hover{
+	display: inline-block;
+	padding: 10px 15px;
+	margin-top: 10px;
+	color: #fff!important;
+	background-color:#c9302c;
+	border-color:#ac2925;
+	text-decoration: none;
+}

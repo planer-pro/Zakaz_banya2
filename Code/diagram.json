@@ -1,0 +1,429 @@
+{
+    "version": 1,
+    "author": "Planerful",
+    "editor": "wokwi",
+    "parts": [
+        {
+            "type": "wokwi-arduino-nano",
+            "id": "nano",
+            "top": -91.2,
+            "left": -96.5,
+            "attrs": {}
+        },
+        {
+            "type": "wokwi-lcd1602",
+            "id": "lcd1",
+            "top": -284.57,
+            "left": -147.2,
+            "attrs": {}
+        },
+        {
+            "type": "wokwi-relay-module",
+            "id": "relay1",
+            "top": -134.2,
+            "left": 144,
+            "attrs": {}
+        },
+        {
+            "type": "wokwi-relay-module",
+            "id": "relay2",
+            "top": -57.4,
+            "left": 144,
+            "attrs": {}
+        },
+        {
+            "type": "wokwi-pushbutton",
+            "id": "btn1",
+            "top": 37.3,
+            "left": 50.5,
+            "rotate": 90,
+            "attrs": {
+                "color": "red"
+            }
+        },
+        {
+            "type": "wokwi-pushbutton",
+            "id": "btn2",
+            "top": 37.3,
+            "left": -45.5,
+            "rotate": 90,
+            "attrs": {
+                "color": "green"
+            }
+        },
+        {
+            "type": "wokwi-gnd",
+            "id": "gnd1",
+            "top": 144,
+            "left": -10.2,
+            "attrs": {}
+        },
+        {
+            "type": "wokwi-gnd",
+            "id": "gnd2",
+            "top": 0,
+            "left": 114.6,
+            "attrs": {}
+        },
+        {
+            "type": "wokwi-gnd",
+            "id": "gnd3",
+            "top": -105.6,
+            "left": -144.6,
+            "attrs": {}
+        },
+        {
+            "type": "wokwi-vcc",
+            "id": "vcc1",
+            "top": -56.84,
+            "left": -144,
+            "attrs": {}
+        },
+        {
+            "type": "wokwi-pushbutton",
+            "id": "btn3",
+            "top": 56.5,
+            "left": 156.1,
+            "rotate": 90,
+            "attrs": {
+                "color": "yellow"
+            }
+        },
+        {
+            "type": "wokwi-pushbutton",
+            "id": "btn4",
+            "top": 56.5,
+            "left": 213.7,
+            "rotate": 90,
+            "attrs": {
+                "color": "blue"
+            }
+        },
+        {
+            "type": "wokwi-gnd",
+            "id": "gnd4",
+            "top": 201.6,
+            "left": 249,
+            "attrs": {}
+        },
+        {
+            "type": "wokwi-resistor",
+            "id": "r1",
+            "top": 3.95,
+            "left": 240,
+            "attrs": {
+                "value": "1000"
+            }
+        },
+        {
+            "type": "wokwi-resistor",
+            "id": "r2",
+            "top": 186.35,
+            "left": 153.6,
+            "attrs": {
+                "value": "1000"
+            }
+        },
+        {
+            "type": "wokwi-vcc",
+            "id": "vcc2",
+            "top": 125.56,
+            "left": 211.2,
+            "attrs": {}
+        }
+    ],
+    "connections": [
+        [
+            "btn2:1.r",
+            "btn1:1.r",
+            "black",
+            [
+                "v29",
+                "h96"
+            ]
+        ],
+        [
+            "gnd1:GND",
+            "btn2:1.r",
+            "black",
+            [
+                "v0"
+            ]
+        ],
+        [
+            "relay1:VCC",
+            "nano:5V",
+            "red",
+            [
+                "h-38.4",
+                "v96",
+                "h-76.8"
+            ]
+        ],
+        [
+            "relay2:VCC",
+            "nano:5V",
+            "red",
+            [
+                "h-38.4",
+                "v19.2",
+                "h-76.8"
+            ]
+        ],
+        [
+            "relay1:GND",
+            "gnd2:GND",
+            "black",
+            [
+                "h0"
+            ]
+        ],
+        [
+            "relay2:GND",
+            "gnd2:GND",
+            "black",
+            [
+                "h-19.2",
+                "v-0.4"
+            ]
+        ],
+        [
+            "relay1:IN",
+            "nano:2",
+            "gray",
+            [
+                "h-48",
+                "v-9.8",
+                "h-76.8"
+            ]
+        ],
+        [
+            "relay2:IN",
+            "nano:3",
+            "gray",
+            [
+                "h-28.8",
+                "v-77",
+                "h-19.2",
+                "v-9.6",
+                "h-86.4"
+            ]
+        ],
+        [
+            "gnd3:GND",
+            "lcd1:VSS",
+            "black",
+            [
+                "v-19.2",
+                "h19.2",
+                "v-9.6"
+            ]
+        ],
+        [
+            "vcc1:VCC",
+            "lcd1:VDD",
+            "red",
+            [
+                "v9.6",
+                "h19.2",
+                "v-96",
+                "h9.6"
+            ]
+        ],
+        [
+            "lcd1:RW",
+            "gnd3:GND",
+            "black",
+            [
+                "v28.8",
+                "h-57.7"
+            ]
+        ],
+        [
+            "lcd1:K",
+            "gnd3:GND",
+            "black",
+            [
+                "v28.8",
+                "h-163.2"
+            ]
+        ],
+        [
+            "lcd1:D7",
+            "nano:4",
+            "green",
+            [
+                "v19.2",
+                "h-9.3"
+            ]
+        ],
+        [
+            "lcd1:D6",
+            "nano:5",
+            "green",
+            [
+                "v9.6",
+                "h0.2",
+                "v9.6",
+                "h-9.6"
+            ]
+        ],
+        [
+            "lcd1:D5",
+            "nano:6",
+            "green",
+            [
+                "v19.2",
+                "h-9.5"
+            ]
+        ],
+        [
+            "lcd1:D4",
+            "nano:7",
+            "green",
+            [
+                "v19.2",
+                "h-9.6"
+            ]
+        ],
+        [
+            "lcd1:E",
+            "nano:8",
+            "green",
+            [
+                "v19.2",
+                "h28.8"
+            ]
+        ],
+        [
+            "lcd1:RS",
+            "nano:9",
+            "green",
+            [
+                "v19.2",
+                "h0.3"
+            ]
+        ],
+        [
+            "btn3:2.l",
+            "nano:A2",
+            "green",
+            [
+                "v-9.6",
+                "h-48.2",
+                "v105.6",
+                "h-115.2",
+                "v-134.4",
+                "h-19.2"
+            ]
+        ],
+        [
+            "btn4:2.l",
+            "nano:A3",
+            "green",
+            [
+                "v-19.2",
+                "h-86.6",
+                "v134.4",
+                "h-115.2",
+                "v-172.8",
+                "h-57.6"
+            ]
+        ],
+        [
+            "btn2:2.l",
+            "nano:A0",
+            "green",
+            [
+                "v-9.6",
+                "h-29"
+            ]
+        ],
+        [
+            "btn1:2.l",
+            "nano:A1",
+            "green",
+            [
+                "v-9.6",
+                "h-9.8"
+            ]
+        ],
+        [
+            "lcd1:V0",
+            "nano:10",
+            "green",
+            [
+                "v48",
+                "h38.1"
+            ]
+        ],
+        [
+            "lcd1:A",
+            "nano:11",
+            "green",
+            [
+                "v38.4",
+                "h-9.7"
+            ]
+        ],
+        [
+            "r2:1",
+            "btn3:2.l",
+            "green",
+            [
+                "v0",
+                "h-19.2",
+                "v-153.6",
+                "h48"
+            ]
+        ],
+        [
+            "r2:2",
+            "gnd4:GND",
+            "green",
+            [
+                "v0",
+                "h46.8"
+            ]
+        ],
+        [
+            "r1:1",
+            "btn4:2.l",
+            "green",
+            [
+                "v0",
+                "h-9.6",
+                "v19.2",
+                "h9.6"
+            ]
+        ],
+        [
+            "r1:2",
+            "gnd4:GND",
+            "green",
+            [
+                "v182.4",
+                "h-39.6"
+            ]
+        ],
+        [
+            "vcc2:VCC",
+            "btn3:1.r",
+            "red",
+            [
+                "v9.6",
+                "h-19.2"
+            ]
+        ],
+        [
+            "btn4:1.r",
+            "vcc2:VCC",
+            "green",
+            [
+                "v48.2",
+                "h-28.8"
+            ]
+        ]
+    ],
+    "dependencies": {}
+}

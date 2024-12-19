@@ -1,0 +1,1922 @@
+<!DOCTYPE html>
+<html class="client-js vector-animations-ready" lang="en" dir="ltr"><head>
+<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+<meta charset="UTF-8">
+<title>Карта регистров датчика WB-MSW v.4 - Wiren Board</title>
+<script async="" src="%D0%9A%D0%B0%D1%80%D1%82%D0%B0%20%D1%80%D0%B5%D0%B3%D0%B8%D1%81%D1%82%D1%80%D0%BE%D0%B2%20%D0%B4%D0%B0%D1%82%D1%87%D0%B8%D0%BA%D0%B0%20WB-MSW%20v.4%20-%20Wiren%20Board_files/tag.js"></script><script>document.documentElement.className="client-js";RLCONF={"wgBreakFrames":!1,"wgSeparatorTransformTable":[",\t."," \t,"],"wgDigitTransformTable":["",""],"wgDefaultDateFormat":"dmy","wgMonthNames":["","январь","февраль","март","апрель","май","июнь","июль","август","сентябрь","октябрь","ноябрь","декабрь"],"wgRequestId":"012c3a7f8248fdc5558666cb","wgCSPNonce":!1,"wgCanonicalNamespace":"","wgCanonicalSpecialPageName":!1,"wgNamespaceNumber":0,"wgPageName":"WB-MSWv_4_registers","wgTitle":"WB-MSWv 4 registers","wgCurRevisionId":77738,"wgRevisionId":77738,"wgArticleId":20568,"wgIsArticle":!0,"wgIsRedirect":!1,"wgAction":"view","wgUserName":null,"wgUserGroups":["*"],"wgCategories":[],"wgPageContentLanguage":"ru","wgPageContentModel":"wikitext","wgRelevantPageName":"WB-MSWv_4_registers","wgRelevantArticleId":20568,"wgIsProbablyEditable":!1,"wgRelevantPageIsProbablyEditable":!1,"wgRestrictionEdit":[],
+"wgRestrictionMove":[],"wgMFDisplayWikibaseDescriptions":{"search":!1,"nearby":!1,"watchlist":!1,"tagline":!1},"wgULSAcceptLanguageList":["en-us","en"],"wgULSCurrentAutonym":"English","wgMediaViewerOnClick":!0,"wgMediaViewerEnabledByDefault":!0,"wgInternalRedirectTargetUrl":"/wiki/WB-MSWv_4_registers","wgULSPosition":"personal","wgULSisCompactLinksEnabled":!0};RLSTATE={"site.styles":"ready","noscript":"ready","user.styles":"ready","user":"ready","user.options":"loading","ext.ApprovedRevs":"ready","mediawiki.ui.button":"ready","skins.vector.styles":"ready","skins.vector.icons":"ready","mediawiki.ui.icon":"ready","ext.uls.pt":"ready"};RLPAGEMODULES=["mediawiki.action.view.redirect","site","mediawiki.page.ready","skins.vector.js","ext.uls.compactlinks","ext.uls.interface"];</script>
+<script>(RLQ=window.RLQ||[]).push(function(){mw.loader.implement("user.options@1hzgi",function($,jQuery,require,module){/*@nomin*/mw.user.tokens.set({"patrolToken":"+\\","watchToken":"+\\","csrfToken":"+\\"});mw.user.options.set({"variant":"ru"});
+});});</script>
+<link rel="stylesheet" href="%D0%9A%D0%B0%D1%80%D1%82%D0%B0%20%D1%80%D0%B5%D0%B3%D0%B8%D1%81%D1%82%D1%80%D0%BE%D0%B2%20%D0%B4%D0%B0%D1%82%D1%87%D0%B8%D0%BA%D0%B0%20WB-MSW%20v.4%20-%20Wiren%20Board_files/load_002.css">
+<script async="" src="%D0%9A%D0%B0%D1%80%D1%82%D0%B0%20%D1%80%D0%B5%D0%B3%D0%B8%D1%81%D1%82%D1%80%D0%BE%D0%B2%20%D0%B4%D0%B0%D1%82%D1%87%D0%B8%D0%BA%D0%B0%20WB-MSW%20v.4%20-%20Wiren%20Board_files/load.js"></script>
+<style>
+.uls-menu{border-radius:2px; font-size:medium}.uls-search,.uls-language-settings-close-block{border-top-right-radius:2px;border-top-left-radius:2px}.uls-language-list{border-bottom-right-radius:2px;border-bottom-left-radius:2px}.uls-menu.callout:before,.uls-menu.callout:after{border-top:10px solid transparent;border-bottom:10px solid transparent;display:inline-block; top:17px;position:absolute;content:''}.uls-menu.callout.selector-right:before{ border-left:10px solid #c8ccd1; right:-11px}.uls-menu.callout.selector-right:after{ border-left:10px solid #fff; right:-10px}.uls-menu.callout.selector-left:before{ border-right:10px solid #c8ccd1; left:-11px}.uls-menu.callout.selector-left:after{ border-right:10px solid #fff; left:-10px}.uls-ui-languages button{margin:5px 15px 5px 0;white-space:nowrap;overflow:hidden}.uls-search-wrapper-wrapper{position:relative;padding-left:40px;margin-top:5px;margin-bottom:5px}.uls-icon-back{background:transparent url(/wiki/extensions/UniversalLanguageSelector/resources/images/back-grey-ltr.svg?01868) no-repeat scroll center center;background-size:28px;height:32px;width:40px;display:block;position:absolute;left:0;border-right:1px solid #c8ccd1;opacity:0.8}.uls-icon-back:hover{opacity:1;cursor:pointer}.uls-menu .uls-no-results-view .uls-no-found-more{background-color:#fff}.uls-menu .uls-no-results-view h3{padding:0 28px;margin:0;color:#54595d;font-size:1em;font-weight:normal}   .skin-vector .uls-menu{border-color:#c8ccd1;box-shadow:0 2px 2px 0 rgba(0,0,0,0.25);font-size:0.875em;z-index:3}.skin-vector .uls-search{border-bottom-color:#c8ccd1}.skin-vector .uls-search-label{opacity:0.51;-webkit-transition:opacity 250ms;transition:opacity 250ms}.skin-vector .uls-search-wrapper:hover .uls-search-label{opacity:0.87}.skin-vector .uls-filtersuggestion{color:#72777d}.skin-vector .uls-lcd-region-title{color:#54595d}
+#uls-settings-block{background-color:#f8f9fa;border-top:1px solid #c8ccd1;padding-left:10px;line-height:1.2em;border-radius:0 0 2px 2px}#uls-settings-block > button{background:left top transparent no-repeat;background-size:20px auto;color:#54595d;display:inline-block;margin:8px 15px;border:0;padding:0 0 0 26px;font-size:medium;cursor:pointer}#uls-settings-block > button:hover{color:#202122}#uls-settings-block > button.display-settings-block{background-image:url(/wiki/extensions/UniversalLanguageSelector/resources/images/display.svg?b78f7)}#uls-settings-block > button.input-settings-block{background-image:url(/wiki/extensions/UniversalLanguageSelector/resources/images/input.svg?e7c85)}.uls-tipsy.uls-tipsy{z-index:1000}</style><style>
+#p-lang .body ul .uls-trigger,#p-lang .pBody ul .uls-trigger{background-image:none;padding:0}#p-lang .mw-interlanguage-selector,#p-lang .mw-interlanguage-selector:active{background-image:url(/wiki/extensions/UniversalLanguageSelector/resources/images/language-base20.svg?b7954);background-position:left 4px center;background-repeat:no-repeat;background-size:16px;margin:4px 0 8px;padding:4px 8px 4px 26px;font-size:13px;font-weight:normal;text-align:left;cursor:pointer}#p-lang .mw-interlanguage-selector.selector-open{background-color:#c8ccd1}  .interlanguage-uls-menu:before,.interlanguage-uls-menu:after{border-top:10px solid transparent;border-bottom:10px solid transparent;display:inline-block; top:17px;position:absolute;content:''}.interlanguage-uls-menu.selector-right:before{ border-left:10px solid #c8ccd1; right:-11px}.interlanguage-uls-menu.selector-right:after{ border-left:10px solid #fff; right:-10px}.interlanguage-uls-menu.selector-left:before{ border-right:10px solid #c8ccd1; left:-11px}.interlanguage-uls-menu.selector-left:after{ border-right:10px solid #fff; left:-10px}</style><meta name="ResourceLoaderDynamicStyles" content="">
+<link rel="stylesheet" href="%D0%9A%D0%B0%D1%80%D1%82%D0%B0%20%D1%80%D0%B5%D0%B3%D0%B8%D1%81%D1%82%D1%80%D0%BE%D0%B2%20%D0%B4%D0%B0%D1%82%D1%87%D0%B8%D0%BA%D0%B0%20WB-MSW%20v.4%20-%20Wiren%20Board_files/load.css">
+<meta name="generator" content="MediaWiki 1.37.0">
+<meta name="format-detection" content="telephone=no">
+<link rel="shortcut icon" href="https://wirenboard.com/favicon.ico">
+<link rel="search" type="application/opensearchdescription+xml" href="https://wirenboard.com/wiki/opensearch_desc.php" title="Wiren Board (ru)">
+<link rel="EditURI" type="application/rsd+xml" href="https://wirenboard.com/wiki/api.php?action=rsd">
+<link rel="alternate" type="application/atom+xml" title="Wiren Board Atom feed" href="https://wirenboard.com/wiki/index.php?title=%D0%A1%D0%BB%D1%83%D0%B6%D0%B5%D0%B1%D0%BD%D0%B0%D1%8F:%D0%A1%D0%B2%D0%B5%D0%B6%D0%B8%D0%B5_%D0%BF%D1%80%D0%B0%D0%B2%D0%BA%D0%B8&amp;feed=atom">
+</head>
+<body class="mediawiki ltr sitedir-ltr mw-hide-empty-elt ns-0 ns-subject page-WB-MSWv_4_registers rootpage-WB-MSWv_4_registers skin-vector action-view skin-vector-search-vue approvedRevs-approved webfonts-changed"><div class="mw-page-container">
+	<a class="mw-jump-link" href="#content">Jump to content</a>
+	<div class="mw-page-container-inner">
+
+<input type="checkbox" id="mw-sidebar-checkbox" class="mw-checkbox-hack-checkbox webfonts-changed">
+
+<header class="mw-header">
+	<label id="mw-sidebar-button" class="mw-checkbox-hack-button mw-ui-icon mw-ui-button mw-ui-quiet mw-ui-icon-element" for="mw-sidebar-checkbox" role="button" aria-controls="mw-panel" data-event-name="ui.sidebar" tabindex="0" title="Main menu" aria-expanded="false">
+		Toggle sidebar
+	</label>
+	<a href="https://wirenboard.com/wiki/%D0%97%D0%B0%D0%B3%D0%BB%D0%B0%D0%B2%D0%BD%D0%B0%D1%8F_%D1%81%D1%82%D1%80%D0%B0%D0%BD%D0%B8%D1%86%D0%B0" class="mw-logo">
+		<span class="mw-logo-container">
+			<img class="mw-logo-wordmark" alt="Wiren Board" src="%D0%9A%D0%B0%D1%80%D1%82%D0%B0%20%D1%80%D0%B5%D0%B3%D0%B8%D1%81%D1%82%D1%80%D0%BE%D0%B2%20%D0%B4%D0%B0%D1%82%D1%87%D0%B8%D0%BA%D0%B0%20WB-MSW%20v.4%20-%20Wiren%20Board_files/Wb_logo.png" width="160" height="40">
+		</span>
+	</a>
+	<div id="p-search" role="search" class="vector-search-box vector-search-box-collapses vector-search-box-show-thumbnail">
+	<div>
+		<h3 lang="en" dir="ltr">
+			<label for="searchInput">Search</label>
+		</h3>
+		<form action="/wiki/index.php" id="searchform">
+			<div id="simpleSearch" data-search-loc="header-moved">
+				<input type="search" name="search" placeholder="Search Wiren Board" autocapitalize="sentences" accesskey="f" id="searchInput" autocomplete="off" class="webfonts-changed">
+				<input type="hidden" name="title" value="Служебная:Поиск" class="webfonts-changed">
+				<input type="submit" name="fulltext" value="Search" title="Search the pages for this text" id="mw-searchButton" class="searchButton mw-fallbackSearchButton webfonts-changed">
+				<input type="submit" name="go" value="Go" title="Go to a page with this exact name if it exists" id="searchButton" class="searchButton webfonts-changed">
+			</div>
+		</form>
+	</div>
+	<a href="https://wirenboard.com/wiki/%D0%A1%D0%BB%D1%83%D0%B6%D0%B5%D0%B1%D0%BD%D0%B0%D1%8F:%D0%9F%D0%BE%D0%B8%D1%81%D0%BA" id="" class="mw-ui-button mw-ui-quiet mw-ui-icon mw-ui-icon-element mw-ui-icon-wikimedia-search search-toggle">
+		
+		<span>Search</span>
+	</a>
+	
+</div>
+
+	<div class="vector-user-links">
+	<nav id="p-personal-more" class="mw-portlet mw-portlet-personal-more vector-menu vector-user-menu-more" aria-labelledby="p-personal-more-label" role="navigation" lang="en" dir="ltr">
+	<h3 id="p-personal-more-label" class="vector-menu-heading"> <span>User links</span>
+	</h3>
+	<div class="vector-menu-content">
+		
+		<ul class="vector-menu-content-list"><li id="ca-uls" class="user-links-collapsible-item mw-list-item active"><a href="#" class="uls-trigger mw-ui-button mw-ui-quiet"><span class="mw-ui-icon mw-ui-icon-wikimedia-language"></span> <span>English</span></a></li>
+	<li id="p-createaccount" class="user-links-collapsible-item">
+		<a href="https://wirenboard.com/wiki/index.php?title=%D0%A1%D0%BB%D1%83%D0%B6%D0%B5%D0%B1%D0%BD%D0%B0%D1%8F:%D0%A1%D0%BE%D0%B7%D0%B4%D0%B0%D1%82%D1%8C_%D1%83%D1%87%D1%91%D1%82%D0%BD%D1%83%D1%8E_%D0%B7%D0%B0%D0%BF%D0%B8%D1%81%D1%8C&amp;returnto=WB-MSWv+4+registers" icon="userAvatar" class="mw-ui-button mw-ui-quiet" title="You are encouraged to create an account and log in; however, it is not mandatory"><span>Create account</span></a>
+	</li>
+</ul>
+		
+	</div>
+</nav>
+
+	<nav id="p-personal" class="mw-portlet mw-portlet-personal emptyPortlet vector-user-menu vector-user-menu-logged-out vector-menu vector-menu-dropdown" aria-labelledby="p-personal-label" role="navigation" title="More options" lang="en" dir="ltr">
+	<input type="checkbox" id="p-personal-checkbox" role="button" aria-haspopup="true" data-event-name="ui.dropdown-p-personal" class="vector-menu-checkbox webfonts-changed" aria-labelledby="p-personal-label">
+	<h3 id="p-personal-label" class="vector-menu-heading mw-ui-button mw-ui-quiet mw-ui-icon mw-ui-icon-element mw-ui-icon-wikimedia-ellipsis"> <span>Personal tools</span>
+			<span class="vector-menu-checkbox-expanded">expanded</span>
+			<span class="vector-menu-checkbox-collapsed">collapsed</span>
+	</h3>
+	<div class="vector-menu-content">
+		<div class="vector-user-menu-create-account"><a href="https://wirenboard.com/wiki/index.php?title=%D0%A1%D0%BB%D1%83%D0%B6%D0%B5%D0%B1%D0%BD%D0%B0%D1%8F:%D0%A1%D0%BE%D0%B7%D0%B4%D0%B0%D1%82%D1%8C_%D1%83%D1%87%D1%91%D1%82%D0%BD%D1%83%D1%8E_%D0%B7%D0%B0%D0%BF%D0%B8%D1%81%D1%8C&amp;returnto=WB-MSWv+4+registers" icon="userAvatar" class="user-links-collapsible-item vector-menu-content-item mw-ui-icon mw-ui-icon-before mw-ui-icon-wikimedia-userAvatar" title="You are encouraged to create an account and log in; however, it is not mandatory"><span>Create account</span></a></div>
+<div class="vector-user-menu-login"><a href="https://wirenboard.com/wiki/index.php?title=%D0%A1%D0%BB%D1%83%D0%B6%D0%B5%D0%B1%D0%BD%D0%B0%D1%8F:%D0%92%D1%85%D0%BE%D0%B4&amp;returnto=WB-MSWv+4+registers" icon="logIn" class="vector-menu-content-item vector-menu-content-item-login mw-ui-icon mw-ui-icon-before mw-ui-icon-wikimedia-logIn" title="You are encouraged to log in; however, it is not mandatory [Alt+Shift+o]" accesskey="o"><span>Log in</span></a></div>
+<div class="vector-user-menu-anon-editor">
+	<p>
+		Pages for logged out editors <a href="https://wirenboard.com/wiki/%D0%A1%D0%BF%D1%80%D0%B0%D0%B2%D0%BA%D0%B0:Introduction" aria-label="Learn more about editing"><span>learn more</span></a>
+	</p>
+</div>
+
+		<ul class="vector-menu-content-list"></ul>
+		
+	</div>
+</nav>
+
+</div>
+
+</header>
+<div class="mw-workspace-container">
+	<div id="mw-navigation">
+		<h2>Navigation menu</h2>
+		
+<div id="mw-panel" class="mw-sidebar">
+	<nav id="p-Вернуться_на_главный_сайт:" class="mw-portlet mw-portlet-Вернуться_на_главный_сайт vector-menu vector-menu-portal portal" aria-labelledby="p-Вернуться_на_главный_сайт:-label" role="navigation" lang="en" dir="ltr">
+	<h3 id="p-Вернуться_на_главный_сайт:-label" class="vector-menu-heading"> <span>Вернуться на главный сайт:</span>
+	</h3>
+	<div class="vector-menu-content">
+		
+		<ul class="vector-menu-content-list"><li id="n-wirenboard.com" class="mw-list-item"><a href="https://wirenboard.com/" rel="nofollow" target="_blank"><span>wirenboard.com</span></a></li></ul>
+		
+	</div>
+</nav>
+
+	<nav id="p-navigation" class="mw-portlet mw-portlet-navigation vector-menu vector-menu-portal portal" aria-labelledby="p-navigation-label" role="navigation" lang="en" dir="ltr">
+	<h3 id="p-navigation-label" class="vector-menu-heading"> <span>Navigation</span>
+	</h3>
+	<div class="vector-menu-content">
+		
+		<ul class="vector-menu-content-list"><li id="n-mainpage-description" class="mw-list-item"><a href="https://wirenboard.com/wiki/%D0%97%D0%B0%D0%B3%D0%BB%D0%B0%D0%B2%D0%BD%D0%B0%D1%8F_%D1%81%D1%82%D1%80%D0%B0%D0%BD%D0%B8%D1%86%D0%B0" title="Visit the main page [Alt+Shift+z]" accesskey="z"><span>Main page</span></a></li></ul>
+		
+	</div>
+</nav>
+<nav id="p-Читателям" class="mw-portlet mw-portlet-Читателям vector-menu vector-menu-portal portal" aria-labelledby="p-Читателям-label" role="navigation" lang="en" dir="ltr">
+	<h3 id="p-Читателям-label" class="vector-menu-heading"> <span>Читателям</span>
+	</h3>
+	<div class="vector-menu-content">
+		
+		<ul class="vector-menu-content-list"><li id="n-Как-внести-правку-или-задать-вопрос" class="mw-list-item"><a href="https://wirenboard.com/wiki/%D0%9A%D0%B0%D0%BA_%D0%B2%D0%BD%D0%B5%D1%81%D1%82%D0%B8_%D0%BF%D1%80%D0%B0%D0%B2%D0%BA%D1%83_%D0%B8%D0%BB%D0%B8_%D0%B7%D0%B0%D0%B4%D0%B0%D1%82%D1%8C_%D0%B2%D0%BE%D0%BF%D1%80%D0%BE%D1%81"><span>Как внести правку или задать вопрос</span></a></li><li id="n-Справочник-по-синтаксису" class="mw-list-item"><a href="https://wirenboard.com/wiki/Syntax"><span>Справочник по синтаксису</span></a></li></ul>
+		
+	</div>
+</nav>
+<nav id="p-tb" class="mw-portlet mw-portlet-tb vector-menu vector-menu-portal portal" aria-labelledby="p-tb-label" role="navigation" lang="en" dir="ltr">
+	<h3 id="p-tb-label" class="vector-menu-heading"> <span>Tools</span>
+	</h3>
+	<div class="vector-menu-content">
+		
+		<ul class="vector-menu-content-list"><li id="t-whatlinkshere" class="mw-list-item"><a href="https://wirenboard.com/wiki/%D0%A1%D0%BB%D1%83%D0%B6%D0%B5%D0%B1%D0%BD%D0%B0%D1%8F:%D0%A1%D1%81%D1%8B%D0%BB%D0%BA%D0%B8_%D1%81%D1%8E%D0%B4%D0%B0/WB-MSWv_4_registers" title="A list of all wiki pages that link here [Alt+Shift+j]" accesskey="j"><span>What links here</span></a></li><li id="t-recentchangeslinked" class="mw-list-item"><a href="https://wirenboard.com/wiki/%D0%A1%D0%BB%D1%83%D0%B6%D0%B5%D0%B1%D0%BD%D0%B0%D1%8F:%D0%A1%D0%B2%D1%8F%D0%B7%D0%B0%D0%BD%D0%BD%D1%8B%D0%B5_%D0%BF%D1%80%D0%B0%D0%B2%D0%BA%D0%B8/WB-MSWv_4_registers" rel="nofollow" title="Recent changes in pages linked from this page [Alt+Shift+k]" accesskey="k"><span>Related changes</span></a></li><li id="t-specialpages" class="mw-list-item"><a href="https://wirenboard.com/wiki/%D0%A1%D0%BB%D1%83%D0%B6%D0%B5%D0%B1%D0%BD%D0%B0%D1%8F:%D0%A1%D0%BF%D0%B5%D1%86%D1%81%D1%82%D1%80%D0%B0%D0%BD%D0%B8%D1%86%D1%8B" title="A list of all special pages [Alt+Shift+q]" accesskey="q"><span>Special pages</span></a></li><li id="t-print" class="mw-list-item"><a href="javascript:print();" rel="alternate" title="Printable version of this page [Alt+Shift+p]" accesskey="p"><span>Printable version</span></a></li><li id="t-permalink" class="mw-list-item"><a href="https://wirenboard.com/wiki/index.php?title=WB-MSWv_4_registers&amp;oldid=77738" title="Permanent link to this revision of the page"><span>Permanent link</span></a></li><li id="t-info" class="mw-list-item"><a href="https://wirenboard.com/wiki/index.php?title=WB-MSWv_4_registers&amp;action=info" title="More information about this page"><span>Page information</span></a></li></ul>
+		
+	</div>
+</nav>
+
+</div>
+
+		<div id="mw-head">
+			<div class="mw-article-toolbar-container">
+				<div id="left-navigation">
+					<nav id="p-namespaces" class="mw-portlet mw-portlet-namespaces vector-menu vector-menu-tabs" aria-labelledby="p-namespaces-label" role="navigation" lang="en" dir="ltr">
+	<h3 id="p-namespaces-label" class="vector-menu-heading"> <span>Namespaces</span>
+	</h3>
+	<div class="vector-menu-content">
+		
+		<ul class="vector-menu-content-list"><li id="ca-nstab-main" class="selected mw-list-item"><a href="https://wirenboard.com/wiki/WB-MSWv_4_registers" title="View the content page [Alt+Shift+c]" accesskey="c"><span>Page</span></a></li><li id="ca-talk" class="new mw-list-item"><a href="https://wirenboard.com/wiki/index.php?title=%D0%9E%D0%B1%D1%81%D1%83%D0%B6%D0%B4%D0%B5%D0%BD%D0%B8%D0%B5:WB-MSWv_4_registers&amp;action=edit&amp;redlink=1" rel="discussion" title="Discussion about the content page (page does not exist) [Alt+Shift+t]" accesskey="t"><span>Discussion</span></a></li></ul>
+		
+	</div>
+</nav>
+
+					<nav id="p-variants" class="mw-portlet mw-portlet-variants emptyPortlet vector-menu-dropdown-noicon vector-menu vector-menu-dropdown" aria-labelledby="p-variants-label" role="navigation" lang="en" dir="ltr">
+	<input type="checkbox" id="p-variants-checkbox" role="button" aria-haspopup="true" data-event-name="ui.dropdown-p-variants" class="vector-menu-checkbox webfonts-changed" aria-labelledby="p-variants-label">
+	<h3 id="p-variants-label" class="vector-menu-heading"> <span>Variants</span>
+			<span class="vector-menu-checkbox-expanded">expanded</span>
+			<span class="vector-menu-checkbox-collapsed">collapsed</span>
+	</h3>
+	<div class="vector-menu-content">
+		
+		<ul class="vector-menu-content-list"></ul>
+		
+	</div>
+</nav>
+
+				</div>
+				<div id="right-navigation">
+					<nav id="p-views" class="mw-portlet mw-portlet-views vector-menu vector-menu-tabs" aria-labelledby="p-views-label" role="navigation" lang="en" dir="ltr">
+	<h3 id="p-views-label" class="vector-menu-heading"> <span>Views</span>
+	</h3>
+	<div class="vector-menu-content">
+		
+		<ul class="vector-menu-content-list"><li id="ca-view" class="selected mw-list-item collapsible"><a href="https://wirenboard.com/wiki/WB-MSWv_4_registers"><span>Read</span></a></li><li id="ca-viewsource" class="mw-list-item collapsible"><a href="https://wirenboard.com/wiki/index.php?title=WB-MSWv_4_registers&amp;action=edit" title="This page is protected.
+You can view its source [Alt+Shift+e]" accesskey="e"><span>View source</span></a></li><li id="ca-history" class="mw-list-item collapsible"><a href="https://wirenboard.com/wiki/index.php?title=WB-MSWv_4_registers&amp;action=history" title="Past revisions of this page [Alt+Shift+h]" accesskey="h"><span>View history</span></a></li></ul>
+		
+	</div>
+</nav>
+
+					<nav id="p-cactions" class="mw-portlet mw-portlet-cactions emptyPortlet vector-menu-dropdown-noicon vector-menu vector-menu-dropdown" aria-labelledby="p-cactions-label" role="navigation" title="More options" lang="en" dir="ltr">
+	<input type="checkbox" id="p-cactions-checkbox" role="button" aria-haspopup="true" data-event-name="ui.dropdown-p-cactions" class="vector-menu-checkbox webfonts-changed" aria-labelledby="p-cactions-label">
+	<h3 id="p-cactions-label" class="vector-menu-heading"> <span>More</span>
+			<span class="vector-menu-checkbox-expanded">expanded</span>
+			<span class="vector-menu-checkbox-collapsed">collapsed</span>
+	</h3>
+	<div class="vector-menu-content">
+		
+		<ul class="vector-menu-content-list"></ul>
+		
+	</div>
+</nav>
+
+				</div>
+			</div>
+		</div>
+	</div>
+	<div class="mw-content-container">
+<main id="content" class="mw-body" role="main">
+	<a id="top"></a>
+	<div id="siteNotice"></div>
+
+
+	<header class="mw-body-header">
+			
+		<h1 id="firstHeading" class="firstHeading" lang="en" dir="ltr">Карта регистров датчика WB-MSW v.4</h1>
+		<div class="mw-indicators">
+		</div>
+			<div id="siteSub" class="noprint">From Wiren Board</div>
+	</header>
+
+	<div id="bodyContent" class="vector-body">
+		<div id="contentSub" lang="en" dir="ltr"><span class="approvedAndLatestMsg">This is the approved revision of this page, as well as being the most recent.</span></div>
+		<div id="contentSub2"></div>
+		
+		<div id="mw-content-text" class="mw-body-content mw-content-ltr" lang="ru" dir="ltr"><div class="mw-parser-output"><h2><span id=".D0.9E.D0.BF.D0.B8.D1.81.D0.B0.D0.BD.D0.B8.D0.B5"></span><span class="mw-headline" id="Описание">Описание</span></h2>
+<p>Регистры, связанные с ИК-управлением, описаны в статье <a href="https://wirenboard.com/wiki/WB-MSx_Consumer_IR_Manual" title="WB-MSx Consumer IR Manual">WB-MSx_Consumer_IR_Manual</a>.
+</p>
+<table border="1" class="wikitable">
+<caption>Условные обозначения
+</caption>
+<tbody><tr>
+<td>RO / RW</td>
+<td>Read only / Read/Write
+</td></tr>
+<tr>
+<td>Выделено <b>жирным</b></td>
+<td>Значение регистра по умолчанию
+</td></tr>
+<tr>
+<td>xN</td>
+<td>Множитель, на который надо умножить число из регистра, чтобы получить значение в единицах измерения.
+<p>Не указан  — считать равным 1
+</p>
+</td></tr>
+<tr>
+<td>⚡</td>
+<td>Регистр поддерживает отправку данных с помощью событий, <a href="https://wirenboard.com/wiki/Modbus#events" title="Modbus">подробнее</a>.
+</td></tr>
+<tr>
+<td>FW</td>
+<td>Версия прошивки устройства, с которой появился регистр. Пусто — регистр был всегда.
+</td></tr>
+<tr>
+<td>Error:</td>
+<td>Значение при ошибке
+</td></tr>
+<tr>
+<td class="cell-gray">Серый цвет ячейки</td>
+<td>Служебный регистр: назначение, формат и содержимое может измениться в новых версиях прошивки
+</td></tr>
+</tbody></table>
+<table border="1" class="wikitable">
+<caption>Modbus-регистры устройства
+</caption>
+<tbody><tr>
+<th colspan="2">Адрес</th>
+<th colspan="3">Параметры регистра</th>
+<th rowspan="2">Описание</th>
+<th rowspan="2" style="width: 14.3em;">Значения</th>
+<th rowspan="2" style="width: 4.1em;">FW
+</th></tr>
+<tr>
+<th>Dec</th>
+<th style="width: 4.3em;">Hex</th>
+<th style="width: 4.64em;">Тип</th>
+<th style="width: 3.7em;">Доступ</th>
+<th style="width: 4.1em;">Формат
+</th></tr>
+
+
+
+<tr>
+<td>0
+</td>
+<td>0x0000
+</td>
+<td>Coil
+</td>
+<td>RW
+</td>
+<td>bool
+</td>
+<td>Включение пищалки (buzzer)
+</td>
+<td><b>0</b>
+</td>
+<td>
+</td></tr>
+<tr>
+<td>2
+</td>
+<td>0x0002
+</td>
+<td>Coil
+</td>
+<td>RW
+</td>
+<td>bool
+</td>
+<td>Включение подогрева (heater) в микросхеме сенсора температуры и влажности
+</td>
+<td><b>0</b>
+</td>
+<td>
+</td></tr>
+<tr>
+<td>3
+</td>
+<td>0x0003
+</td>
+<td>Coil
+</td>
+<td>RW
+</td>
+<td>bool
+</td>
+<td>Включение датчика CO2 (1-вкл, 0-выкл)
+</td>
+<td><b>0</b>
+</td>
+<td>
+</td></tr>
+<tr>
+<td>10
+</td>
+<td>0x000A
+</td>
+<td>Coil
+</td>
+<td>RW
+</td>
+<td>bool
+</td>
+<td>Включение красного светодиода при ненулевых значениях регистров 97 и 98
+</td>
+<td><b>0</b>
+</td>
+<td>
+</td></tr>
+<tr>
+<td>11
+</td>
+<td>0x000B
+</td>
+<td>Coil
+</td>
+<td>RW
+</td>
+<td>bool
+</td>
+<td>Включение зеленого светодиода при ненулевых значениях регистров 97 и 98
+</td>
+<td><b>0</b>
+</td>
+<td>
+</td></tr>
+<tr>
+<td>0
+</td>
+<td>0x0000
+</td>
+<td>Input
+</td>
+<td>RO
+</td>
+<td>s16
+</td>
+<td>Температура
+</td>
+<td>x0.1, °C<br>Error: 0x7FFF
+</td>
+<td>
+</td></tr>
+<tr>
+<td>1
+</td>
+<td>0x0001
+</td>
+<td>Input
+</td>
+<td>RO
+</td>
+<td>s16
+</td>
+<td>Относительная влажность
+</td>
+<td>x0.1, %RH<br>Error: 0xFFFF
+</td>
+<td>
+</td></tr>
+<tr>
+<td>3
+</td>
+<td>0x0003
+</td>
+<td>Input
+</td>
+<td>RO
+</td>
+<td>s16
+</td>
+<td>Уровень шума, умноженный на 100
+</td>
+<td>x0.01, дБ
+</td>
+<td>
+</td></tr>
+<tr>
+<td>4
+</td>
+<td>0x0004
+</td>
+<td>Input
+</td>
+<td>RO
+</td>
+<td>s16
+</td>
+<td>Температура
+</td>
+<td>x0.01, °C<br>Error: 0x7FFF
+</td>
+<td>
+</td></tr>
+<tr>
+<td>5
+</td>
+<td>0x0005
+</td>
+<td>Input
+</td>
+<td>RO
+</td>
+<td>s16
+</td>
+<td>Относительная влажность
+</td>
+<td>x0.01, %RH<br>Error: 0xFFFF
+</td>
+<td>
+</td></tr>
+<tr>
+<td>8
+</td>
+<td>0x0008
+</td>
+<td>Input
+</td>
+<td>RO
+</td>
+<td>u16
+</td>
+<td>Концентрация CO2
+</td>
+<td>ppm, <br>Error: 0xFFFF
+</td>
+<td>
+</td></tr>
+<tr>
+<td>9 - 10
+</td>
+<td>0x0009 - 0x000A
+</td>
+<td>Input
+</td>
+<td>RO
+</td>
+<td>u32
+</td>
+<td>Освещенность (9 - старший разряд, 10 — младший разряд значения освещенности)
+</td>
+<td>x0.01, лк<br>Error: 0xFFFFFFFF
+</td>
+<td>
+</td></tr>
+<tr>
+<td>11
+</td>
+<td>0x000B
+</td>
+<td>Input
+</td>
+<td>RO
+</td>
+<td>u16
+</td>
+<td>Качество воздуха
+</td>
+<td>ppb<br>Error: 0xFFFF
+</td>
+<td>
+</td></tr>
+<tr>
+<td>82
+</td>
+<td>0x0052
+</td>
+<td>Input
+</td>
+<td>RO
+</td>
+<td>u16
+</td>
+<td>Наличие датчика CO2: 0 - не найден, 1 - установлен.
+</td>
+<td>0 или 1
+</td>
+<td>4.19.0
+</td></tr>
+<tr>
+<td>83
+</td>
+<td>0x0053
+</td>
+<td>Input
+</td>
+<td>RO
+</td>
+<td>u16
+</td>
+<td>Тип установленного датчика CO2
+</td>
+<td>0&nbsp;-&nbsp;MH-Z19B, 1&nbsp;-&nbsp;CM1106, 2&nbsp;-&nbsp;CM1106SL
+</td>
+<td>4.19.0
+</td></tr>
+<tr class="cell-gray">
+<td>86
+</td>
+<td>0x0056
+</td>
+<td>Input
+</td>
+<td>RO
+</td>
+<td>u16
+</td>
+<td>Текущий канал работы датчика уровня шума: 0 - канал низкоуровневых шумов, 1 - канал высокоуровневых шумов.
+</td>
+<td>0 или 1
+</td>
+<td>
+</td></tr>
+<tr class="cell-gray">
+<td>87
+</td>
+<td>0x0057
+</td>
+<td>Input
+</td>
+<td>RO
+</td>
+<td>u16
+</td>
+<td>HOLD_REG_SPL_HIGHGAIN_RAW_INT
+</td>
+<td>x0.0625
+</td>
+<td>
+</td></tr>
+<tr>
+<td>91
+</td>
+<td>0x005B
+</td>
+<td>Holding
+</td>
+<td>RW
+</td>
+<td>u16
+</td>
+<td>Время усреднения шума
+</td>
+<td>x10, мс<br><b>20</b>
+</td>
+<td>
+</td></tr>
+<tr class="cell-gray">
+<td>92
+</td>
+<td>0x005C
+</td>
+<td>Holding
+</td>
+<td>RW
+</td>
+<td>s16
+</td>
+<td>HOLD_REG_SPL_RAW_OFFSET - сдвиг значения АЦП
+</td>
+<td>x16
+</td>
+<td>
+</td></tr>
+<tr class="cell-gray">
+<td>93
+</td>
+<td>0x005D
+</td>
+<td>Holding
+</td>
+<td>RW
+</td>
+<td>s16
+</td>
+<td>HOLD_REG_SPL_OFFSET - поправка к значению уровня шума
+</td>
+<td>x0.1, дБ
+</td>
+<td>
+</td></tr>
+<tr>
+<td>95
+</td>
+<td>0x005F
+</td>
+<td>Holding
+</td>
+<td>RW
+</td>
+<td>u16
+</td>
+<td>Режим автокалибровки датчика CO2 (ABC) на атмосферный уровень CO2
+</td>
+<td>0 — выключен или 1 — включен
+</td>
+<td>
+</td></tr>
+<tr>
+<td>97
+</td>
+<td>0x0061
+</td>
+<td>Holding
+</td>
+<td>RW
+</td>
+<td>u16
+</td>
+<td>Период между вспышками сигнальных светодиодов
+</td>
+<td>c<br>0 - 10
+</td>
+<td>
+</td></tr>
+<tr>
+<td>98
+</td>
+<td>0x0062
+</td>
+<td>Holding
+</td>
+<td>RW
+</td>
+<td>u16
+</td>
+<td>Длительность вспышки светодиодов
+</td>
+<td>мc<br>0 - 50
+</td>
+<td>
+</td></tr>
+<tr class="cell-gray">
+<td>100
+</td>
+<td>0x0064
+</td>
+<td>Input
+</td>
+<td>RO
+</td>
+<td>u16
+</td>
+<td>HOLD_REG_SPL_RAW_INT
+</td>
+<td>x0.0625
+</td>
+<td>
+</td></tr>
+<tr class="cell-gray">
+<td>101
+</td>
+<td>0x0065
+</td>
+<td>Input
+</td>
+<td>RO
+</td>
+<td>u16
+</td>
+<td>Количество успешных считываний датчика температуры и влажности
+</td>
+<td>
+</td>
+<td>
+</td></tr>
+<tr class="cell-gray">
+<td>102
+</td>
+<td>0x0066
+</td>
+<td>Input
+</td>
+<td>RO
+</td>
+<td>u16
+</td>
+<td>Количество ошибок считывания датчика температуры и влажности
+</td>
+<td>
+</td>
+<td>
+</td></tr>
+<tr class="cell-gray">
+<td>106
+</td>
+<td>0x006A
+</td>
+<td>Input
+</td>
+<td>RO
+</td>
+<td>u16
+</td>
+<td>Значение baseline датчика VOC
+</td>
+<td>
+</td>
+<td>
+</td></tr>
+<tr class="cell-gray">
+<td>107
+</td>
+<td>0x006B
+</td>
+<td>Input
+</td>
+<td>RO
+</td>
+<td>u16
+</td>
+<td>Сырые значения датчика VOC
+</td>
+<td>Error: 0xFFFF
+</td>
+<td>
+</td></tr>
+<tr class="cell-gray">
+<td>108
+</td>
+<td>0x006C
+</td>
+<td>Input
+</td>
+<td>RO
+</td>
+<td>u16
+</td>
+<td>Версия датчика VOC
+</td>
+<td>Error: 0xFFFF
+</td>
+<td>
+</td></tr>
+<tr>
+<td>245
+</td>
+<td>0x00F5
+</td>
+<td>Holding
+</td>
+<td>RW
+</td>
+<td>s16
+</td>
+<td>Температурная компенсация самонагрева для датчика температуры и 
+влажности (значение вычитается из измереной температуры). Допустимые 
+значения компенсации от -10 °C до +10 °C.
+</td>
+<td>x0.01, °C
+</td>
+<td>
+</td></tr>
+<tr>
+<td>280
+</td>
+<td>0x0118
+</td>
+<td>Input <a href="https://wirenboard.com/wiki/Fast_Modbus" title="Fast Modbus">⚡</a>
+</td>
+<td>RO
+</td>
+<td>u16
+</td>
+<td>Максимальное значение датчика движения за установленное время окна (Max motion)
+</td>
+<td>Error: 0xFFFF
+</td>
+<td rowspan="4">
+</td></tr>
+<tr class="cell-gray">
+<td>281
+</td>
+<td>0x0119
+</td>
+<td>Input
+</td>
+<td>RO
+</td>
+<td>u16
+</td>
+<td>Сырое значение с АЦП датчика движения
+</td>
+<td>
+</td></tr>
+<tr>
+<td>282
+</td>
+<td>0x011A
+</td>
+<td>Holding
+</td>
+<td>RW
+</td>
+<td>u16
+</td>
+<td>Ширина временного окна для вычисления максимального усредненного значения датчика движения
+</td>
+<td>с<br>1 - 60 (<b>10</b>)
+</td></tr>
+<tr>
+<td>283
+</td>
+<td>0x011B
+</td>
+<td>Input <a href="https://wirenboard.com/wiki/Fast_Modbus" title="Fast Modbus">⚡</a>
+</td>
+<td>RO
+</td>
+<td>u16
+</td>
+<td>Текущее усредненное значение движения в условных единицах (Current motion)
+</td>
+<td>Error: 0xFFFF
+</td></tr>
+<tr class="cell-gray">
+<td>284
+</td>
+<td>0x011C
+</td>
+<td>Input
+</td>
+<td>RO
+</td>
+<td>s16
+</td>
+<td>Сырое значение температуры (без учета температурной компенсации)
+</td>
+<td>x0.01, °C<br>Error: 0x7FFF
+</td>
+<td rowspan="2">
+</td></tr>
+<tr class="cell-gray">
+<td>285
+</td>
+<td>0x011D
+</td>
+<td>Input
+</td>
+<td>RO
+</td>
+<td>s16
+</td>
+<td>Сырое значение относительной влажности (без учета температурной компенсации)
+</td>
+<td>x0.01, %RH<br>Error: 0x7FFF
+</td></tr>
+<tr class="cell-gray">
+<td>286-287
+</td>
+<td>0x011E - 0x011F
+</td>
+<td>Input
+</td>
+<td>RO
+</td>
+<td>u32
+</td>
+<td>Сырое значение освещенности (286 - старший разряд, 287 — младший разряд значения освещенности)
+</td>
+<td>x0.01, лк<br>Error: 0xFFFFFFFF
+</td>
+<td>
+</td></tr>
+<tr class="cell-gray">
+<td>288
+</td>
+<td>0x0120
+</td>
+<td>Holding
+</td>
+<td>RW
+</td>
+<td>s16
+</td>
+<td>Калибровочное значение датчика освещенности, корректировка 
+происходит по следующей формуле: illuminance = illuminance * (1 + 
+calib_coeff/2^7))
+</td>
+<td>val -128..127
+</td>
+<td>
+</td></tr>
+<tr class="cell-gray">
+<td>348 - 357
+</td>
+<td>0x015C - 0x0165
+</td>
+<td>Input
+</td>
+<td>RO
+</td>
+<td>u16
+</td>
+<td>Версия ПО датчика CO2 (один ascii символ в регистре)
+</td>
+<td>
+</td>
+<td>4.25.0
+</td></tr>
+<tr class="cell-gray">
+<td>358
+</td>
+<td>0x0166
+</td>
+<td>Input
+</td>
+<td>RO
+</td>
+<td>u16
+</td>
+<td>Количество ошибок считывания датчика CO2
+</td>
+<td>
+</td>
+<td>4.24.0
+</td></tr>
+<tr class="cell-gray">
+<td>359
+</td>
+<td>0x0167
+</td>
+<td>Input
+</td>
+<td>RO
+</td>
+<td>u16
+</td>
+<td>Тип датчика VOC (0 - SGP30, 0x10 - SGPC3, 0x20 - ENS160)
+</td>
+<td>Error: 0xFFFF
+</td>
+<td rowspan="3">4.20.0
+</td></tr>
+<tr class="cell-gray">
+<td>360
+</td>
+<td>0x0168
+</td>
+<td>Input
+</td>
+<td>RO
+</td>
+<td>u16
+</td>
+<td>Эквивалентное качеству воздуха (VOC) значение eCO2 (только для VOC версии 0x22)
+</td>
+<td>Error: 0xFFFF
+</td></tr>
+<tr class="cell-gray">
+<td>361
+</td>
+<td>0x0169
+</td>
+<td>Input
+</td>
+<td>RO
+</td>
+<td>u16
+</td>
+<td>eCO2 baseline для VOC (только для VOC версии 0x22)
+</td>
+<td>Error: 0xFFFF
+</td></tr>
+<tr>
+<td>362
+</td>
+<td>0x016A
+</td>
+<td>Input
+</td>
+<td>RO
+</td>
+<td>u16
+</td>
+<td>Тип датчика освещенности: 0 - OPT3001, 1 - VEML7700
+</td>
+<td>Error: 0xFFFF
+</td>
+<td>4.28.0
+</td></tr>
+
+<tr>
+<td>88
+</td>
+<td>0x0058
+</td>
+<td>Holding
+</td>
+<td>RW
+</td>
+<td>u16
+</td>
+<td>Принудительная калибровка датчика CO2 на заданное значение 
+концентрации. Для калибровки запишите сюда текущее значение концентрации
+ CO2, измеренное другим прибором (только для CM1106).
+</td>
+<td>ppm<br>400 - 1500
+</td>
+<td>4.19.0
+</td></tr>
+<tr>
+<td>89
+</td>
+<td>0x0059
+</td>
+<td>Holding
+</td>
+<td>RW
+</td>
+<td>u16
+</td>
+<td>Длительность цикла для алгоритма самокалибровки датчика CO2 (ABC) (только для CM1106).
+</td>
+<td>дней<br>1 - 30, Error: 0xFFFF
+</td>
+<td>4.19.0
+</td></tr>
+<tr class="cell-gray">
+<td>340
+</td>
+<td>0x0154
+</td>
+<td>Input
+</td>
+<td>RO
+</td>
+<td>u16
+</td>
+<td>Статус предварительного нагрева датчика CO2: 1 - предварительный 
+нагрев,  0 - предварительный нагрев завершен (только для CM1106).
+</td>
+<td rowspan="7">0 или 1
+</td>
+<td rowspan="7">4.19.0
+</td></tr>
+<tr class="cell-gray">
+<td>341
+</td>
+<td>0x0155
+</td>
+<td>Input
+</td>
+<td>RO
+</td>
+<td>u16
+</td>
+<td>Статус датчика CO2: 1 - ошибка,  0 - нормальная работа (только для CM1106).
+</td></tr>
+<tr class="cell-gray">
+<td>342
+</td>
+<td>0x0156
+</td>
+<td>Input
+</td>
+<td>RO
+</td>
+<td>u16
+</td>
+<td>Статус превышения диапазона измерений датчика CO2: 1 - превышение,  0 - нормальная работа (только для CM1106).
+</td></tr>
+<tr class="cell-gray">
+<td>343
+</td>
+<td>0x0157
+</td>
+<td>Input
+</td>
+<td>RO
+</td>
+<td>u16
+</td>
+<td>Статус выхода значения за нижнюю границу диапазона измерений датчика
+ CO2: 1 - значение меньше, чем диапазон измерения,  0 - нормальная 
+работа (только для CM1106).
+</td></tr>
+<tr class="cell-gray">
+<td>344
+</td>
+<td>0x0158
+</td>
+<td>Input
+</td>
+<td>RO
+</td>
+<td>u16
+</td>
+<td>Статус калибровки датчика CO2: 1 - не откалиброван,  0 - откалиброван (только для CM1106).
+</td></tr>
+<tr class="cell-gray">
+<td>345
+</td>
+<td>0x0159
+</td>
+<td>Input
+</td>
+<td>RO
+</td>
+<td>u16
+</td>
+<td>Статус старения датчика CO2: 1 - легкое старение,  0 - нормальная работа (только для CM1106).
+</td></tr>
+<tr class="cell-gray">
+<td>346
+</td>
+<td>0x015A
+</td>
+<td>Input
+</td>
+<td>RO
+</td>
+<td>u16
+</td>
+<td>Статус дрейфа датчика CO2: 1 - дрейф,  0 - нормальная работа (только для CM1106).
+</td></tr>
+
+<tr>
+<td>12
+</td>
+<td>0x000C
+</td>
+<td>Input
+</td>
+<td>RO
+</td>
+<td>u16
+</td>
+<td>Индекс качества воздуха (AQI - Air Quality Index, только для ENS160)
+</td>
+<td>1-5<br>Error: 0xFFFF
+</td>
+<td rowspan="3">4.30.0
+</td></tr>
+<tr>
+<td>363
+</td>
+<td>0x016B
+</td>
+<td>Input
+</td>
+<td>RO
+</td>
+<td>u16
+</td>
+<td>Состояние датчика VOC (только для ENS160)
+</td>
+<td>Error: 0xFFFF
+</td></tr>
+
+<tr>
+<td>364
+</td>
+<td>0x016С
+</td>
+<td>Input
+</td>
+<td>RO
+</td>
+<td>u16
+</td>
+<td>Сырое значения датчика VOC "R4" (только для ENS160)
+</td>
+<td>
+</td></tr>
+
+
+<tr>
+<td>368
+</td>
+<td>0x0170
+</td>
+<td>Input
+</td>
+<td>RO
+</td>
+<td>u8
+</td>
+<td>Наличие датчика температуры
+</td>
+<td>0 или 1
+</td>
+<td>4.24.0
+</td></tr>
+<tr>
+<td>369
+</td>
+<td>0x0171
+</td>
+<td>Input
+</td>
+<td>RO
+</td>
+<td>u8
+</td>
+<td>Наличие датчика влажности
+</td>
+<td>0 или 1
+</td>
+<td>4.24.0
+</td></tr>
+
+
+
+<tr>
+<td>370
+</td>
+<td>0x0172
+</td>
+<td>Input
+</td>
+<td>RO
+</td>
+<td>u8
+</td>
+<td>Наличие цифрового датчика освещенности
+</td>
+<td>0 или 1
+</td>
+<td>4.24.0
+</td></tr>
+
+
+
+<tr>
+<td>371
+</td>
+<td>0x0173
+</td>
+<td>Input
+</td>
+<td>RO
+</td>
+<td>u8
+</td>
+<td>Наличие датчика качества воздуха (VOC)
+</td>
+<td>0 или 1
+</td>
+<td>4.24.0
+</td></tr>
+
+
+
+<tr>
+<td>372
+</td>
+<td>0x0174
+</td>
+<td>Input
+</td>
+<td>RO
+</td>
+<td>u8
+</td>
+<td>Наличие датчика CO2. Значение в регистре появляется через несколько секунд после подключения/отключения датчика
+</td>
+<td>0 или 1
+</td>
+<td>4.24.0
+</td></tr>
+
+
+
+<tr>
+<td>373
+</td>
+<td>0x0175
+</td>
+<td>Input
+</td>
+<td>RO
+</td>
+<td>u8
+</td>
+<td>Наличие датчика движения
+</td>
+<td>0 или 1
+</td>
+<td>4.24.0
+</td></tr>
+
+
+
+<tr>
+<td>374
+</td>
+<td>0x0176
+</td>
+<td>Input
+</td>
+<td>RO
+</td>
+<td>u8
+</td>
+<td>Наличие датчика уровня шума
+</td>
+<td>0 или 1
+</td>
+<td>4.24.0
+</td></tr>
+
+
+
+<tr>
+<td>375
+</td>
+<td>0x0177
+</td>
+<td>Input
+</td>
+<td>RO
+</td>
+<td>u8
+</td>
+<td>Наличие инфракрасного приемопередатчика
+</td>
+<td>0 или 1
+</td>
+<td>4.24.0
+</td></tr>
+
+</tbody></table>
+<table border="1" class="wikitable hidden">
+<caption>Условные обозначения
+</caption>
+<tbody><tr>
+<td>RO / RW</td>
+<td>Read only / Read/Write
+</td></tr>
+<tr>
+<td>Выделено <b>жирным</b></td>
+<td>Значение регистра по умолчанию
+</td></tr>
+<tr>
+<td>xN</td>
+<td>Множитель, на который надо умножить число из регистра, чтобы получить значение в единицах измерения.
+<p>Не указан  — считать равным 1
+</p>
+</td></tr>
+<tr>
+<td>⚡</td>
+<td>Регистр поддерживает отправку данных с помощью событий, <a href="https://wirenboard.com/wiki/Modbus#events" title="Modbus">подробнее</a>.
+</td></tr>
+<tr>
+<td>FW</td>
+<td>Версия прошивки устройства, с которой появился регистр. Пусто — регистр был всегда.
+</td></tr>
+<tr>
+<td>Error:</td>
+<td>Значение при ошибке
+</td></tr>
+<tr>
+<td class="cell-gray">Серый цвет ячейки</td>
+<td>Служебный регистр: назначение, формат и содержимое может измениться в новых версиях прошивки
+</td></tr>
+</tbody></table>
+<table border="1" class="wikitable">
+<caption>Параметры подключения, версия прошивки и другие служебные регистры
+</caption>
+<tbody><tr>
+<th colspan="2">Адрес</th>
+<th colspan="3">Параметры регистра</th>
+<th rowspan="2">Описание</th>
+<th rowspan="2" style="width: 14.3em;">Значения</th>
+<th rowspan="2">Примечание
+</th></tr>
+<tr>
+<th>Dec</th>
+<th style="width: 4.3em;">Hex</th>
+<th style="width: 4.64em;">Тип</th>
+<th style="width: 3.7em;">Доступ</th>
+<th style="width: 4.1em;">Формат
+</th></tr>
+
+
+
+<tr>
+<th colspan="8"><b>Параметры подключения</b>
+</th></tr>
+<tr>
+<td>110
+</td>
+<td>0x006E
+</td>
+<td>Holding
+</td>
+<td>RW
+</td>
+<td>u16
+</td>
+<td>Скорость порта RS-485.<br><a href="https://wirenboard.com/wiki/UART_Communication_Settings" title="UART Communication Settings"> Настройка параметров подключения по RS-485</a>
+</td>
+<td>x100, Боды<br>12 — 1200 бит/с,<br>24 — 2400 бит/с,<br>48 — 4800 бит/с, <br><b>96 — 9600 бит/с</b>, <br>192 — 19 200 бит/с, <br>384 — 38 400 бит/с, <br>576 — 57 600 бит/с,<br>1152 — 115 200 Кбит/с
+</td>
+<td>
+</td></tr>
+<tr>
+<td>111
+</td>
+<td>0x006F
+</td>
+<td>Holding
+</td>
+<td>RW
+</td>
+<td>u16
+</td>
+<td>Настройка бита чётности порта RS-485
+</td>
+<td><b>0 — нет бита чётности (none)</b>,<br>1 — нечётный,<br>2 — чётный
+</td>
+<td>
+</td></tr>
+<tr>
+<td>112
+</td>
+<td>0x0070
+</td>
+<td>Holding
+</td>
+<td>RW
+</td>
+<td>u16
+</td>
+<td>Количество стоп-битов порта RS-485
+</td>
+<td>1, <b>2</b>
+</td>
+<td>
+</td></tr>
+<tr>
+<td>128
+</td>
+<td>0x0080
+</td>
+<td>Holding
+</td>
+<td>RW
+</td>
+<td>u16
+</td>
+<td>Modbus-адрес устройства (<a href="https://wirenboard.com/wiki/Wiren_Board_Device_Modbus_Address" title="Wiren Board Device Modbus Address">подробнее</a>)
+</td>
+<td>
+</td></tr>
+<tr>
+<th colspan="8"><b>Модель устройства и версия прошивки</b>
+</th></tr>
+<tr>
+<td class="text-right">200-219
+</td>
+<td>0x00C8 - 0x00DB
+</td>
+<td>Input
+</td>
+<td>RO
+</td>
+<td>string
+</td>
+<td>Модель устройства
+</td>
+<td>
+</td>
+<td>
+</td></tr>
+<tr>
+<td>220-248
+</td>
+<td>0x00DC - 0x00F8
+</td>
+<td>Input
+</td>
+<td>RO
+</td>
+<td>string
+</td>
+<td>Хэш коммита и название ветки откуда собрана прошивка (2 символа в регистре)
+</td>
+<td>
+</td>
+<td>
+</td></tr>
+<tr>
+<td>250-265
+</td>
+<td>0x00FA - 0x0109
+</td>
+<td>Input
+</td>
+<td>RO
+</td>
+<td>string
+</td>
+<td>Версия прошивки
+</td>
+<td>
+</td>
+<td>
+</td></tr>
+<tr>
+<td>266-269
+</td>
+<td>0x010A - 0x010D
+</td>
+<td>Input
+</td>
+<td>RO
+</td>
+<td>u64
+</td>
+<td>Расширение серийного номера
+</td>
+<td>
+</td>
+<td>
+</td></tr>
+<tr>
+<td>270-271
+</td>
+<td>0x010E - 0x010F
+</td>
+<td>Input
+</td>
+<td>RO
+</td>
+<td>u32
+</td>
+<td>Серийный номер
+</td>
+<td>
+</td>
+<td>
+</td></tr>
+<tr>
+<td>290-301
+</td>
+<td>0x0122 - 0x012D
+</td>
+<td>Holding
+</td>
+<td>RO
+</td>
+<td>string
+</td>
+<td>Сигнатура прошивки
+</td>
+<td>
+</td>
+<td>
+</td></tr>
+<tr>
+<td class="text-right">320
+</td>
+<td>0x0140
+</td>
+<td rowspan="4">Input
+</td>
+<td rowspan="4">RO
+</td>
+<td rowspan="3">u16
+</td>
+<td rowspan="4">Версия прошивки в числовом формате (<a href="https://wirenboard.com/wiki/Modbus-hardware-version" title="Modbus-hardware-version">подробнее</a>)
+</td>
+<td>MAJOR
+</td>
+<td>
+</td></tr>
+<tr>
+<td class="text-right">321
+</td>
+<td>0x0141
+</td>
+<td>MINOR
+</td>
+<td>
+</td></tr>
+<tr>
+<td class="text-right">322
+</td>
+<td>0x0142
+</td>
+<td>PATCH
+</td>
+<td>
+</td></tr>
+<tr>
+<td class="text-right">323
+</td>
+<td>0x0143
+</td>
+<td>s16
+</td>
+<td>SUFFIX
+</td>
+<td>
+</td></tr>
+<tr>
+<td class="text-right">324-325
+</td>
+<td>0x0144 - 0x0145
+</td>
+<td>Input
+</td>
+<td>RO
+</td>
+<td>u32
+</td>
+<td>Версия прошивки в числовом формате
+</td>
+<td>
+</td>
+<td>
+</td></tr>
+<tr>
+<td class="text-right">326-327
+</td>
+<td>0x0146 - 0x0147
+</td>
+<td>Input
+</td>
+<td>RO
+</td>
+<td>u32
+</td>
+<td>Версия прошивки в Big Endian формате
+</td>
+<td>
+</td>
+<td>
+</td></tr>
+<tr>
+<th colspan="8"><b>Прочее</b>
+</th></tr>
+<tr>
+<td>104­-105
+</td>
+<td>0x0068 - 0x0069
+</td>
+<td>Input
+</td>
+<td>RO
+</td>
+<td>u32
+</td>
+<td>Время работы с момента загрузки
+</td>
+<td>секунды
+</td>
+<td>
+</td></tr>
+<tr>
+<td>120
+</td>
+<td>0x0078
+</td>
+<td>Holding
+</td>
+<td>RW
+</td>
+<td>u16
+</td>
+<td>Перезагрузка устройства без сохранения состояния
+</td>
+<td>любое, отличное от 0 перезагружает устройство
+</td></tr>
+<tr>
+<td>123
+</td>
+<td>0x007B
+</td>
+<td>Input
+</td>
+<td>RO
+</td>
+<td>u16
+</td>
+<td>Напряжение на микроконтроллере
+</td>
+<td>мВ
+</td>
+<td>
+</td></tr>
+<tr>
+<td>129
+</td>
+<td>0x0081
+</td>
+<td>Holding
+</td>
+<td>RW
+</td>
+<td>u16
+</td>
+<td>Перевод в режим обновления прошивки на 2 минуты
+</td>
+<td>любое, отличное от 0 переводит устройство в режим обновления прошивки
+</td>
+<td>
+</td></tr>
+<tr>
+<td>330-336
+</td>
+<td>0x014A - 0x0150
+</td>
+<td>Holding
+</td>
+<td>RO
+</td>
+<td>string
+</td>
+<td>Версия загрузчика
+</td>
+<td>
+</td></tr>
+<tr>
+<td>113
+</td>
+<td>0x0071
+</td>
+<td>Holding
+</td>
+<td>RW
+</td>
+<td>u16
+</td>
+<td>Время перед отправкой ответа на modbus запрос
+</td>
+<td><b>0</b> - 254 мс
+</td>
+<td>
+</td></tr>
+<tr>
+<td>114
+</td>
+<td>0x0072
+</td>
+<td>Holding
+</td>
+<td>RW
+</td>
+<td>u16
+</td>
+<td>Режим непрерывного чтения регистров с зазором
+</td>
+<td><b>0 - отключен</b> <br> 1 - включен <br> 2 - включение сохраняется после перезагрузки
+</td>
+<td>
+</td></tr>
+<tr>
+<td>121
+</td>
+<td>0x0079
+</td>
+<td>Input
+</td>
+<td>RO
+</td>
+<td>u16
+</td>
+<td>Текущее напряжение питания
+</td>
+<td>мВ
+</td>
+<td>
+</td></tr>
+<tr>
+<td>125
+</td>
+<td>0x007D
+</td>
+<td>Input
+</td>
+<td>RO
+</td>
+<td>u16
+</td>
+<td>Текущее напряжение питания (без фильтра)
+</td>
+<td>мВ
+</td>
+<td>
+</td></tr>
+<tr>
+<td>124
+</td>
+<td>0x007C
+</td>
+<td>Input
+</td>
+<td>RO
+</td>
+<td>u16
+</td>
+<td>Внутренняя температура микроконтроллера
+</td>
+<td>x0.1, °C
+</td>
+<td>
+</td></tr></tbody></table>
+<!-- 
+NewPP limit report
+Cached time: 20231222004716
+Cache expiry: 86400
+Reduced expiry: false
+Complications: []
+CPU time usage: 0.154 seconds
+Real time usage: 0.262 seconds
+Preprocessor visited node count: 507/1000000
+Post‐expand include size: 23172/2097152 bytes
+Template argument size: 260/2097152 bytes
+Highest expansion depth: 5/40
+Expensive parser function count: 0/100
+Unstrip recursion depth: 0/20
+Unstrip post‐expand size: 0/5000000 bytes
+-->
+<!--
+Transclusion expansion time report (%,ms,calls,template)
+100.00%  160.463      1 -total
+ 18.60%   29.848      1 Wbincludes:WB-MSW_Main_Registers
+  8.14%   13.058      1 Wbincludes:Registers_Connection_Settings
+  7.31%   11.734      2 Wbincludes:Header_Registers_Universal
+  7.10%   11.392      1 Wbincludes:Registers_Service_Main
+  7.06%   11.321      1 Wbincludes:WB-MSW_Registers_for_CM1106
+  7.01%   11.250      1 Wbincludes:Availability_Register_VOC
+  6.47%   10.375      1 Wbincludes:Availability_Register_Noise
+  4.59%    7.362      1 Wbincludes:Registers_Vin
+  4.31%    6.919      1 Wbincludes:Registers_FW_Version_For_Device_With_Fast_Modbus
+-->
+
+<!-- Saved in parser cache with key wirenru_mw822-mw_:pcache:idhash:20568-0!canonical and timestamp 20231222004715 and revision id 77738. Serialized with JSON.
+ -->
+</div>
+<div class="printfooter">Retrieved from "<a dir="ltr" href="https://wirenboard.com/wiki/index.php?title=WB-MSWv_4_registers&amp;oldid=77738">https://wirenboard.com/wiki/index.php?title=WB-MSWv_4_registers&amp;oldid=77738</a>"</div></div>
+		<div id="catlinks" class="catlinks catlinks-allhidden" data-mw="interface"></div>
+	</div>
+
+
+</main>
+
+	</div> 
+</div> 
+
+<div class="mw-workspace-container mw-footer-container">
+	<div class="mw-content-container">
+		<footer id="footer" class="mw-footer" role="contentinfo" lang="en" dir="ltr">
+	<ul id="footer-info">
+	<li id="footer-info-lastmod"> This page was last edited on 8 December 2023, at 17:00.</li>
+</ul>
+
+	<ul id="footer-places">
+	<li id="footer-places-privacy"><a href="https://wirenboard.com/wiki/%D0%91%D0%B5%D1%81%D0%BA%D0%BE%D0%BD%D1%82%D0%B0%D0%BA%D1%82%D0%BD%D1%8B%D0%B5_%D1%83%D1%81%D1%82%D1%80%D0%BE%D0%B9%D1%81%D1%82%D0%B2%D0%B0:%D0%9F%D0%BE%D0%BB%D0%B8%D1%82%D0%B8%D0%BA%D0%B0_%D0%BA%D0%BE%D0%BD%D1%84%D0%B8%D0%B4%D0%B5%D0%BD%D1%86%D0%B8%D0%B0%D0%BB%D1%8C%D0%BD%D0%BE%D1%81%D1%82%D0%B8" title="Бесконтактные устройства:Политика конфиденциальности">Privacy policy</a></li>
+	<li id="footer-places-about"><a href="https://wirenboard.com/wiki/%D0%91%D0%B5%D1%81%D0%BA%D0%BE%D0%BD%D1%82%D0%B0%D0%BA%D1%82%D0%BD%D1%8B%D0%B5_%D1%83%D1%81%D1%82%D1%80%D0%BE%D0%B9%D1%81%D1%82%D0%B2%D0%B0:%D0%9E%D0%BF%D0%B8%D1%81%D0%B0%D0%BD%D0%B8%D0%B5" class="mw-redirect" title="Бесконтактные устройства:Описание">About Wiren Board</a></li>
+	<li id="footer-places-disclaimer"><a href="https://wirenboard.com/wiki/%D0%91%D0%B5%D1%81%D0%BA%D0%BE%D0%BD%D1%82%D0%B0%D0%BA%D1%82%D0%BD%D1%8B%D0%B5_%D1%83%D1%81%D1%82%D1%80%D0%BE%D0%B9%D1%81%D1%82%D0%B2%D0%B0:%D0%9E%D1%82%D0%BA%D0%B0%D0%B7_%D0%BE%D1%82_%D0%BE%D1%82%D0%B2%D0%B5%D1%82%D1%81%D1%82%D0%B2%D0%B5%D0%BD%D0%BD%D0%BE%D1%81%D1%82%D0%B8" title="Бесконтактные устройства:Отказ от ответственности">Disclaimers</a></li>
+	<li id="footer-places-mobileview"><a href="https://wirenboard.com/wiki/index.php?title=WB-MSWv_4_registers&amp;mobileaction=toggle_view_mobile" class="noprint stopMobileRedirectToggle">Mobile view</a></li>
+</ul>
+
+	<ul id="footer-icons" class="noprint">
+	<li id="footer-poweredbyico"><a href="https://www.mediawiki.org/" target="_blank"><img src="%D0%9A%D0%B0%D1%80%D1%82%D0%B0%20%D1%80%D0%B5%D0%B3%D0%B8%D1%81%D1%82%D1%80%D0%BE%D0%B2%20%D0%B4%D0%B0%D1%82%D1%87%D0%B8%D0%BA%D0%B0%20WB-MSW%20v.4%20-%20Wiren%20Board_files/poweredby_mediawiki_88x31.png" alt="Powered by MediaWiki" srcset="%D0%9A%D0%B0%D1%80%D1%82%D0%B0%20%D1%80%D0%B5%D0%B3%D0%B8%D1%81%D1%82%D1%80%D0%BE%D0%B2%20%D0%B4%D0%B0%D1%82%D1%87%D0%B8%D0%BA%D0%B0%20WB-MSW%20v.4%20-%20Wiren%20Board_files/poweredby_mediawiki_132x47.png 1.5x, %D0%9A%D0%B0%D1%80%D1%82%D0%B0%20%D1%80%D0%B5%D0%B3%D0%B8%D1%81%D1%82%D1%80%D0%BE%D0%B2%20%D0%B4%D0%B0%D1%82%D1%87%D0%B8%D0%BA%D0%B0%20WB-MSW%20v.4%20-%20Wiren%20Board_files/poweredby_mediawiki_176x62.png 2x" width="88" height="31" loading="lazy"></a></li>
+</ul>
+
+</footer>
+
+	</div>
+</div>
+	</div> 
+</div> 
+
+<!-- Yandex.Metrika counter -->
+<script type="text/javascript">
+   (function(m,e,t,r,i,k,a){m[i]=m[i]||function(){(m[i].a=m[i].a||[]).push(arguments)};
+   m[i].l=1*new Date();k=e.createElement(t),a=e.getElementsByTagName(t)[0],k.async=1,k.src=r,a.parentNode.insertBefore(k,a)})
+   (window, document, "script", "https://mc.yandex.ru/metrika/tag.js", "ym");
+
+   ym(48377798, "init", {
+        clickmap:true,
+        trackLinks:true,
+        accurateTrackBounce:true,
+        webvisor:true,
+        trackHash:true,
+        ecommerce:"dataLayer"
+   });
+</script>
+<noscript><div><img src="https://mc.yandex.ru/watch/48377798" style="position:absolute; left:-9999px;" alt="" /></div></noscript>
+<!-- /Yandex.Metrika counter -->
+<script>(RLQ=window.RLQ||[]).push(function(){mw.config.set({"wgPageParseReport":{"limitreport":{"cputime":"0.154","walltime":"0.262","ppvisitednodes":{"value":507,"limit":1000000},"postexpandincludesize":{"value":23172,"limit":2097152},"templateargumentsize":{"value":260,"limit":2097152},"expansiondepth":{"value":5,"limit":40},"expensivefunctioncount":{"value":0,"limit":100},"unstrip-depth":{"value":0,"limit":20},"unstrip-size":{"value":0,"limit":5000000},"timingprofile":["100.00%  160.463      1 -total"," 18.60%   29.848      1 Wbincludes:WB-MSW_Main_Registers","  8.14%   13.058      1 Wbincludes:Registers_Connection_Settings","  7.31%   11.734      2 Wbincludes:Header_Registers_Universal","  7.10%   11.392      1 Wbincludes:Registers_Service_Main","  7.06%   11.321      1 Wbincludes:WB-MSW_Registers_for_CM1106","  7.01%   11.250      1 Wbincludes:Availability_Register_VOC","  6.47%   10.375      1 Wbincludes:Availability_Register_Noise","  4.59%    7.362      1 Wbincludes:Registers_Vin","  4.31%    6.919      1 Wbincludes:Registers_FW_Version_For_Device_With_Fast_Modbus"]},"cachereport":{"timestamp":"20231222004716","ttl":86400,"transientcontent":false}}});});</script>
+<!-- No web analytics configured. -->
+
+<script>(RLQ=window.RLQ||[]).push(function(){mw.config.set({"wgBackendResponseTime":180});});</script>
+</body></html>

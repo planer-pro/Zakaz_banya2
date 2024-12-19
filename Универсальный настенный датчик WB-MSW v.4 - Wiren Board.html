@@ -1,0 +1,1240 @@
+<!DOCTYPE html>
+<html class="client-js vector-animations-ready" lang="en" dir="ltr"><head>
+<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+<meta charset="UTF-8">
+<title>Универсальный настенный датчик WB-MSW v.4 - Wiren Board</title>
+<script async="" src="%D0%A3%D0%BD%D0%B8%D0%B2%D0%B5%D1%80%D1%81%D0%B0%D0%BB%D1%8C%D0%BD%D1%8B%D0%B9%20%D0%BD%D0%B0%D1%81%D1%82%D0%B5%D0%BD%D0%BD%D1%8B%D0%B9%20%D0%B4%D0%B0%D1%82%D1%87%D0%B8%D0%BA%20WB-MSW%20v.4%20-%20Wiren%20Board_files/tag.js"></script><script>document.documentElement.className="client-js";RLCONF={"wgBreakFrames":!1,"wgSeparatorTransformTable":[",\t."," \t,"],"wgDigitTransformTable":["",""],"wgDefaultDateFormat":"dmy","wgMonthNames":["","январь","февраль","март","апрель","май","июнь","июль","август","сентябрь","октябрь","ноябрь","декабрь"],"wgRequestId":"2e6c23a98df5216feda0f264","wgCSPNonce":!1,"wgCanonicalNamespace":"","wgCanonicalSpecialPageName":!1,"wgNamespaceNumber":0,"wgPageName":"WB-MSW_v.4_Modbus_Sensor","wgTitle":"WB-MSW v.4 Modbus Sensor","wgCurRevisionId":77345,"wgRevisionId":77345,"wgArticleId":20119,"wgIsArticle":!0,"wgIsRedirect":!1,"wgAction":"view","wgUserName":null,"wgUserGroups":["*"],"wgCategories":[],"wgPageContentLanguage":"ru","wgPageContentModel":"wikitext","wgRelevantPageName":"WB-MSW_v.4_Modbus_Sensor","wgRelevantArticleId":20119,"wgIsProbablyEditable":!1,"wgRelevantPageIsProbablyEditable":!1,"wgRestrictionEdit"
+:[],"wgRestrictionMove":[],"wgMFDisplayWikibaseDescriptions":{"search":!1,"nearby":!1,"watchlist":!1,"tagline":!1},"wgULSAcceptLanguageList":["en-us","en"],"wgULSCurrentAutonym":"English","wgMediaViewerOnClick":!0,"wgMediaViewerEnabledByDefault":!0,"wgTranslatePageTranslation":"source","wgULSPosition":"personal","wgULSisCompactLinksEnabled":!0};RLSTATE={"site.styles":"ready","noscript":"ready","user.styles":"ready","user":"ready","user.options":"loading","ext.ApprovedRevs":"ready","ext.translate":"ready","ext.translate.tag.languages":"ready","mediawiki.page.gallery.styles":"ready","mediawiki.ui.button":"ready","skins.vector.styles":"ready","skins.vector.icons":"ready","mediawiki.ui.icon":"ready","ext.uls.pt":"ready"};RLPAGEMODULES=["mediawiki.page.gallery","site","mediawiki.page.ready","mediawiki.toc","skins.vector.js","mmv.head","mmv.bootstrap.autostart","ext.translate.pagetranslation.uls","ext.uls.compactlinks","ext.uls.interface"];</script>
+<script>(RLQ=window.RLQ||[]).push(function(){mw.loader.implement("user.options@1hzgi",function($,jQuery,require,module){/*@nomin*/mw.user.tokens.set({"patrolToken":"+\\","watchToken":"+\\","csrfToken":"+\\"});mw.user.options.set({"variant":"ru"});
+});});</script>
+<link rel="stylesheet" href="%D0%A3%D0%BD%D0%B8%D0%B2%D0%B5%D1%80%D1%81%D0%B0%D0%BB%D1%8C%D0%BD%D1%8B%D0%B9%20%D0%BD%D0%B0%D1%81%D1%82%D0%B5%D0%BD%D0%BD%D1%8B%D0%B9%20%D0%B4%D0%B0%D1%82%D1%87%D0%B8%D0%BA%20WB-MSW%20v.4%20-%20Wiren%20Board_files/load_002.css">
+<script async="" src="%D0%A3%D0%BD%D0%B8%D0%B2%D0%B5%D1%80%D1%81%D0%B0%D0%BB%D1%8C%D0%BD%D1%8B%D0%B9%20%D0%BD%D0%B0%D1%81%D1%82%D0%B5%D0%BD%D0%BD%D1%8B%D0%B9%20%D0%B4%D0%B0%D1%82%D1%87%D0%B8%D0%BA%20WB-MSW%20v.4%20-%20Wiren%20Board_files/load.js"></script>
+<style>
+.grid *{-webkit-box-sizing:border-box;-moz-box-sizing:border-box;box-sizing:border-box} .grid .left{float:left}.grid .right{float:right}.grid .text-left{text-align:left}.grid .text-right{text-align:right}.grid .text-center{text-align:center}.grid .hide{display:none}.grid .highlight{background:#ff9} .grid .row{width:100%;max-width:none;min-width:600px;margin:0 auto}.grid .row .row{width:auto;max-width:none;min-width:0;margin:0 -5px}.grid .column,.grid .columns{float:left;min-height:1px;padding:0 5px;position:relative}.grid .row.collapse .column,.grid .row.collapse .columns{padding:0}.grid .row .row.collapse{margin:0}.grid .column.centered,.grid .columns.centered{float:none;margin:0 auto}.grid .row .one{width:8.333%}.grid .row .two{width:16.667%}.grid .row .three{width:25%}.grid .row .four{width:33.333%}.grid .row .five{width:41.667%}.grid .row .six{width:50%}.grid .row .seven{width:58.333%}.grid .row .eight{width:66.667%}.grid .row .nine{width:75%}.grid .row .ten{width:83.333%}.grid .row .eleven{width:91.667%}.grid .row .twelve{width:100%}.grid .row .offset-by-one{margin-left:8.333%}.grid .row .offset-by-two{margin-left:16.667%}.grid .row .offset-by-three{margin-left:25%}.grid .row .offset-by-four{margin-left:33.333%}.grid .row .offset-by-five{margin-left:41.667%}.grid .row .offset-by-six{margin-left:50%}.grid .row .offset-by-seven{margin-left:58.333%}.grid .row .offset-by-eight{margin-left:66.667%}.grid .row .offset-by-nine{margin-left:75%}.grid .row .offset-by-ten{margin-left:83.333%}.grid .push-two{left:16.667%}.grid .pull-two{right:16.667%}.grid .push-three{left:25%}.grid .pull-three{right:25%}.grid .push-four{left:33.333%}.grid .pull-four{right:33.333%}.grid .push-five{left:41.667%}.grid .pull-five{right:41.667%}.grid .push-six{left:50%}.grid .pull-six{right:50%}.grid .push-seven{left:58.333%}.grid .pull-seven{right:58.333%}.grid .push-eight{left:66.667%}.grid .pull-eight{right:66.667%}.grid .push-nine{left:75%}.grid .pull-nine{right:75%}.grid .push-ten{left:83.333%}.grid .pull-ten{right:83.333%}.grid .row:before,.grid .row:after{content:'';display:table}.grid .row:after{clear:both}  .grid .block-grid{display:block;overflow:hidden;padding:0}.grid .block-grid > li{display:block;height:auto;float:left}.grid .block-grid.two-up{margin:0 -15px}.grid .block-grid.two-up > li{width:50%;padding:0 15px 15px} .grid .block-grid.three-up{margin:0 -12px}.grid .block-grid.three-up > li{width:33.33%;padding:0 12px 12px} .grid .block-grid.four-up{margin:0 -10px}.grid .block-grid.four-up > li{width:25%;padding:0 10px 10px} .grid .block-grid.five-up{margin:0 -8px}.grid .block-grid.five-up > li{width:20%;padding:0 8px 8px}
+@media screen {
+	.toctoggle{-moz-user-select:none;-webkit-user-select:none;-ms-user-select:none;user-select:none;font-size:94%}}
+.uls-menu{border-radius:2px; font-size:medium}.uls-search,.uls-language-settings-close-block{border-top-right-radius:2px;border-top-left-radius:2px}.uls-language-list{border-bottom-right-radius:2px;border-bottom-left-radius:2px}.uls-menu.callout:before,.uls-menu.callout:after{border-top:10px solid transparent;border-bottom:10px solid transparent;display:inline-block; top:17px;position:absolute;content:''}.uls-menu.callout.selector-right:before{ border-left:10px solid #c8ccd1; right:-11px}.uls-menu.callout.selector-right:after{ border-left:10px solid #fff; right:-10px}.uls-menu.callout.selector-left:before{ border-right:10px solid #c8ccd1; left:-11px}.uls-menu.callout.selector-left:after{ border-right:10px solid #fff; left:-10px}.uls-ui-languages button{margin:5px 15px 5px 0;white-space:nowrap;overflow:hidden}.uls-search-wrapper-wrapper{position:relative;padding-left:40px;margin-top:5px;margin-bottom:5px}.uls-icon-back{background:transparent url(/wiki/extensions/UniversalLanguageSelector/resources/images/back-grey-ltr.svg?01868) no-repeat scroll center center;background-size:28px;height:32px;width:40px;display:block;position:absolute;left:0;border-right:1px solid #c8ccd1;opacity:0.8}.uls-icon-back:hover{opacity:1;cursor:pointer}.uls-menu .uls-no-results-view .uls-no-found-more{background-color:#fff}.uls-menu .uls-no-results-view h3{padding:0 28px;margin:0;color:#54595d;font-size:1em;font-weight:normal}   .skin-vector .uls-menu{border-color:#c8ccd1;box-shadow:0 2px 2px 0 rgba(0,0,0,0.25);font-size:0.875em;z-index:3}.skin-vector .uls-search{border-bottom-color:#c8ccd1}.skin-vector .uls-search-label{opacity:0.51;-webkit-transition:opacity 250ms;transition:opacity 250ms}.skin-vector .uls-search-wrapper:hover .uls-search-label{opacity:0.87}.skin-vector .uls-filtersuggestion{color:#72777d}.skin-vector .uls-lcd-region-title{color:#54595d}
+#uls-settings-block{background-color:#f8f9fa;border-top:1px solid #c8ccd1;padding-left:10px;line-height:1.2em;border-radius:0 0 2px 2px}#uls-settings-block > button{background:left top transparent no-repeat;background-size:20px auto;color:#54595d;display:inline-block;margin:8px 15px;border:0;padding:0 0 0 26px;font-size:medium;cursor:pointer}#uls-settings-block > button:hover{color:#202122}#uls-settings-block > button.display-settings-block{background-image:url(/wiki/extensions/UniversalLanguageSelector/resources/images/display.svg?b78f7)}#uls-settings-block > button.input-settings-block{background-image:url(/wiki/extensions/UniversalLanguageSelector/resources/images/input.svg?e7c85)}.uls-tipsy.uls-tipsy{z-index:1000}
+.mw-mmv-overlay{position:fixed;top:0;left:0;right:0;bottom:0;z-index:1000;background-color:#000}body.mw-mmv-lightbox-open{overflow-y:auto;  }body.mw-mmv-lightbox-open #mw-page-base,body.mw-mmv-lightbox-open #mw-head-base,body.mw-mmv-lightbox-open #mw-navigation,body.mw-mmv-lightbox-open #content,body.mw-mmv-lightbox-open #footer,body.mw-mmv-lightbox-open #globalWrapper{ display:none}body.mw-mmv-lightbox-open > *{ display:none}body.mw-mmv-lightbox-open > .mw-mmv-overlay,body.mw-mmv-lightbox-open > .mw-mmv-wrapper{display:block}.mw-mmv-filepage-buttons{margin-top:5px}.mw-mmv-filepage-buttons .mw-mmv-view-expanded,.mw-mmv-filepage-buttons .mw-mmv-view-config{display:block;line-height:inherit}.mw-mmv-filepage-buttons .mw-mmv-view-expanded .mw-ui-icon:before{background-image:url("data:image/svg+xml,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 1024 768%22%3E %3Cpath d=%22M851.2 71.6 690.7 232.1l-40.1-40.3-9.6 164.8 164.8-9.3-40.3-40.4L926 146.4l58.5 58.5L997.6 0 792.7 13.1%22/%3E %3Cpath d=%22M769.6 89.3H611.9l70.9 70.8 7.9 7.5m-47.1 234.6-51.2 3 3-51.2 9.4-164.4 5.8-100.3H26.4V768h883.1V387l-100.9 5.8-165 9.4zM813.9 678H113.6l207.2-270.2 31.5-12.9L548 599.8l105.9-63.2 159.8 140.8.2.6zm95.6-291.9V228l-79.1 78.9 7.8 7.9%22/%3E %3C/svg%3E")}.mw-mmv-filepage-buttons .mw-mmv-view-config .mw-ui-icon:before{background-image:url("data:image/svg+xml,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 1024 768%22%3E %3Cpath d=%22M897 454.6V313.4L810.4 299c-6.4-23.3-16-45.7-27.3-65.8l50.5-71.4-99.4-100.2-71.4 50.5c-20.9-11.2-42.5-20.9-65.8-27.3L582.6-1H441.4L427 85.6c-23.3 6.4-45.7 16-65.8 27.3l-71.4-50.5-100.3 99.5 50.5 71.4c-11.2 20.9-20.9 42.5-27.3 66.6L127 313.4v141.2l85.8 14.4c6.4 23.3 16 45.7 27.3 66.6L189.6 607l99.5 99.5 71.4-50.5c20.9 11.2 42.5 20.9 66.6 27.3l14.4 85.8h141.2l14.4-86.6c23.3-6.4 45.7-16 65.8-27.3l71.4 50.5 99.5-99.5-50.5-71.4c11.2-20.9 20.9-42.5 27.3-66.6l86.4-13.6zm-385 77c-81.8 0-147.6-66.6-147.6-147.6 0-81.8 66.6-147.6 147.6-147.6S659.6 302.2 659.6 384 593.8 531.6 512 531.6z%22/%3E %3C/svg%3E");margin-right:0;opacity:0.75}.mw-mmv-filepage-buttons .mw-mmv-view-config .mw-ui-icon:before:hover{opacity:1}.mw-mmv-filepage-buttons .mw-mmv-view-config .mw-ui-icon span{display:none}.mw-mmv-button{background-color:transparent;min-width:0;border:0;padding:0;overflow-x:hidden;text-indent:-9999em}</style><style>
+#p-lang .body ul .uls-trigger,#p-lang .pBody ul .uls-trigger{background-image:none;padding:0}#p-lang .mw-interlanguage-selector,#p-lang .mw-interlanguage-selector:active{background-image:url(/wiki/extensions/UniversalLanguageSelector/resources/images/language-base20.svg?b7954);background-position:left 4px center;background-repeat:no-repeat;background-size:16px;margin:4px 0 8px;padding:4px 8px 4px 26px;font-size:13px;font-weight:normal;text-align:left;cursor:pointer}#p-lang .mw-interlanguage-selector.selector-open{background-color:#c8ccd1}  .interlanguage-uls-menu:before,.interlanguage-uls-menu:after{border-top:10px solid transparent;border-bottom:10px solid transparent;display:inline-block; top:17px;position:absolute;content:''}.interlanguage-uls-menu.selector-right:before{ border-left:10px solid #c8ccd1; right:-11px}.interlanguage-uls-menu.selector-right:after{ border-left:10px solid #fff; right:-10px}.interlanguage-uls-menu.selector-left:before{ border-right:10px solid #c8ccd1; left:-11px}.interlanguage-uls-menu.selector-left:after{ border-right:10px solid #fff; left:-10px}
+.uls-trigger{background:url(/wiki/extensions/UniversalLanguageSelector/lib/jquery.uls/images/language.svg?80b0b) no-repeat left center;padding-left:24px}.uls-menu{position:absolute;z-index:1000;display:none;margin-top:1px;background-color:#fff;border:1px solid #ccc;border-color:rgba(0,0,0,0.2);-webkit-box-shadow:0 5px 10px rgba(0,0,0,0.2);-moz-box-shadow:0 5px 10px rgba(0,0,0,0.2);box-shadow:0 5px 10px rgba(0,0,0,0.2);-webkit-background-clip:padding-box;-moz-background-clip:padding;background-clip:padding-box}.uls-wide{min-width:715px}.uls-medium{min-width:360px} .uls-medium.grid .row{min-width:300px}.uls-narrow{min-width:180px} .uls-narrow.grid .row{min-width:150px}.uls-search{background-color:#fff;padding:5px 16px;border-bottom:1px solid #ddd}.grid .uls-search{padding-left:0} .uls-search-wrapper{position:relative;padding-left:44px;margin-right:5px;height:32px}.uls-search-label{background:url(/wiki/extensions/UniversalLanguageSelector/lib/jquery.uls/images/search.svg?ad30e) no-repeat center center;background-size:20px;height:32px;width:44px;display:block;position:absolute;left:0;opacity:0.5}.uls-search-input-wrapper{position:relative} .uls-filterinput{font-size:16px;height:32px;width:100%; padding:6px 25px 6px 0;outline:0;border:0;display:block;position:absolute;top:0;left:0} .uls-languagefilter{background-color:transparent;border:0;color:#222} .uls-filtersuggestion{background-color:#fff;color:#777}.uls-languagefilter-clear{background:url(/wiki/extensions/UniversalLanguageSelector/lib/jquery.uls/images/close.svg?2ba46) no-repeat left center;background-size:15px;cursor:pointer;height:15px;width:15px;opacity:0.7; margin:8.5px 5px;position:absolute;right:0; z-index:1} .uls-lcd{background-color:#fcfcfc;height:20em; overflow-x:hidden;overflow-y:auto;width:auto;padding:0 16px}.uls-lcd-region-title{color:#555;font-size:14px;padding-left:28px}.uls-lcd--no-quicklist [data-region='all'] .uls-lcd-region-title{display:none}.uls-lcd-region-section{margin-top:10px} .grid .uls-language-block.row{padding:0;margin:0}.uls-language-block > ul{ list-style:none none} .grid .uls-language-block > ul{margin:0 0 20px 0;padding:0 16px}.grid .uls-language-block > ul:first-child{padding-left:0}.grid .uls-language-block > ul:last-child{padding-right:0}.uls-language-block > ul > li{cursor:pointer;margin-left:20px;padding:8px; text-align:left}.uls-language-block > ul > li:hover{background-color:#eaeff7}.uls-language-block a{cursor:pointer;text-decoration:none;color:#36c;font-size:14px;display:inline-block;width:100%;overflow-x:hidden; text-overflow:ellipsis;white-space:nowrap;vertical-align:middle}.uls-no-results-view{display:none}.uls-lcd.uls-no-results > .uls-lcd-region-section{display:none}.uls-lcd.uls-no-results > .uls-no-results-view{display:block}.uls-no-results-found-title{font-size:16px;padding:0 16px 0 28px;margin:20px 0;border-bottom:0;color:#54595d}.uls-no-found-more{border-top:1px solid #eaecf0;color:#54595d;padding:12px 16px 12px 44px;font-size:0.9em;width:100%;margin-top:1.6em;line-height:1.6em;position:absolute;bottom:0;left:0}</style><meta name="ResourceLoaderDynamicStyles" content="">
+<link rel="stylesheet" href="%D0%A3%D0%BD%D0%B8%D0%B2%D0%B5%D1%80%D1%81%D0%B0%D0%BB%D1%8C%D0%BD%D1%8B%D0%B9%20%D0%BD%D0%B0%D1%81%D1%82%D0%B5%D0%BD%D0%BD%D1%8B%D0%B9%20%D0%B4%D0%B0%D1%82%D1%87%D0%B8%D0%BA%20WB-MSW%20v.4%20-%20Wiren%20Board_files/load.css">
+<meta name="generator" content="MediaWiki 1.37.0">
+<meta name="format-detection" content="telephone=no">
+<link rel="shortcut icon" href="https://wirenboard.com/favicon.ico">
+<link rel="search" type="application/opensearchdescription+xml" href="https://wirenboard.com/wiki/opensearch_desc.php" title="Wiren Board (ru)">
+<link rel="EditURI" type="application/rsd+xml" href="https://wirenboard.com/wiki/api.php?action=rsd">
+<link rel="alternate" type="application/atom+xml" title="Wiren Board Atom feed" href="https://wirenboard.com/wiki/index.php?title=%D0%A1%D0%BB%D1%83%D0%B6%D0%B5%D0%B1%D0%BD%D0%B0%D1%8F:%D0%A1%D0%B2%D0%B5%D0%B6%D0%B8%D0%B5_%D0%BF%D1%80%D0%B0%D0%B2%D0%BA%D0%B8&amp;feed=atom">
+</head>
+<body class="mediawiki ltr sitedir-ltr mw-hide-empty-elt ns-0 ns-subject page-WB-MSW_v_4_Modbus_Sensor rootpage-WB-MSW_v_4_Modbus_Sensor skin-vector action-view skin-vector-search-vue approvedRevs-approved webfonts-changed"><div class="mw-page-container">
+	<a class="mw-jump-link" href="#content">Jump to content</a>
+	<div class="mw-page-container-inner">
+
+<input type="checkbox" id="mw-sidebar-checkbox" class="mw-checkbox-hack-checkbox webfonts-changed">
+
+<header class="mw-header">
+	<label id="mw-sidebar-button" class="mw-checkbox-hack-button mw-ui-icon mw-ui-button mw-ui-quiet mw-ui-icon-element" for="mw-sidebar-checkbox" role="button" aria-controls="mw-panel" data-event-name="ui.sidebar" tabindex="0" title="Main menu" aria-expanded="false">
+		Toggle sidebar
+	</label>
+	<a href="https://wirenboard.com/wiki/%D0%97%D0%B0%D0%B3%D0%BB%D0%B0%D0%B2%D0%BD%D0%B0%D1%8F_%D1%81%D1%82%D1%80%D0%B0%D0%BD%D0%B8%D1%86%D0%B0" class="mw-logo">
+		<span class="mw-logo-container">
+			<img class="mw-logo-wordmark" alt="Wiren Board" src="%D0%A3%D0%BD%D0%B8%D0%B2%D0%B5%D1%80%D1%81%D0%B0%D0%BB%D1%8C%D0%BD%D1%8B%D0%B9%20%D0%BD%D0%B0%D1%81%D1%82%D0%B5%D0%BD%D0%BD%D1%8B%D0%B9%20%D0%B4%D0%B0%D1%82%D1%87%D0%B8%D0%BA%20WB-MSW%20v.4%20-%20Wiren%20Board_files/Wb_logo.png" width="160" height="40">
+		</span>
+	</a>
+	<div id="p-search" role="search" class="vector-search-box vector-search-box-collapses vector-search-box-show-thumbnail">
+	<div>
+		<h3 lang="en" dir="ltr">
+			<label for="searchInput">Search</label>
+		</h3>
+		<form action="/wiki/index.php" id="searchform">
+			<div id="simpleSearch" data-search-loc="header-moved">
+				<input type="search" name="search" placeholder="Search Wiren Board" autocapitalize="sentences" accesskey="f" id="searchInput" autocomplete="off" class="webfonts-changed">
+				<input type="hidden" name="title" value="Служебная:Поиск" class="webfonts-changed">
+				<input type="submit" name="fulltext" value="Search" title="Search the pages for this text" id="mw-searchButton" class="searchButton mw-fallbackSearchButton webfonts-changed">
+				<input type="submit" name="go" value="Go" title="Go to a page with this exact name if it exists" id="searchButton" class="searchButton webfonts-changed">
+			</div>
+		</form>
+	</div>
+	<a href="https://wirenboard.com/wiki/%D0%A1%D0%BB%D1%83%D0%B6%D0%B5%D0%B1%D0%BD%D0%B0%D1%8F:%D0%9F%D0%BE%D0%B8%D1%81%D0%BA" id="" class="mw-ui-button mw-ui-quiet mw-ui-icon mw-ui-icon-element mw-ui-icon-wikimedia-search search-toggle">
+		
+		<span>Search</span>
+	</a>
+	
+</div>
+
+	<div class="vector-user-links">
+	<nav id="p-personal-more" class="mw-portlet mw-portlet-personal-more vector-menu vector-user-menu-more" aria-labelledby="p-personal-more-label" role="navigation" lang="en" dir="ltr">
+	<h3 id="p-personal-more-label" class="vector-menu-heading"> <span>User links</span>
+	</h3>
+	<div class="vector-menu-content">
+		
+		<ul class="vector-menu-content-list"><li id="ca-uls" class="user-links-collapsible-item mw-list-item active"><a href="#" class="uls-trigger mw-ui-button mw-ui-quiet"><span class="mw-ui-icon mw-ui-icon-wikimedia-language"></span> <span>English</span></a></li>
+	<li id="p-createaccount" class="user-links-collapsible-item">
+		<a href="https://wirenboard.com/wiki/index.php?title=%D0%A1%D0%BB%D1%83%D0%B6%D0%B5%D0%B1%D0%BD%D0%B0%D1%8F:%D0%A1%D0%BE%D0%B7%D0%B4%D0%B0%D1%82%D1%8C_%D1%83%D1%87%D1%91%D1%82%D0%BD%D1%83%D1%8E_%D0%B7%D0%B0%D0%BF%D0%B8%D1%81%D1%8C&amp;returnto=WB-MSW+v.4+Modbus+Sensor" icon="userAvatar" class="mw-ui-button mw-ui-quiet" title="You are encouraged to create an account and log in; however, it is not mandatory"><span>Create account</span></a>
+	</li>
+</ul>
+		
+	</div>
+</nav>
+
+	<nav id="p-personal" class="mw-portlet mw-portlet-personal emptyPortlet vector-user-menu vector-user-menu-logged-out vector-menu vector-menu-dropdown" aria-labelledby="p-personal-label" role="navigation" title="More options" lang="en" dir="ltr">
+	<input type="checkbox" id="p-personal-checkbox" role="button" aria-haspopup="true" data-event-name="ui.dropdown-p-personal" class="vector-menu-checkbox webfonts-changed" aria-labelledby="p-personal-label">
+	<h3 id="p-personal-label" class="vector-menu-heading mw-ui-button mw-ui-quiet mw-ui-icon mw-ui-icon-element mw-ui-icon-wikimedia-ellipsis"> <span>Personal tools</span>
+			<span class="vector-menu-checkbox-expanded">expanded</span>
+			<span class="vector-menu-checkbox-collapsed">collapsed</span>
+	</h3>
+	<div class="vector-menu-content">
+		<div class="vector-user-menu-create-account"><a href="https://wirenboard.com/wiki/index.php?title=%D0%A1%D0%BB%D1%83%D0%B6%D0%B5%D0%B1%D0%BD%D0%B0%D1%8F:%D0%A1%D0%BE%D0%B7%D0%B4%D0%B0%D1%82%D1%8C_%D1%83%D1%87%D1%91%D1%82%D0%BD%D1%83%D1%8E_%D0%B7%D0%B0%D0%BF%D0%B8%D1%81%D1%8C&amp;returnto=WB-MSW+v.4+Modbus+Sensor" icon="userAvatar" class="user-links-collapsible-item vector-menu-content-item mw-ui-icon mw-ui-icon-before mw-ui-icon-wikimedia-userAvatar" title="You are encouraged to create an account and log in; however, it is not mandatory"><span>Create account</span></a></div>
+<div class="vector-user-menu-login"><a href="https://wirenboard.com/wiki/index.php?title=%D0%A1%D0%BB%D1%83%D0%B6%D0%B5%D0%B1%D0%BD%D0%B0%D1%8F:%D0%92%D1%85%D0%BE%D0%B4&amp;returnto=WB-MSW+v.4+Modbus+Sensor" icon="logIn" class="vector-menu-content-item vector-menu-content-item-login mw-ui-icon mw-ui-icon-before mw-ui-icon-wikimedia-logIn" title="You are encouraged to log in; however, it is not mandatory [Alt+Shift+o]" accesskey="o"><span>Log in</span></a></div>
+<div class="vector-user-menu-anon-editor">
+	<p>
+		Pages for logged out editors <a href="https://wirenboard.com/wiki/%D0%A1%D0%BF%D1%80%D0%B0%D0%B2%D0%BA%D0%B0:Introduction" aria-label="Learn more about editing"><span>learn more</span></a>
+	</p>
+</div>
+
+		<ul class="vector-menu-content-list"></ul>
+		
+	</div>
+</nav>
+
+</div>
+
+</header>
+<div class="mw-workspace-container">
+	<div id="mw-navigation">
+		<h2>Navigation menu</h2>
+		
+<div id="mw-panel" class="mw-sidebar">
+	<nav id="p-Вернуться_на_главный_сайт:" class="mw-portlet mw-portlet-Вернуться_на_главный_сайт vector-menu vector-menu-portal portal" aria-labelledby="p-Вернуться_на_главный_сайт:-label" role="navigation" lang="en" dir="ltr">
+	<h3 id="p-Вернуться_на_главный_сайт:-label" class="vector-menu-heading"> <span>Вернуться на главный сайт:</span>
+	</h3>
+	<div class="vector-menu-content">
+		
+		<ul class="vector-menu-content-list"><li id="n-wirenboard.com" class="mw-list-item"><a href="https://wirenboard.com/" rel="nofollow" target="_blank"><span>wirenboard.com</span></a></li></ul>
+		
+	</div>
+</nav>
+
+	<nav id="p-navigation" class="mw-portlet mw-portlet-navigation vector-menu vector-menu-portal portal" aria-labelledby="p-navigation-label" role="navigation" lang="en" dir="ltr">
+	<h3 id="p-navigation-label" class="vector-menu-heading"> <span>Navigation</span>
+	</h3>
+	<div class="vector-menu-content">
+		
+		<ul class="vector-menu-content-list"><li id="n-mainpage-description" class="mw-list-item"><a href="https://wirenboard.com/wiki/%D0%97%D0%B0%D0%B3%D0%BB%D0%B0%D0%B2%D0%BD%D0%B0%D1%8F_%D1%81%D1%82%D1%80%D0%B0%D0%BD%D0%B8%D1%86%D0%B0" title="Visit the main page [Alt+Shift+z]" accesskey="z"><span>Main page</span></a></li></ul>
+		
+	</div>
+</nav>
+<nav id="p-Читателям" class="mw-portlet mw-portlet-Читателям vector-menu vector-menu-portal portal" aria-labelledby="p-Читателям-label" role="navigation" lang="en" dir="ltr">
+	<h3 id="p-Читателям-label" class="vector-menu-heading"> <span>Читателям</span>
+	</h3>
+	<div class="vector-menu-content">
+		
+		<ul class="vector-menu-content-list"><li id="n-Как-внести-правку-или-задать-вопрос" class="mw-list-item"><a href="https://wirenboard.com/wiki/%D0%9A%D0%B0%D0%BA_%D0%B2%D0%BD%D0%B5%D1%81%D1%82%D0%B8_%D0%BF%D1%80%D0%B0%D0%B2%D0%BA%D1%83_%D0%B8%D0%BB%D0%B8_%D0%B7%D0%B0%D0%B4%D0%B0%D1%82%D1%8C_%D0%B2%D0%BE%D0%BF%D1%80%D0%BE%D1%81"><span>Как внести правку или задать вопрос</span></a></li><li id="n-Справочник-по-синтаксису" class="mw-list-item"><a href="https://wirenboard.com/wiki/Syntax"><span>Справочник по синтаксису</span></a></li></ul>
+		
+	</div>
+</nav>
+<nav id="p-tb" class="mw-portlet mw-portlet-tb vector-menu vector-menu-portal portal" aria-labelledby="p-tb-label" role="navigation" lang="en" dir="ltr">
+	<h3 id="p-tb-label" class="vector-menu-heading"> <span>Tools</span>
+	</h3>
+	<div class="vector-menu-content">
+		
+		<ul class="vector-menu-content-list"><li id="t-whatlinkshere" class="mw-list-item"><a href="https://wirenboard.com/wiki/%D0%A1%D0%BB%D1%83%D0%B6%D0%B5%D0%B1%D0%BD%D0%B0%D1%8F:%D0%A1%D1%81%D1%8B%D0%BB%D0%BA%D0%B8_%D1%81%D1%8E%D0%B4%D0%B0/WB-MSW_v.4_Modbus_Sensor" title="A list of all wiki pages that link here [Alt+Shift+j]" accesskey="j"><span>What links here</span></a></li><li id="t-recentchangeslinked" class="mw-list-item"><a href="https://wirenboard.com/wiki/%D0%A1%D0%BB%D1%83%D0%B6%D0%B5%D0%B1%D0%BD%D0%B0%D1%8F:%D0%A1%D0%B2%D1%8F%D0%B7%D0%B0%D0%BD%D0%BD%D1%8B%D0%B5_%D0%BF%D1%80%D0%B0%D0%B2%D0%BA%D0%B8/WB-MSW_v.4_Modbus_Sensor" rel="nofollow" title="Recent changes in pages linked from this page [Alt+Shift+k]" accesskey="k"><span>Related changes</span></a></li><li id="t-specialpages" class="mw-list-item"><a href="https://wirenboard.com/wiki/%D0%A1%D0%BB%D1%83%D0%B6%D0%B5%D0%B1%D0%BD%D0%B0%D1%8F:%D0%A1%D0%BF%D0%B5%D1%86%D1%81%D1%82%D1%80%D0%B0%D0%BD%D0%B8%D1%86%D1%8B" title="A list of all special pages [Alt+Shift+q]" accesskey="q"><span>Special pages</span></a></li><li id="t-print" class="mw-list-item"><a href="javascript:print();" rel="alternate" title="Printable version of this page [Alt+Shift+p]" accesskey="p"><span>Printable version</span></a></li><li id="t-permalink" class="mw-list-item"><a href="https://wirenboard.com/wiki/index.php?title=WB-MSW_v.4_Modbus_Sensor&amp;oldid=77345" title="Permanent link to this revision of the page"><span>Permanent link</span></a></li><li id="t-info" class="mw-list-item"><a href="https://wirenboard.com/wiki/index.php?title=WB-MSW_v.4_Modbus_Sensor&amp;action=info" title="More information about this page"><span>Page information</span></a></li></ul>
+		
+	</div>
+</nav>
+
+</div>
+
+		<div id="mw-head">
+			<div class="mw-article-toolbar-container">
+				<div id="left-navigation">
+					<nav id="p-namespaces" class="mw-portlet mw-portlet-namespaces vector-menu vector-menu-tabs" aria-labelledby="p-namespaces-label" role="navigation" lang="en" dir="ltr">
+	<h3 id="p-namespaces-label" class="vector-menu-heading"> <span>Namespaces</span>
+	</h3>
+	<div class="vector-menu-content">
+		
+		<ul class="vector-menu-content-list"><li id="ca-nstab-main" class="selected mw-list-item"><a href="https://wirenboard.com/wiki/WB-MSW_v.4_Modbus_Sensor" title="View the content page [Alt+Shift+c]" accesskey="c"><span>Page</span></a></li><li id="ca-talk" class="new mw-list-item"><a href="https://wirenboard.com/wiki/index.php?title=%D0%9E%D0%B1%D1%81%D1%83%D0%B6%D0%B4%D0%B5%D0%BD%D0%B8%D0%B5:WB-MSW_v.4_Modbus_Sensor&amp;action=edit&amp;redlink=1" rel="discussion" title="Discussion about the content page (page does not exist) [Alt+Shift+t]" accesskey="t"><span>Discussion</span></a></li></ul>
+		
+	</div>
+</nav>
+
+					<nav id="p-variants" class="mw-portlet mw-portlet-variants emptyPortlet vector-menu-dropdown-noicon vector-menu vector-menu-dropdown" aria-labelledby="p-variants-label" role="navigation" lang="en" dir="ltr">
+	<input type="checkbox" id="p-variants-checkbox" role="button" aria-haspopup="true" data-event-name="ui.dropdown-p-variants" class="vector-menu-checkbox webfonts-changed" aria-labelledby="p-variants-label">
+	<h3 id="p-variants-label" class="vector-menu-heading"> <span>Variants</span>
+			<span class="vector-menu-checkbox-expanded">expanded</span>
+			<span class="vector-menu-checkbox-collapsed">collapsed</span>
+	</h3>
+	<div class="vector-menu-content">
+		
+		<ul class="vector-menu-content-list"></ul>
+		
+	</div>
+</nav>
+
+				</div>
+				<div id="right-navigation">
+					<nav id="p-views" class="mw-portlet mw-portlet-views vector-menu vector-menu-tabs" aria-labelledby="p-views-label" role="navigation" lang="en" dir="ltr">
+	<h3 id="p-views-label" class="vector-menu-heading"> <span>Views</span>
+	</h3>
+	<div class="vector-menu-content">
+		
+		<ul class="vector-menu-content-list"><li id="ca-view" class="selected mw-list-item collapsible"><a href="https://wirenboard.com/wiki/WB-MSW_v.4_Modbus_Sensor"><span>Read</span></a></li><li id="ca-viewsource" class="mw-list-item collapsible"><a href="https://wirenboard.com/wiki/index.php?title=WB-MSW_v.4_Modbus_Sensor&amp;action=edit" title="This page is protected.
+You can view its source [Alt+Shift+e]" accesskey="e"><span>View source</span></a></li><li id="ca-history" class="mw-list-item collapsible"><a href="https://wirenboard.com/wiki/index.php?title=WB-MSW_v.4_Modbus_Sensor&amp;action=history" title="Past revisions of this page [Alt+Shift+h]" accesskey="h"><span>View history</span></a></li></ul>
+		
+	</div>
+</nav>
+
+					<nav id="p-cactions" class="mw-portlet mw-portlet-cactions emptyPortlet vector-menu-dropdown-noicon vector-menu vector-menu-dropdown" aria-labelledby="p-cactions-label" role="navigation" title="More options" lang="en" dir="ltr">
+	<input type="checkbox" id="p-cactions-checkbox" role="button" aria-haspopup="true" data-event-name="ui.dropdown-p-cactions" class="vector-menu-checkbox webfonts-changed" aria-labelledby="p-cactions-label">
+	<h3 id="p-cactions-label" class="vector-menu-heading"> <span>More</span>
+			<span class="vector-menu-checkbox-expanded">expanded</span>
+			<span class="vector-menu-checkbox-collapsed">collapsed</span>
+	</h3>
+	<div class="vector-menu-content">
+		
+		<ul class="vector-menu-content-list"></ul>
+		
+	</div>
+</nav>
+
+				</div>
+			</div>
+		</div>
+	</div>
+	<div class="mw-content-container">
+<main id="content" class="mw-body" role="main">
+	<a id="top"></a>
+	<div id="siteNotice"></div>
+
+
+	<header class="mw-body-header">
+			
+		<h1 id="firstHeading" class="firstHeading" lang="en" dir="ltr">Универсальный настенный датчик WB-MSW v.4</h1>
+		<div class="mw-indicators">
+		</div>
+			<div id="siteSub" class="noprint">From Wiren Board</div>
+	</header>
+
+	<div id="bodyContent" class="vector-body">
+		<div id="contentSub" lang="en" dir="ltr"><span class="approvedAndLatestMsg">This is the approved revision of this page, as well as being the most recent.</span></div>
+		<div id="contentSub2"></div>
+		
+		<div id="mw-content-text" class="mw-body-content mw-content-ltr" lang="ru" dir="ltr"><div class="mw-parser-output"><div class="mw-pt-languages noprint" lang="en" dir="ltr"><div class="mw-pt-languages-label">Other languages:</div><ul class="mw-pt-languages-list"><li><a href="https://wirenboard.com/wiki/WB-MSW_v.4_Modbus_Sensor/en" class="mw-pt-languages-ui mw-pt-progress mw-pt-progress--high" title="WB-MSW v.4 Modbus Sensor (62% translated)" lang="en" dir="ltr">English</a></li>
+<li><span class="mw-pt-languages-selected mw-pt-progress mw-pt-progress--complete" lang="ru" dir="ltr">русский</span></li></ul></div>
+<p><br>
+<b><a target="_blank" rel="nofollow noreferrer noopener" class="external text" href="https://wirenboard.com/ru/product/wb-msw-v4/">Купить в интернет-магазине</a></b>
+</p><p><br>
+</p><p><b>Эта страница описывает новое устройство WB-MSW v.4</b>, описание предыдущей версии <a href="https://wirenboard.com/wiki/WB-MSW_v.3_Modbus_Sensor" title="WB-MSW v.3 Modbus Sensor">WB-MSW v.3</a>.
+</p>
+<div class="thumb tright"><div class="thumbinner" style="width:302px;"><a href="https://wirenboard.com/wiki/index.php?title=%D0%A4%D0%B0%D0%B9%D0%BB:WB-MSW_v.4_front.png&amp;filetimestamp=20230330130902&amp;" class="image"><img alt="" src="%D0%A3%D0%BD%D0%B8%D0%B2%D0%B5%D1%80%D1%81%D0%B0%D0%BB%D1%8C%D0%BD%D1%8B%D0%B9%20%D0%BD%D0%B0%D1%81%D1%82%D0%B5%D0%BD%D0%BD%D1%8B%D0%B9%20%D0%B4%D0%B0%D1%82%D1%87%D0%B8%D0%BA%20WB-MSW%20v.4%20-%20Wiren%20Board_files/300px-WB-MSW_v.4_front.png" decoding="async" width="300" height="312" class="thumbimage" srcset="%D0%A3%D0%BD%D0%B8%D0%B2%D0%B5%D1%80%D1%81%D0%B0%D0%BB%D1%8C%D0%BD%D1%8B%D0%B9%20%D0%BD%D0%B0%D1%81%D1%82%D0%B5%D0%BD%D0%BD%D1%8B%D0%B9%20%D0%B4%D0%B0%D1%82%D1%87%D0%B8%D0%BA%20WB-MSW%20v.4%20-%20Wiren%20Board_files/450px-WB-MSW_v.4_front.png 1.5x, %D0%A3%D0%BD%D0%B8%D0%B2%D0%B5%D1%80%D1%81%D0%B0%D0%BB%D1%8C%D0%BD%D1%8B%D0%B9%20%D0%BD%D0%B0%D1%81%D1%82%D0%B5%D0%BD%D0%BD%D1%8B%D0%B9%20%D0%B4%D0%B0%D1%82%D1%87%D0%B8%D0%BA%20WB-MSW%20v.4%20-%20Wiren%20Board_files/600px-WB-MSW_v.4_front.png 2x" data-file-width="1502" data-file-height="1564"></a>  <div class="thumbcaption"><div class="magnify"><a href="https://wirenboard.com/wiki/index.php?title=%D0%A4%D0%B0%D0%B9%D0%BB:WB-MSW_v.4_front.png&amp;filetimestamp=20230330130902" class="internal" title="Enlarge"></a></div>Универсальный датчик WB-MSW v.4, вид спереди</div></div></div>
+<div class="thumb tright"><div class="thumbinner" style="width:302px;"><a href="https://wirenboard.com/wiki/index.php?title=%D0%A4%D0%B0%D0%B9%D0%BB:WB-MSW_v.4_side.png&amp;filetimestamp=20230330130919&amp;" class="image"><img alt="" src="%D0%A3%D0%BD%D0%B8%D0%B2%D0%B5%D1%80%D1%81%D0%B0%D0%BB%D1%8C%D0%BD%D1%8B%D0%B9%20%D0%BD%D0%B0%D1%81%D1%82%D0%B5%D0%BD%D0%BD%D1%8B%D0%B9%20%D0%B4%D0%B0%D1%82%D1%87%D0%B8%D0%BA%20WB-MSW%20v.4%20-%20Wiren%20Board_files/300px-WB-MSW_v.4_side.png" decoding="async" width="300" height="328" class="thumbimage" srcset="%D0%A3%D0%BD%D0%B8%D0%B2%D0%B5%D1%80%D1%81%D0%B0%D0%BB%D1%8C%D0%BD%D1%8B%D0%B9%20%D0%BD%D0%B0%D1%81%D1%82%D0%B5%D0%BD%D0%BD%D1%8B%D0%B9%20%D0%B4%D0%B0%D1%82%D1%87%D0%B8%D0%BA%20WB-MSW%20v.4%20-%20Wiren%20Board_files/450px-WB-MSW_v.4_side.png 1.5x, %D0%A3%D0%BD%D0%B8%D0%B2%D0%B5%D1%80%D1%81%D0%B0%D0%BB%D1%8C%D0%BD%D1%8B%D0%B9%20%D0%BD%D0%B0%D1%81%D1%82%D0%B5%D0%BD%D0%BD%D1%8B%D0%B9%20%D0%B4%D0%B0%D1%82%D1%87%D0%B8%D0%BA%20WB-MSW%20v.4%20-%20Wiren%20Board_files/600px-WB-MSW_v.4_side.png 2x" data-file-width="1460" data-file-height="1598"></a>  <div class="thumbcaption"><div class="magnify"><a href="https://wirenboard.com/wiki/index.php?title=%D0%A4%D0%B0%D0%B9%D0%BB:WB-MSW_v.4_side.png&amp;filetimestamp=20230330130919" class="internal" title="Enlarge"></a></div>Универсальный датчик WB-MSW v.4, вид сзади. Виден список возможных опций и назначение контактов на винтовых разъёмах</div></div></div>
+<div class="thumb tright"><div class="thumbinner" style="width:302px;"><a href="https://wirenboard.com/wiki/index.php?title=%D0%A4%D0%B0%D0%B9%D0%BB:WB-MSW_v.4_PCB.png&amp;filetimestamp=20231220132453&amp;" class="image"><img alt="" src="%D0%A3%D0%BD%D0%B8%D0%B2%D0%B5%D1%80%D1%81%D0%B0%D0%BB%D1%8C%D0%BD%D1%8B%D0%B9%20%D0%BD%D0%B0%D1%81%D1%82%D0%B5%D0%BD%D0%BD%D1%8B%D0%B9%20%D0%B4%D0%B0%D1%82%D1%87%D0%B8%D0%BA%20WB-MSW%20v.4%20-%20Wiren%20Board_files/300px-WB-MSW_v.4_PCB.png" decoding="async" width="300" height="297" class="thumbimage" srcset="%D0%A3%D0%BD%D0%B8%D0%B2%D0%B5%D1%80%D1%81%D0%B0%D0%BB%D1%8C%D0%BD%D1%8B%D0%B9%20%D0%BD%D0%B0%D1%81%D1%82%D0%B5%D0%BD%D0%BD%D1%8B%D0%B9%20%D0%B4%D0%B0%D1%82%D1%87%D0%B8%D0%BA%20WB-MSW%20v.4%20-%20Wiren%20Board_files/450px-WB-MSW_v.4_PCB.png 1.5x, %D0%A3%D0%BD%D0%B8%D0%B2%D0%B5%D1%80%D1%81%D0%B0%D0%BB%D1%8C%D0%BD%D1%8B%D0%B9%20%D0%BD%D0%B0%D1%81%D1%82%D0%B5%D0%BD%D0%BD%D1%8B%D0%B9%20%D0%B4%D0%B0%D1%82%D1%87%D0%B8%D0%BA%20WB-MSW%20v.4%20-%20Wiren%20Board_files/600px-WB-MSW_v.4_PCB.png 2x" data-file-width="800" data-file-height="792"></a>  <div class="thumbcaption"><div class="magnify"><a href="https://wirenboard.com/wiki/index.php?title=%D0%A4%D0%B0%D0%B9%D0%BB:WB-MSW_v.4_PCB.png&amp;filetimestamp=20231220132453" class="internal" title="Enlarge"></a></div>Плата WB-MSW</div></div></div>
+<div id="toc" class="toc" role="navigation" aria-labelledby="mw-toc-heading"><input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox webfonts-changed" style="display:none"><div class="toctitle" lang="en" dir="ltr"><h2 id="mw-toc-heading">Contents</h2><span class="toctogglespan"><label class="toctogglelabel" for="toctogglecheckbox"></label></span></div>
+<ul>
+<li class="toclevel-1 tocsection-1"><a href="#Назначение"><span class="tocnumber">1</span> <span class="toctext">Назначение</span></a></li>
+<li class="toclevel-1 tocsection-2"><a href="#Отличие_от_предыдущей_версии"><span class="tocnumber">2</span> <span class="toctext">Отличие от предыдущей версии</span></a></li>
+<li class="toclevel-1 tocsection-3"><a href="#Модификации"><span class="tocnumber">3</span> <span class="toctext">Модификации</span></a></li>
+<li class="toclevel-1 tocsection-4"><a href="#Покраска_корпуса"><span class="tocnumber">4</span> <span class="toctext">Покраска корпуса</span></a></li>
+<li class="toclevel-1 tocsection-5"><a href="#Технические_характеристики"><span class="tocnumber">5</span> <span class="toctext">Технические характеристики</span></a></li>
+<li class="toclevel-1 tocsection-6"><a href="#Общий_принцип_работы"><span class="tocnumber">6</span> <span class="toctext">Общий принцип работы</span></a>
+<ul>
+<li class="toclevel-2 tocsection-7"><a href="#Датчик_TH"><span class="tocnumber">6.1</span> <span class="toctext">Датчик TH</span></a></li>
+<li class="toclevel-2 tocsection-8"><a href="#Датчик_движения"><span class="tocnumber">6.2</span> <span class="toctext">Датчик движения</span></a></li>
+<li class="toclevel-2 tocsection-9"><a href="#Светодиодные_индикаторы_и_зуммер"><span class="tocnumber">6.3</span> <span class="toctext">Светодиодные индикаторы  и зуммер</span></a></li>
+<li class="toclevel-2 tocsection-10"><a href="#Эмуляция_ИК-пультов"><span class="tocnumber">6.4</span> <span class="toctext">Эмуляция ИК-пультов</span></a></li>
+<li class="toclevel-2 tocsection-11"><a href="#Датчик_освещенности"><span class="tocnumber">6.5</span> <span class="toctext">Датчик освещенности</span></a></li>
+<li class="toclevel-2 tocsection-12"><a href="#Датчик_шума"><span class="tocnumber">6.6</span> <span class="toctext">Датчик шума</span></a></li>
+<li class="toclevel-2 tocsection-13"><a href="#Датчик_качества_воздуха_(VOC)"><span class="tocnumber">6.7</span> <span class="toctext">Датчик качества воздуха (VOC)</span></a>
+<ul>
+<li class="toclevel-3"><a href="#Версии_до_августа_2023_года"><span class="tocnumber">6.7.1</span> <span class="toctext">Версии до августа 2023 года</span></a></li>
+<li class="toclevel-3"><a href="#Версии_с_августа_2023_года"><span class="tocnumber">6.7.2</span> <span class="toctext">Версии с августа 2023 года</span></a></li>
+<li class="toclevel-3 tocsection-14"><a href="#Зачем_измерять_VOC"><span class="tocnumber">6.7.3</span> <span class="toctext">Зачем измерять VOC</span></a></li>
+</ul>
+</li>
+<li class="toclevel-2 tocsection-15"><a href="#Датчик_CO2"><span class="tocnumber">6.8</span> <span class="toctext">Датчик CO2</span></a>
+<ul>
+<li class="toclevel-3 tocsection-16"><a href="#Автокалибровка"><span class="tocnumber">6.8.1</span> <span class="toctext">Автокалибровка</span></a></li>
+<li class="toclevel-3 tocsection-17"><a href="#Принудительная_калибровка"><span class="tocnumber">6.8.2</span> <span class="toctext">Принудительная калибровка</span></a></li>
+<li class="toclevel-3 tocsection-18"><a href="#Зачем_нужно_измерять_CO2?"><span class="tocnumber">6.8.3</span> <span class="toctext">Зачем нужно измерять CO2?</span></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toclevel-1 tocsection-19"><a href="#Монтаж"><span class="tocnumber">7</span> <span class="toctext">Монтаж</span></a>
+<ul>
+<li class="toclevel-2 tocsection-20"><a href="#Подключение"><span class="tocnumber">7.1</span> <span class="toctext">Подключение</span></a></li>
+<li class="toclevel-2 tocsection-21"><a href="#Монтаж_на_стену"><span class="tocnumber">7.2</span> <span class="toctext">Монтаж на стену</span></a></li>
+<li class="toclevel-2 tocsection-22"><a href="#Как_открыть_корпус_датчика"><span class="tocnumber">7.3</span> <span class="toctext">Как открыть корпус датчика</span></a></li>
+</ul>
+</li>
+<li class="toclevel-1 tocsection-23"><a href="#Представление_в_веб-интерфейсе_контроллера_WB"><span class="tocnumber">8</span> <span class="toctext">Представление в веб-интерфейсе контроллера WB</span></a>
+<ul>
+<li class="toclevel-2 tocsection-24"><a href="#Выбор_шаблона"><span class="tocnumber">8.1</span> <span class="toctext">Выбор шаблона</span></a></li>
+<li class="toclevel-2 tocsection-25"><a href="#Управление_устройством_и_просмотр_значений"><span class="tocnumber">8.2</span> <span class="toctext">Управление устройством и просмотр значений</span></a></li>
+</ul>
+</li>
+<li class="toclevel-1 tocsection-26"><a href="#Настройка"><span class="tocnumber">9</span> <span class="toctext">Настройка</span></a>
+<ul>
+<li class="toclevel-2"><a href="#Способы_настройки"><span class="tocnumber">9.1</span> <span class="toctext">Способы настройки</span></a></li>
+<li class="toclevel-2 tocsection-27"><a href="#Управление_техникой_по_ИК"><span class="tocnumber">9.2</span> <span class="toctext">Управление техникой по ИК</span></a></li>
+</ul>
+</li>
+<li class="toclevel-1"><a href="#Работа_по_Modbus"><span class="tocnumber">10</span> <span class="toctext">Работа по Modbus</span></a>
+<ul>
+<li class="toclevel-2"><a href="#Параметры_порта_по_умолчанию"><span class="tocnumber">10.1</span> <span class="toctext">Параметры порта по умолчанию</span></a></li>
+<li class="toclevel-2"><a href="#Modbus-адрес"><span class="tocnumber">10.2</span> <span class="toctext">Modbus-адрес</span></a></li>
+<li class="toclevel-2 tocsection-28"><a href="#Расширение_Быстрый_Modbus"><span class="tocnumber">10.3</span> <span class="toctext">Расширение Быстрый Modbus</span></a></li>
+<li class="toclevel-2 tocsection-29"><a href="#Карта_регистров"><span class="tocnumber">10.4</span> <span class="toctext">Карта регистров</span></a></li>
+</ul>
+</li>
+<li class="toclevel-1 tocsection-30"><a href="#Обновление_прошивки_и_сброс_настроек"><span class="tocnumber">11</span> <span class="toctext">Обновление прошивки и сброс настроек</span></a></li>
+<li class="toclevel-1 tocsection-31"><a href="#Примеры_правил"><span class="tocnumber">12</span> <span class="toctext">Примеры правил</span></a></li>
+<li class="toclevel-1 tocsection-32"><a href="#Известные_неисправности"><span class="tocnumber">13</span> <span class="toctext">Известные неисправности</span></a></li>
+<li class="toclevel-1 tocsection-33"><a href="#Ревизии_устройства"><span class="tocnumber">14</span> <span class="toctext">Ревизии устройства</span></a></li>
+<li class="toclevel-1 tocsection-34"><a href="#Изображения_и_чертежи_устройства"><span class="tocnumber">15</span> <span class="toctext">Изображения и чертежи устройства</span></a></li>
+</ul>
+</div>
+
+<h2><span id=".D0.9D.D0.B0.D0.B7.D0.BD.D0.B0.D1.87.D0.B5.D0.BD.D0.B8.D0.B5"></span><span class="mw-headline" id="Назначение">Назначение</span></h2>
+<p>Комбинированный цифровой датчик температуры, влажности, освещенности,
+ движения, уровня шума, концентрации CO2 и летучих органических 
+соединений. Оснащён ИК приемопередатчиком. 
+</p><p>Предназначен для контроля климата в жилых и офисных помещениях, 
+для бытового использования. Датчик выполнен в пластиковом корпусе и 
+предназначен для крепления на стену.
+</p><p>Является средством измерения. Номер в Госреестре средств измерений <a target="_blank" rel="nofollow noreferrer noopener" class="external text" href="https://fgis.gost.ru/fundmetrology/registry/4/items/1404016">87443-22</a>.
+</p><p><br>
+</p><p>Управление модулем производится с контроллера или ПК по шине RS-485 командами по протоколу Modbus RTU.
+</p><p><br>
+</p>
+<h2><span id=".D0.9E.D1.82.D0.BB.D0.B8.D1.87.D0.B8.D0.B5_.D0.BE.D1.82_.D0.BF.D1.80.D0.B5.D0.B4.D1.8B.D0.B4.D1.83.D1.89.D0.B5.D0.B9_.D0.B2.D0.B5.D1.80.D1.81.D0.B8.D0.B8"></span><span class="mw-headline" id="Отличие_от_предыдущей_версии">Отличие от предыдущей версии</span></h2>
+<p>Основные отличия WB-MSW v.3: корпус тоньше и меньше; другие форма и 
+расположение крепёжных отверстий, а также заглушка на отверстии под 
+кабель-канал.
+</p><p><br>
+</p><p><br>
+</p>
+<h2><span id=".D0.9C.D0.BE.D0.B4.D0.B8.D1.84.D0.B8.D0.BA.D0.B0.D1.86.D0.B8.D0.B8"></span><span class="mw-headline" id="Модификации">Модификации</span></h2>
+<p>Датчик может поставляться в любой комбинации встроенных датчиков, 
+которыми он комплектуется на производстве, докупить отдельно их нельзя.
+</p><p><b>Внимание!</b> Светодиодные индикаторы, датчик освещённости и 
+ИК-светодиоды физически находятся на одной плате, поэтому присутствуют 
+или отсутствуют только одновременно.
+</p><p><br>
+</p>
+<h2><span id=".D0.9F.D0.BE.D0.BA.D1.80.D0.B0.D1.81.D0.BA.D0.B0_.D0.BA.D0.BE.D1.80.D0.BF.D1.83.D1.81.D0.B0"></span><span class="mw-headline" id="Покраска_корпуса">Покраска корпуса</span></h2>
+<p>Разноцветных корпусов нет, но белые корпуса легко покрасить — получается неплохо, см. <a href="https://wirenboard.com/wiki/Painting_MSW" title="Painting MSW"> Покраска корпуса MSW</a>
+</p><p><br>
+</p><p><br>
+</p>
+<h2><span id=".D0.A2.D0.B5.D1.85.D0.BD.D0.B8.D1.87.D0.B5.D1.81.D0.BA.D0.B8.D0.B5_.D1.85.D0.B0.D1.80.D0.B0.D0.BA.D1.82.D0.B5.D1.80.D0.B8.D1.81.D1.82.D0.B8.D0.BA.D0.B8"></span><span class="mw-headline" id="Технические_характеристики">Технические характеристики</span></h2>
+<table class="wikitable">
+<tbody><tr>
+<th style="text-align: center;">Измеряемая величина
+</th>
+<th style="text-align: center;">Диапазон
+</th>
+<th style="text-align: center;">Погрешность
+</th>
+<th style="text-align: center;">Готовность к работе
+<p>после подачи питания 
+</p>
+</th></tr>
+<tr>
+<td>Концентрация CO<sub>2</sub>
+</td>
+<td>400 – 10000 ppm (миллионных долей)
+</td>
+<td>100 ppm + 5% от измеренного значения
+</td>
+<td>3 мин,
+<p>автокалибровка каждые 7&nbsp;дн.
+</p>
+</td></tr>
+<tr>
+<td>Температура
+</td>
+<td>−40&nbsp;°С – +80&nbsp;°С
+</td>
+<td>±0.3 °С (в диапазоне 0&nbsp;– 70&nbsp;°C)
+<p>±0.5 °С (в диапазоне −40 – 0 °C и 70 – 80 °C) 
+</p>
+</td>
+<td>1 сек
+<p>постоянная времени (выравнивание
+</p><p>с окружающим воздухом) ~4 мин
+</p>
+</td></tr>
+<tr>
+<td>Относительная влажность
+</td>
+<td>5 – 95&nbsp;%
+</td>
+<td>±3&nbsp;%
+</td>
+<td>1 сек
+</td></tr>
+<tr>
+<td>Уровень шума (звуковое давление)
+</td>
+<td>39 – 90 дБА
+</td>
+<td>±2 дБ
+</td>
+<td>5 сек
+</td></tr>
+<tr>
+<td>Освещённость
+</td>
+<td>0 – 145&nbsp;000 лк
+</td>
+<td>±10&nbsp;%
+</td>
+<td>1 сек
+</td></tr>
+<tr>
+<td>Качество воздуха
+<p>(концентрация летучих
+органических соединений — VOC) 
+</p>
+</td>
+<td>0 ppm – 60000 ppb (миллиардных долей) по этанолу
+</td>
+<td>±15&nbsp;%&nbsp;(тип)
+<p>±40&nbsp;%&nbsp;(макс) 
+</p>
+</td>
+<td>6 мин
+<p>(самокалибровка спустя 12&nbsp;ч)
+</p>
+</td></tr>
+<tr>
+<td>Датчик движения (недоступен в <a href="https://wirenboard.com/wiki/WB-MSW-LORA_v.4_Sensor" title="WB-MSW-LORA v.4 Sensor">версии с LoRa</a>)
+</td>
+<td>До 8 м, 120 градусов
+</td>
+<td>
+</td>
+<td>8 сек
+</td></tr>
+<tr>
+<td>Передача ИК-команд
+</td>
+<td>До 10 м (зависит от окружающих условий)
+</td>
+<td>
+</td>
+<td>1 сек
+</td></tr>
+</tbody></table>
+<p><br>
+</p>
+<table class="wikitable">
+<tbody><tr>
+<th style="text-align: center;">Параметр
+</th>
+<th style="text-align: center;">Значение
+</th></tr>
+
+
+<tr>
+<th colspan="2">Питание
+</th></tr>
+<tr>
+<td>Напряжение питания
+</td>
+<td>9 В – 28 В постоянного тока
+</td></tr>
+<tr>
+<td>Потребляемая мощность
+</td>
+<td>
+<ul><li>0.5 Вт;</li>
+<li>пиковая при измерении CO<sub>2</sub> до 1.6 Вт;</li>
+<li>пиковая при измерении CO<sub>2</sub> и передаче ИК сигнала до 4 Вт.</li></ul>
+<p>Пожалуйста, выбирайте кабель и блок питания с учётом <a href="https://wirenboard.com/wiki/RS-485:%D0%A4%D0%B8%D0%B7%D0%B8%D1%87%D0%B5%D1%81%D0%BA%D0%BE%D0%B5_%D0%BF%D0%BE%D0%B4%D0%BA%D0%BB%D1%8E%D1%87%D0%B5%D0%BD%D0%B8%D0%B5#%D0%9F%D0%B0%D0%B4%D0%B5%D0%BD%D0%B8%D0%B5_%D0%BD%D0%B0%D0%BF%D1%80%D1%8F%D0%B6%D0%B5%D0%BD%D0%B8%D1%8F_%D0%BD%D0%B0_%D0%BA%D0%B0%D0%B1%D0%B5%D0%BB%D0%B5_%D0%BF%D1%80%D0%B8_%D0%BF%D0%B8%D0%BA%D0%BE%D0%B2%D0%BE%D0%BC_%D0%BF%D0%BE%D1%82%D1%80%D0%B5%D0%B1%D0%BB%D0%B5%D0%BD%D0%B8%D0%B8_%D1%83%D1%81%D1%82%D1%80%D0%BE%D0%B9%D1%81%D1%82%D0%B2" class="mw-redirect" title="RS-485:Физическое подключение"> падения напряжения на кабеле при пиковом потреблении устройств</a>.
+</p>
+</td></tr>
+<tr>
+<th colspan="2">ИК-команды
+</th></tr>
+<tr>
+<td>Количество запоминаемых команд
+</td>
+<td>
+<p>80
+</p>
+</td></tr>
+<tr>
+<td>Длительность команд
+</td>
+<td>Максимальная длина команды — до 1000 символов.
+<p>Каждый регистр кодирует длительность высокого или низкого уровня сигнала (последовательно) в микросекундах.
+</p>
+</td></tr>
+
+<tr>
+<th colspan="2"><b>Клеммники и сечение проводов</b>
+</th></tr>
+<tr>
+<td>Рекомендуемое сечение провода с НШВИ, мм<sup>2</sup></td>
+<td>0.35 – 1 мм<sup>2</sup> — одинарные, 0.35 – 0.5 мм<sup>2</sup> — сдвоенные провода,
+</td></tr>
+<tr>
+<td>Длина стандартной втулки НШВИ, мм</td>
+<td>8
+</td></tr>
+<tr>
+<td>Момент затяжки винтов, Н∙м</td>
+<td>0.2
+</td></tr>
+<tr>
+<th colspan="2">Индикация
+</th></tr>
+<tr>
+<td>Питание и обмен данными
+</td>
+<td>Зеленый светодиод в нижней части корпуса
+</td></tr>
+<tr>
+<td>Пользовательские индикаторы
+</td>
+<td>Зеленый и красный светодиод с настраиваемыми частотой и скважностью мигания
+</td></tr>
+<tr>
+<td>Звуковая индикация
+</td>
+<td>«Пищалка» — beeper
+</td></tr>
+
+
+
+
+<tr>
+<th colspan="2">Управление
+</th></tr>
+<tr>
+<td>Интерфейс управления
+</td>
+<td>RS-485
+</td></tr>
+<tr>
+<td>Изоляция интерфейса
+</td>
+<td>Неизолированный
+</td></tr>
+<tr>
+<td>Протокол обмена данными
+</td>
+<td>Modbus RTU, адрес задается программно, заводские настройки указаны на наклейке
+</td></tr>
+<tr>
+<td>Параметры интерфейса RS-485
+</td>
+<td>Задаются программно, по умолчанию:
+<p>скорость — 9600 бит/с; данные — 8 бит; бит чётности — нет (N); стоп-биты — 2 
+</p>
+</td></tr>
+<tr>
+<td>Готовность к работе после подачи питания
+</td>
+<td>~2 c
+</td></tr>
+
+<tr>
+<th colspan="2">Условия эксплуатации
+</th></tr>
+<tr>
+<td>Температура воздуха
+</td>
+<td>От −40 до +80 °С
+</td></tr>
+<tr>
+<td>Относительная влажность
+</td>
+<td>До 95&nbsp;%, без конденсации влаги
+</td></tr>
+<tr>
+<td>Климатическое исполнение по ГОСТ 15150-69
+</td>
+<td><a href="https://wirenboard.com/wiki/Climatic" title="Climatic"> O2.1*</a>
+</td></tr>
+
+
+<tr>
+<td>Гарантийный срок</td>
+<td>2 года
+</td></tr>
+<tr>
+<td>Срок службы</td>
+<td>5 лет
+</td></tr>
+
+
+
+
+
+
+
+<tr>
+<td>Температура воздуха при установленном датчике CO2
+</td>
+<td>От -10 до +50 °C
+</td></tr>
+<tr>
+<th colspan="2">Габариты
+</th></tr>
+<tr>
+<td>Габариты
+</td>
+<td>80 x 80 x 23.6 мм (с линзой)
+<p><br>
+</p>
+</td></tr>
+<tr>
+<td>Масса (с коробкой)</td>
+<td>
+<p>80 г
+</p>
+</td></tr></tbody></table>
+<p><br>
+</p>
+<h2><span id=".D0.9E.D0.B1.D1.89.D0.B8.D0.B9_.D0.BF.D1.80.D0.B8.D0.BD.D1.86.D0.B8.D0.BF_.D1.80.D0.B0.D0.B1.D0.BE.D1.82.D1.8B"></span><span class="mw-headline" id="Общий_принцип_работы">Общий принцип работы</span></h2>
+<h3><span id=".D0.94.D0.B0.D1.82.D1.87.D0.B8.D0.BA_TH"></span><span class="mw-headline" id="Датчик_TH">Датчик TH</span></h3>
+<p>В датчике используется сенсор температуры и влажности (TH) Sensirion SHT40, который распаян на плате модуля.
+</p><p>Модуль автоматически корректирует показания температуры и 
+влажности, учитывая базовый нагрев платы от микросхемы питания (0.3 °C),
+ а также нагрев от установленных датчиков СО2 (0.31 °C) и VOC (0.14 °C).
+ Значения до корректировки можно посмотреть в регистрах 284 и 285. 
+Доступна пользовательская температурная компенсация, которую можно 
+записать в регистр 245. Может быть полезно, если вы монтируете датчик 
+близко к потолку и хотите скорректировать значения.
+</p><p>В датчике есть нагреватель, который позволят высушивать 
+конденсат, образующийся при повышенной влажности. Нагреватель включается
+ автоматически при влажности более 95&nbsp;%, работает 1 секунду и 
+отключается. Если вам нужно высушить датчик датчика при других значениях
+ влажности, запишите 1 в регистр <i>Включение подогрева (heater) в микросхеме сенсора температуры и влажности </i>.
+</p><p><br>
+</p>
+<h3><span id=".D0.94.D0.B0.D1.82.D1.87.D0.B8.D0.BA_.D0.B4.D0.B2.D0.B8.D0.B6.D0.B5.D0.BD.D0.B8.D1.8F"></span><span class="mw-headline" id="Датчик_движения">Датчик движения</span></h3>
+<p>PIR-датчик движения обнаруживает перемещение объектов на расстоянии до 8 м с углом обзора около 100-120 градусов.
+Датчик выдает два параметра:
+</p>
+<ul><li><b>Current motion</b> — это текущее значение интенсивности движения, усредненное за несколько секунд.</li>
+<li><b>Max Motion</b> — максимальное значение регистра Current motion за последние N секунд (задается в регистре 282, по умолчанию 10 секунд)</li></ul>
+<p>Если датчик движения опрашивается быстро (несколько раз в секунду), можно использовать <b>Current motion</b>
+ для обнаружения движения с хорошим временным разрешением. Но если 
+датчик опрашивается редко (например, раз в 30 секунд, в большой сети), 
+то чтобы не пропустить быстрое однократное движение, используйте 
+значение <b>Max Motion</b> и установите ширину временного окна N больше, чем период опроса датчика.
+</p><p>С прошивки 4.31.0 значения регистров Current motion и Max Motion 
+можно получать событиями через Быстрый Modbus — минимум задержек при 
+любой загруженности шины. Читайте подробнее в разделе <a href="#modbus">Работа по Modbus</a>.
+</p><p>В системе правил можно по-разному реагировать на значения 
+интенсивности движения. Например, настраивая пороги срабатывания для 
+нечувствительности к домашним животным.
+</p>
+<div class="center"><div class="thumb tnone"><div class="thumbinner" style="width:1002px;"><a href="https://wirenboard.com/wiki/index.php?title=%D0%A4%D0%B0%D0%B9%D0%BB:CurrenMaxRawMotion.png&amp;filetimestamp=20181018132040&amp;" class="image"><img alt="" src="%D0%A3%D0%BD%D0%B8%D0%B2%D0%B5%D1%80%D1%81%D0%B0%D0%BB%D1%8C%D0%BD%D1%8B%D0%B9%20%D0%BD%D0%B0%D1%81%D1%82%D0%B5%D0%BD%D0%BD%D1%8B%D0%B9%20%D0%B4%D0%B0%D1%82%D1%87%D0%B8%D0%BA%20WB-MSW%20v.4%20-%20Wiren%20Board_files/1000px-CurrenMaxRawMotion.png" decoding="async" width="1000" height="330" class="thumbimage" srcset="%D0%A3%D0%BD%D0%B8%D0%B2%D0%B5%D1%80%D1%81%D0%B0%D0%BB%D1%8C%D0%BD%D1%8B%D0%B9%20%D0%BD%D0%B0%D1%81%D1%82%D0%B5%D0%BD%D0%BD%D1%8B%D0%B9%20%D0%B4%D0%B0%D1%82%D1%87%D0%B8%D0%BA%20WB-MSW%20v.4%20-%20Wiren%20Board_files/CurrenMaxRawMotion.png 1.5x" data-file-width="1271" data-file-height="419"></a>  <div class="thumbcaption"><div class="magnify"><a href="https://wirenboard.com/wiki/index.php?title=%D0%A4%D0%B0%D0%B9%D0%BB:CurrenMaxRawMotion.png&amp;filetimestamp=20181018132040" class="internal" title="Enlarge"></a></div>Взаимосвязь параметров датчика движения, голубые отрезки — периоды интенсивного движения. Окно для Max Motion (N) - 10 секунд</div></div></div></div>
+<p><br>
+</p>
+<h3><span id=".D0.A1.D0.B2.D0.B5.D1.82.D0.BE.D0.B4.D0.B8.D0.BE.D0.B4.D0.BD.D1.8B.D0.B5_.D0.B8.D0.BD.D0.B4.D0.B8.D0.BA.D0.B0.D1.82.D0.BE.D1.80.D1.8B_.D0.B8_.D0.B7.D1.83.D0.BC.D0.BC.D0.B5.D1.80"></span><span class="mw-headline" id="Светодиодные_индикаторы_и_зуммер">Светодиодные индикаторы  и зуммер</span></h3>
+<p>Светодиодные индикаторы расположены на одной плате с датчиком 
+освещённости и ИК-передатчиком, поэтому, если вы не выбирали одну из 
+этих опций, индикаторов у вас не будет. Зуммер находится на плате и 
+доступен во всех комплектациях.
+</p><p><br>
+</p>
+<div class="thumb tright"><div class="thumbinner" style="width:502px;"><a href="https://wirenboard.com/wiki/index.php?title=%D0%A4%D0%B0%D0%B9%D0%BB:Wbmsw3flash2.gif&amp;filetimestamp=20180918111507&amp;" class="image"><img alt="" src="%D0%A3%D0%BD%D0%B8%D0%B2%D0%B5%D1%80%D1%81%D0%B0%D0%BB%D1%8C%D0%BD%D1%8B%D0%B9%20%D0%BD%D0%B0%D1%81%D1%82%D0%B5%D0%BD%D0%BD%D1%8B%D0%B9%20%D0%B4%D0%B0%D1%82%D1%87%D0%B8%D0%BA%20WB-MSW%20v.4%20-%20Wiren%20Board_files/Wbmsw3flash2.gif" decoding="async" width="500" height="508" class="thumbimage" data-file-width="500" data-file-height="508"></a>  <div class="thumbcaption"><div class="magnify"><a href="https://wirenboard.com/wiki/index.php?title=%D0%A4%D0%B0%D0%B9%D0%BB:Wbmsw3flash2.gif&amp;filetimestamp=20180918111507" class="internal" title="Enlarge"></a></div>Работа светодиодного индикатора</div></div></div>
+<p>Также во всех комплектациях доступен зелёный индикатор обмена 
+данными, который виден в технологическом отверстии на нижней части 
+корпуса.
+</p><p>Пользователь может управлять:
+</p>
+<ul><li>Двумя яркими светодиодами — зеленым и красным, которые подсвечивают линзу на корпусе. Индикаторы могут только мигать.</li>
+<li>Звуковым индикатором (зуммер, buzzer).</li></ul>
+<p>Индикаторы позволяют обеспечить обратную связь при монтаже и 
+эксплуатации. Например, датчик может мигать красным при превышении 
+оптимальной концентрации углекислого газа (<a href="https://wirenboard.com/wiki/Rule_Examples#%D0%94%D0%B0%D1%82%D1%87%D0%B8%D0%BA_MSW_v.3" title="Rule Examples">примеры правил</a>).
+ При монтаже большого количества датчиков индикаторы (или бипер) помогут
+ определить, к какому конкретно датчику вы сейчас обращаетесь.
+</p><p><br>
+Включение, периодичность и длительность вспышек  светодиодов задаются в 
+веб-интерфейсе или в соответствующих Modbus-регистрах. Периодичность и 
+длительность задаются одинаковыми для обоих светодиодов, поэтому при их 
+одновременном включении они будут мигать синхронно. При включении 
+светодиодов убедитесь, что периодичность и длительность вспышек не равны
+ 0, иначе светодиоды не будут работать.
+</p><p><br>
+</p>
+<h3><span id=".D0.AD.D0.BC.D1.83.D0.BB.D1.8F.D1.86.D0.B8.D1.8F_.D0.98.D0.9A-.D0.BF.D1.83.D0.BB.D1.8C.D1.82.D0.BE.D0.B2"></span><span class="mw-headline" id="Эмуляция_ИК-пультов">Эмуляция ИК-пультов</span></h3>
+<p>Под линзой устройства расположены ИК-приёмник для обучения и 8 ИК-светодиодов. 
+</p><p>Подробное описание использования модуля, а также карта регистров, описаны в статье <a href="https://wirenboard.com/wiki/WB-MSx_Consumer_IR_Manual" title="WB-MSx Consumer IR Manual">Инструкция по работе с ИК-приёмопередатчиком в устройствах WB-MSW, WB-MIR</a>.
+</p><p>Обучение проводится один раз — команды сохраняются в памяти 
+устройства и могут быть воспроизведены командой с контроллера. 
+Количество запоминаемых команд достаточно большое (до сотни, в 
+зависимости от модели пульта), чтобы управлять сразу многими 
+устройствами в помещении. Мощности передатчика хватает, чтобы 
+управляемые устройства принимали не только прямой, но и отраженный 
+сигнал.
+</p><p>Обычно используется для управления кондиционерами и тепловыми 
+завесами. Учтите, что ИК-команды отправляются всем устройствам в зоне 
+видимости, поэтому передать разные команды на одинаковые устройства не 
+получится. Для индивидуального управления каждым кондиционером 
+используйте модуль <a href="https://wirenboard.com/wiki/WB-MIR_v2_-_Modbus_IR_Remote_Control" title="WB-MIR v2 - Modbus IR Remote Control">WB-MIR</a>.
+</p><p><br>
+</p>
+<h3><span id=".D0.94.D0.B0.D1.82.D1.87.D0.B8.D0.BA_.D0.BE.D1.81.D0.B2.D0.B5.D1.89.D0.B5.D0.BD.D0.BD.D0.BE.D1.81.D1.82.D0.B8"></span><span class="mw-headline" id="Датчик_освещенности">Датчик освещенности</span></h3>
+<p>Датчик освещенности имеет фильтр, который повторяет кривую 
+спектральной чувствительности человеческого глаза. Это позволяет 
+измерять освещенность в люксах, что позволяет обеспечить контроль 
+освещенности в соответствии с нормами СанПиН.
+</p><p>Максимальное время реакции на резкое изменение освещённости — 1.5 c.
+</p><p><br>
+</p>
+<h3><span id=".D0.94.D0.B0.D1.82.D1.87.D0.B8.D0.BA_.D1.88.D1.83.D0.BC.D0.B0"></span><span class="mw-headline" id="Датчик_шума">Датчик шума</span></h3>
+<p>В модуле используется микрофон с усилителем и фильтрами для коррекции
+ по шкале А с учётом особенностей восприятия человеческим ухом звуков 
+разных частот. Шум измеряется в акустических децибелах (дБА), что 
+позволяет контролировать шумовую обстановку в соответствии со 
+стандартами и санитарными нормами.
+</p>
+<h3><span id=".D0.94.D0.B0.D1.82.D1.87.D0.B8.D0.BA_.D0.BA.D0.B0.D1.87.D0.B5.D1.81.D1.82.D0.B2.D0.B0_.D0.B2.D0.BE.D0.B7.D0.B4.D1.83.D1.85.D0.B0_.28VOC.29"></span><span class="mw-headline" id="Датчик_качества_воздуха_(VOC)">Датчик качества воздуха (VOC)</span></h3>
+<h4><span id=".D0.92.D0.B5.D1.80.D1.81.D0.B8.D0.B8_.D0.B4.D0.BE_.D0.B0.D0.B2.D0.B3.D1.83.D1.81.D1.82.D0.B0_2023_.D0.B3.D0.BE.D0.B4.D0.B0"></span><span class="mw-headline" id="Версии_до_августа_2023_года"> Версии до августа 2023 года </span></h4>
+<p>Измерение VOC сделано на отдельном модуле с сенсором Sensiron SGPC3 (<a target="_blank" rel="nofollow noreferrer noopener" class="external text" href="https://sensirion.com/media/documents/0E2E7340/617BDB64/Sensirion_Gas_Sensors_Datasheet_SGPC3.pdf">datasheet</a>), устанавливаемом по стрелочке в специальный разъём.
+</p><p>Сенсор готов к работе через 6 минут после включения. До этого в 
+регистре качества воздуха находится значение, сигнализирующее об ошибке 
+(0xFFFF). 
+</p><p>Используемый нами сенсор VOC содержит встроенный алгоритм 
+самокалибровки, который срабатывает каждые 12 часов. Однако, из-за 
+особенностей алгоритма, синхронизация показаний с двух датчиков Wiren 
+Board может происходить значительно дольше. Не отключайте питание 
+датчика — это сбросит значения калибровки и процесс стабилизации 
+значений начнётся сначала.
+</p>
+<h4><span id=".D0.92.D0.B5.D1.80.D1.81.D0.B8.D0.B8_.D1.81_.D0.B0.D0.B2.D0.B3.D1.83.D1.81.D1.82.D0.B0_2023_.D0.B3.D0.BE.D0.B4.D0.B0"></span><span class="mw-headline" id="Версии_с_августа_2023_года"> Версии с августа 2023 года </span></h4>
+<p>Измерение VOC сделано на отдельном модуле с сенсором ScioSense ENS160 (<a target="_blank" rel="nofollow noreferrer noopener" class="external text" href="https://www.sciosense.com/wp-content/uploads/documents/SC-001224-DS-9-ENS160-Datasheet.pdf">datasheet</a>), устанавливаемом в специальный разъём на плате датчика WB-MSW. Маркировка модуля VOC sensor v1.5. 
+</p><p>Сенсор отдаёт значение VOC в ppb, а также «Индекс качества 
+воздуха (AQI)» в виде числа от 1 до 5. Индекс качества воздуха удобно 
+использовать в правилах, вместо анализа диапазона значений.
+</p><p>Показания с сенсора будут доступны сразу после включения, но 
+датчик довольно долго выходит на рабочий режим — после первого включения
+ датчику нужно непрерывно поработать как минимум 24 часа для 
+самокалибровки. Однако, из-за особенностей алгоритма самокалибровки, 
+синхронизация показаний с двух датчиков Wiren Board может происходить 
+значительно дольше. Не отключайте питание датчика — это сбросит значения
+ калибровки и процесс стабилизации значений начнётся сначала.
+</p>
+<h4><span id=".D0.97.D0.B0.D1.87.D0.B5.D0.BC_.D0.B8.D0.B7.D0.BC.D0.B5.D1.80.D1.8F.D1.82.D1.8C_VOC"></span><span class="mw-headline" id="Зачем_измерять_VOC">Зачем измерять VOC</span></h4>
+<p><span role="note" class="note note-info"> Датчик VOC не работает как детектор утечки бытовых горючих газов и совсем не реагирует на дым!</span>
+</p><p>Летучие органические вещества (ЛОВ, VOC) — это легкоиспаряющиеся 
+вещества, выделяющиеся в атмосферу в виде газов. Датчик определяет 
+суммарную концентрацию летучих органических веществ, в том числе 
+испарения лаков/красок и элементов внутренней отделки помещений (фенол, 
+формальдегид, толуол, стирол), спирты, бензол, гниющие овощи, выделяемые
+ человеком газы, бытовой газ. Высокие концентрации опасных ЛОВ 
+представляют угрозу жизни и здоровью человека. 
+</p><p>Концентрация измеряется в единицах на миллиард ppb (также 
+называемую ОЛОС — см. ГОСТ Р ИСО 16000-9-2009). Данный параметр 
+характеризует общую концентрацию ЛОВ в усредненном помещении.
+</p><p>На основании исследований производителем датчика установлены следующие пороги концентрации:
+</p>
+<table class="wikitable">
+<tbody><tr>
+<th>AQI</th>
+<th>Концентрация (ppb)</th>
+<th>Уровень</th>
+<th>Соответствие гигиеническим нормам</th>
+<th>Рекомендации</th>
+<th>Предельное время  воздействия
+</th></tr>
+<tr>
+<td>5</td>
+<td>2200 - 5500</td>
+<td>Опасно для здоровья</td>
+<td>Ситуация неприемлема</td>
+<td>Подвергаться воздействию только в критических случаях / Необходимо интенсивное вентилирование</td>
+<td>часы
+</td></tr>
+<tr>
+<td>4</td>
+<td>660-2200</td>
+<td>Неудовлетворительно</td>
+<td>Серьезные претензии</td>
+<td>Необходимо интенсивное вентилирование или проветривание, требуется поиск источников загрязнения</td>
+<td>&lt; 1 месяца
+</td></tr>
+<tr>
+<td>3</td>
+<td>220 - 660</td>
+<td>Приемлемо</td>
+<td>Некоторые претензии</td>
+<td>Рекомендуется интенсивное вентилирование или проветривание, требуется поиск источников загрязнения</td>
+<td>&lt; 12 месяцев
+</td></tr>
+<tr>
+<td>2</td>
+<td>65 - 220</td>
+<td>Хорошо</td>
+<td>Без особых претензий</td>
+<td>Рекомендуется вентилирование или проветривание</td>
+<td>нет предела
+</td></tr>
+<tr>
+<td>1</td>
+<td>0-65</td>
+<td>Отлично</td>
+<td>Без претензий</td>
+<td>Требуемое значение</td>
+<td>нет предела
+</td></tr></tbody></table>
+<h3><span id=".D0.94.D0.B0.D1.82.D1.87.D0.B8.D0.BA_CO2"></span><span class="mw-headline" id="Датчик_CO2">Датчик CO2</span></h3>
+<div class="thumb tright"><div class="thumbinner" style="width:352px;"><a href="https://wirenboard.com/wiki/index.php?title=%D0%A4%D0%B0%D0%B9%D0%BB:Princip-izmerenia-co2.png&amp;filetimestamp=20200604115842&amp;" class="image"><img alt="" src="%D0%A3%D0%BD%D0%B8%D0%B2%D0%B5%D1%80%D1%81%D0%B0%D0%BB%D1%8C%D0%BD%D1%8B%D0%B9%20%D0%BD%D0%B0%D1%81%D1%82%D0%B5%D0%BD%D0%BD%D1%8B%D0%B9%20%D0%B4%D0%B0%D1%82%D1%87%D0%B8%D0%BA%20WB-MSW%20v.4%20-%20Wiren%20Board_files/Princip-izmerenia-co2.png" decoding="async" width="350" height="162" class="thumbimage" data-file-width="350" data-file-height="162"></a>  <div class="thumbcaption"><div class="magnify"><a href="https://wirenboard.com/wiki/index.php?title=%D0%A4%D0%B0%D0%B9%D0%BB:Princip-izmerenia-co2.png&amp;filetimestamp=20200604115842" class="internal" title="Enlarge"></a></div>Принцип действия датчика CO2</div></div></div>
+<p>Для измерения концентрации CO2 в воздухе используется недисперсионный
+ инфракрасный (NDIR) датчик. Принцип действия основан на поглощении 
+углекислым газом инфракрасного света. Оптический способ измерения CO2 
+намного точнее, чем с помощью более дешевых электрохимических датчиков.
+</p><p>Концентрация CO2 измеряется в ppm — частях на миллион.
+</p><p><a href="https://wirenboard.com/wiki/%D0%A1%D0%BB%D1%83%D0%B6%D0%B5%D0%B1%D0%BD%D0%B0%D1%8F:%D0%9C%D0%BE%D0%B9_%D1%8F%D0%B7%D1%8B%D0%BA/Image:_WB-MSW_v.4_CO2_CM1106_Period.png" title="Служебная:Мой язык/Image: WB-MSW v.4 CO2 CM1106 Period.png">300px|thumb|right| Период автокалибровки в датчике WB-MSW v.4 </a>
+Период калибровки можно настроить в параметре <b>Период автокалибровки датчика CO₂</b>. По умолчанию параметр не опрашивается, включите его опрос в настройках драйвера wb-mqtt-serial.
+</p><p><br>
+</p>
+<h4><span id=".D0.90.D0.B2.D1.82.D0.BE.D0.BA.D0.B0.D0.BB.D0.B8.D0.B1.D1.80.D0.BE.D0.B2.D0.BA.D0.B0"></span><span class="mw-headline" id="Автокалибровка">Автокалибровка</span></h4>
+<p>По умолчанию измеренное минимальное значение в течение 7 дней 
+принимается за 400 ppm — это значение концентрации CO2 на улице. 
+Концентрация CO2 упадёт до уличной, если в помещении нет людей хотя бы 
+несколько часов в день, или если в помещении работает вытяжная 
+вентиляция, или в помещении иногда открывают окна.
+</p><p><br>
+Период автокалибровки можно изменить в настройках.
+</p><p><br>
+</p>
+<h4><span id=".D0.9F.D1.80.D0.B8.D0.BD.D1.83.D0.B4.D0.B8.D1.82.D0.B5.D0.BB.D1.8C.D0.BD.D0.B0.D1.8F_.D0.BA.D0.B0.D0.BB.D0.B8.D0.B1.D1.80.D0.BE.D0.B2.D0.BA.D0.B0"></span><span class="mw-headline" id="Принудительная_калибровка">Принудительная калибровка</span></h4>
+<p>В большинстве случаев отключение автокалибровки или принудительная 
+калибровка не требуются — датчик показывает правильные значения без 
+дополнительных манипуляций, но иногда без неё не обойтись:
+</p>
+<ol><li>Нужно срочно откалибровать датчик и некогда ждать, пока сработает автоматическая калибровка.</li>
+<li>Датчик находится в помещении, которое плохо проветривается и уровень
+ CO2 никогда не достигает 400 ppm. В этом случае не забудьте отключить 
+автоматическую калибровку.</li></ol>
+<p>Суть принудительной калибровки заключается в том, что мы помещаем 
+датчик в среду, где уровень CO2 равен атмосферному (400 ppm) и 
+устанавливаем это значение как начало отсчёта. Чтобы уменьшить ошибки 
+при измерении CO2, калибруйте датчик при комнатной температуре.
+</p><p>Поместите работающий датчик в хорошо проветренное помещение и подождите 20 минут. Затем выполните следующие шаги:
+</p>
+<ol><li>В настройках датчика, в группе <b>Параметры воздуха</b>&nbsp;:
+<ul><li>Если нужно отключить автоматическую калибровку, то в параметре <b>Автокалибровка датчика CO₂</b> выберите <b>отключена</b>.</li>
+<li>Включите опрос регистра <b>Значение референсного датчика CO₂</b> и сохраните настройки.</li></ul></li>
+<li>В карточке устройства на вкладке <b>Устройства</b> запишите значение 400 в <b>Значение референсного датчика CO₂</b>. Значение вернется к 0. Калибровка завершена.</li></ol>
+<p>Если вы отключили автоматическую калибровку, то раз в полгода 
+повторяйте процедуру — датчик будет показывать более точные значения.
+</p>
+<ul class="gallery mw-gallery-packed">
+	<li class="gallerycaption">Калибровка сенсора CO2</li>
+		<li class="gallerybox" style="width: 276px"><div style="width: 276px">
+			<div class="thumb" style="width: 274px;"><div style="margin:0px auto;"><a href="https://wirenboard.com/wiki/index.php?title=%D0%A4%D0%B0%D0%B9%D0%BB:WB-MSW_v.4_CM1106_Manual_Calibration_1.png&amp;filetimestamp=20230407121025&amp;" class="image"><img alt="" src="%D0%A3%D0%BD%D0%B8%D0%B2%D0%B5%D1%80%D1%81%D0%B0%D0%BB%D1%8C%D0%BD%D1%8B%D0%B9%20%D0%BD%D0%B0%D1%81%D1%82%D0%B5%D0%BD%D0%BD%D1%8B%D0%B9%20%D0%B4%D0%B0%D1%82%D1%87%D0%B8%D0%BA%20WB-MSW%20v.4%20-%20Wiren%20Board_files/411px-WB-MSW_v.4_CM1106_Manual_Calibration_1.png" decoding="async" width="274" height="200" srcset="%D0%A3%D0%BD%D0%B8%D0%B2%D0%B5%D1%80%D1%81%D0%B0%D0%BB%D1%8C%D0%BD%D1%8B%D0%B9%20%D0%BD%D0%B0%D1%81%D1%82%D0%B5%D0%BD%D0%BD%D1%8B%D0%B9%20%D0%B4%D0%B0%D1%82%D1%87%D0%B8%D0%BA%20WB-MSW%20v.4%20-%20Wiren%20Board_files/616px-WB-MSW_v.4_CM1106_Manual_Calibration_1.png 1.5x, %D0%A3%D0%BD%D0%B8%D0%B2%D0%B5%D1%80%D1%81%D0%B0%D0%BB%D1%8C%D0%BD%D1%8B%D0%B9%20%D0%BD%D0%B0%D1%81%D1%82%D0%B5%D0%BD%D0%BD%D1%8B%D0%B9%20%D0%B4%D0%B0%D1%82%D1%87%D0%B8%D0%BA%20WB-MSW%20v.4%20-%20Wiren%20Board_files/821px-WB-MSW_v.4_CM1106_Manual_Calibration_1.png 2x" data-file-width="1019" data-file-height="745"></a></div></div>
+			<div class="gallerytext">
+<p>Выбор типа сенсора
+</p>
+			</div>
+		</div></li>
+		<li class="gallerybox" style="width: 177.333px;"><div style="width: 177.333px;">
+			<div class="thumb" style="width: 176px;"><div style="margin:0px auto;"><a href="https://wirenboard.com/wiki/index.php?title=%D0%A4%D0%B0%D0%B9%D0%BB:WB-MSW_v.4_CM1106_Manual_Calibration_2.png&amp;filetimestamp=20230407121039&amp;" class="image"><img alt="" src="%D0%A3%D0%BD%D0%B8%D0%B2%D0%B5%D1%80%D1%81%D0%B0%D0%BB%D1%8C%D0%BD%D1%8B%D0%B9%20%D0%BD%D0%B0%D1%81%D1%82%D0%B5%D0%BD%D0%BD%D1%8B%D0%B9%20%D0%B4%D0%B0%D1%82%D1%87%D0%B8%D0%BA%20WB-MSW%20v.4%20-%20Wiren%20Board_files/263px-WB-MSW_v.4_CM1106_Manual_Calibration_2.png" decoding="async" width="176" height="200" srcset="%D0%A3%D0%BD%D0%B8%D0%B2%D0%B5%D1%80%D1%81%D0%B0%D0%BB%D1%8C%D0%BD%D1%8B%D0%B9%20%D0%BD%D0%B0%D1%81%D1%82%D0%B5%D0%BD%D0%BD%D1%8B%D0%B9%20%D0%B4%D0%B0%D1%82%D1%87%D0%B8%D0%BA%20WB-MSW%20v.4%20-%20Wiren%20Board_files/WB-MSW_v.4_CM1106_Manual_Calibration_2.png 1.5x" data-file-width="392" data-file-height="447"></a></div></div>
+			<div class="gallerytext">
+<p>Установка референсного значения
+</p>
+			</div>
+		</div></li>
+</ul>
+<p><br>
+</p>
+<h4><span id=".D0.97.D0.B0.D1.87.D0.B5.D0.BC_.D0.BD.D1.83.D0.B6.D0.BD.D0.BE_.D0.B8.D0.B7.D0.BC.D0.B5.D1.80.D1.8F.D1.82.D1.8C_CO2.3F"></span><span class="mw-headline" id="Зачем_нужно_измерять_CO2?">Зачем нужно измерять CO2?</span></h4>
+<p>Углекислый газ в высоких концентрациях токсичен. Незначительные 
+повышения концентрации, вплоть до 0.2−0.4&nbsp;% (2000−4000 ppm), в 
+помещениях приводят к развитию у людей сонливости и слабости. Для 
+помещений нормальным является уровень CO₂ около 600 ppm. Повышенные 
+концентрации углекислого газа снижают когнитивные способности людей. Уже
+ при 1200 ppm расширяются кровеносные сосуды в мозге, снижается 
+активность нейронов и уменьшается объём коммуникации между областями 
+мозга.
+</p>
+<table class="wikitable">
+<tbody><tr>
+<th>Влияние на взрослых здоровых людей
+</th>
+<th>Концентрация углекислого газа, ppm
+</th></tr>
+<tr>
+<td>Нормальный уровень на открытом воздухе
+</td>
+<td>400—450
+</td></tr>
+<tr>
+<td>Приемлемые уровни
+</td>
+<td>&lt;600
+</td></tr>
+<tr>
+<td>Жалобы на несвежий воздух
+</td>
+<td>600—1000
+</td></tr>
+<tr>
+<td>Общая вялость
+</td>
+<td>1000—2500
+</td></tr>
+<tr>
+<td>Возможны нежелательные эффекты на здоровье
+</td>
+<td>2500—5000
+</td></tr>
+<tr>
+<td>Максимально допустимая концентрация в течение 8 часового рабочего дня
+</td>
+<td>5000
+</td></tr></tbody></table>
+<p><b>Классификация воздуха в помещениях по ГОСТ 30494-2011</b>
+</p>
+<table border="1" width="700" class="wikitable" style="text-align:center">
+<tbody><tr>
+<th rowspan="2">Класс</th>
+<th colspan="2">Качество воздуха в помещении</th>
+<th rowspan="2">Допустимое содержание CO₂ *, см³/м³
+</th></tr>
+<tr>
+<th>Оптимальное</th>
+<th>Допустимое
+</th></tr>
+<tr>
+<td>1</td>
+<td>Высокое</td>
+<td>-</td>
+<td>400 и менее
+</td></tr>
+<tr>
+<td>2</td>
+<td>Среднее</td>
+<td>-</td>
+<td>400-600
+</td></tr>
+<tr>
+<td>3</td>
+<td>-</td>
+<td>Допустимое</td>
+<td>600-1000
+</td></tr>
+<tr>
+<td>4</td>
+<td>-</td>
+<td>Низкое</td>
+<td>1000 и более
+</td></tr>
+<tr>
+<td style="text-align:left" colspan="4">* Допустимое содержание CO₂ в помещениях принимают сверх содержания CO₂ в наружном воздухе, см³/м³
+</td></tr></tbody></table>
+<p><br>
+</p>
+<h2><span id=".D0.9C.D0.BE.D0.BD.D1.82.D0.B0.D0.B6"></span><span class="mw-headline" id="Монтаж">Монтаж</span></h2>
+<h3><span id=".D0.9F.D0.BE.D0.B4.D0.BA.D0.BB.D1.8E.D1.87.D0.B5.D0.BD.D0.B8.D0.B5"></span><span class="mw-headline" id="Подключение">Подключение</span></h3>
+<p>Клеммный блок «V+ GND A B» с шагом 3.5&nbsp;мм служит для подключения
+ питания и управления по шине RS-485. Для стабильной связи с устройством
+ важно правильно организовать подключение к шине RS-485, читайте об этом
+ в статье <a href="https://wirenboard.com/wiki/RS-485:_Wiring_and_Connection" title="RS-485: Wiring and Connection">Физическое подключение шины RS-485</a>. 
+</p><p>Если устройства, подключенные к шине RS-485, питаются от разных источников питания, их клеммы GND должны быть соединены, <a href="https://wirenboard.com/wiki/Rules_of_GND_connecting" title="Rules of GND connecting">подробнее</a>.
+</p><p>При питании по длинному кабелю учитывайте <a href="https://wirenboard.com/wiki/RS-485:%D0%A4%D0%B8%D0%B7%D0%B8%D1%87%D0%B5%D1%81%D0%BA%D0%BE%D0%B5_%D0%BF%D0%BE%D0%B4%D0%BA%D0%BB%D1%8E%D1%87%D0%B5%D0%BD%D0%B8%D0%B5#.D0.9F.D0.B0.D0.B4.D0.B5.D0.BD.D0.B8.D0.B5_.D0.BD.D0.B0.D0.BF.D1.80.D1.8F.D0.B6.D0.B5.D0.BD.D0.B8.D1.8F_.D0.BD.D0.B0_.D0.BA.D0.B0.D0.B1.D0.B5.D0.BB.D0.B5_.D0.BF.D1.80.D0.B8_.D0.BF.D0.B8.D0.BA.D0.BE.D0.B2.D0.BE.D0.BC_.D0.BF.D0.BE.D1.82.D1.80.D0.B5.D0.B1.D0.BB.D0.B5.D0.BD.D0.B8.D0.B8_.D1.83.D1.81.D1.82.D1.80.D0.BE.D0.B9.D1.81.D1.82.D0.B2" class="mw-redirect" title="RS-485:Физическое подключение"> падение напряжения на нем</a>.
+</p><p><br>
+</p>
+<h3><span id=".D0.9C.D0.BE.D0.BD.D1.82.D0.B0.D0.B6_.D0.BD.D0.B0_.D1.81.D1.82.D0.B5.D0.BD.D1.83"></span><span class="mw-headline" id="Монтаж_на_стену">Монтаж на стену</span></h3>
+<div class="thumb tright"><div class="thumbinner" style="width:652px;"><a href="https://wirenboard.com/wiki/index.php?title=%D0%A4%D0%B0%D0%B9%D0%BB:Installation_WB-MSW_v.4%2BController.png&amp;filetimestamp=20221130110141&amp;" class="image"><img alt="" src="%D0%A3%D0%BD%D0%B8%D0%B2%D0%B5%D1%80%D1%81%D0%B0%D0%BB%D1%8C%D0%BD%D1%8B%D0%B9%20%D0%BD%D0%B0%D1%81%D1%82%D0%B5%D0%BD%D0%BD%D1%8B%D0%B9%20%D0%B4%D0%B0%D1%82%D1%87%D0%B8%D0%BA%20WB-MSW%20v.4%20-%20Wiren%20Board_files/650px-Installation_WB-MSW_v.4+Controller.png" decoding="async" width="650" height="398" class="thumbimage" srcset="%D0%A3%D0%BD%D0%B8%D0%B2%D0%B5%D1%80%D1%81%D0%B0%D0%BB%D1%8C%D0%BD%D1%8B%D0%B9%20%D0%BD%D0%B0%D1%81%D1%82%D0%B5%D0%BD%D0%BD%D1%8B%D0%B9%20%D0%B4%D0%B0%D1%82%D1%87%D0%B8%D0%BA%20WB-MSW%20v.4%20-%20Wiren%20Board_files/975px-Installation_WB-MSW_v.4+Controller.png 1.5x, %D0%A3%D0%BD%D0%B8%D0%B2%D0%B5%D1%80%D1%81%D0%B0%D0%BB%D1%8C%D0%BD%D1%8B%D0%B9%20%D0%BD%D0%B0%D1%81%D1%82%D0%B5%D0%BD%D0%BD%D1%8B%D0%B9%20%D0%B4%D0%B0%D1%82%D1%87%D0%B8%D0%BA%20WB-MSW%20v.4%20-%20Wiren%20Board_files/1300px-Installation_WB-MSW_v.4+Controller.png 2x" data-file-width="1473" data-file-height="901"></a>  <div class="thumbcaption"><div class="magnify"><a href="https://wirenboard.com/wiki/index.php?title=%D0%A4%D0%B0%D0%B9%D0%BB:Installation_WB-MSW_v.4%2BController.png&amp;filetimestamp=20221130110141" class="internal" title="Enlarge"></a></div>Образец монтажа и подключения WB-MSW v.4. Винтовые зажимы находятся на тыльной стороне модуля в специальном углублении (см.фото)</div></div></div>
+<p><br>
+Модуль имеет два отверстия для крепления к поверхности. Мы подготовили установочный шаблон для корпуса датчика:
+</p>
+<ol><li>Скачайте файл <a href="https://wirenboard.com/wiki/images/5/55/WB-MSW_v.4_mounting_template.pdf" class="internal" title="WB-MSW v.4 mounting template.pdf"> WB-MSW v.4 mounting template.pdf</a> на компьютер.</li>
+<li>Откройте в Acrobat Reader и при печати выберите опцию «Реальный масштаб».</li></ol>
+<p>Для крепления датчика выбирайте винты/шурупы с головкой диаметром около 7 мм. 
+</p><p>Устройство должно эксплуатироваться при рекомендованных условиях окружающей среды.
+</p><p>Рекомендуем располагать датчики на теплых (внутренних) стенах, на
+ высоте 1-1.6 м от уровня пола, с учетом возможных сквозняков и 
+освещенности солнцем.
+При креплении на потолке в жилом помещении температура будет завышена, а
+ влажность занижена. Концентрация CO2 от высоты не зависит. 
+При креплении на внешних стенах зимой будут заниженные показания 
+температуры на несколько градусов из-за холодного пограничного слоя 
+воздуха и охлаждения корпуса датчика от стены.
+</p><p>Сразу же после установки датчик CO2 может показывать неверные 
+значения: это может быть связано с неосторожным обращением во время 
+транспортировки и монтажа.
+</p><p><br>
+Вы можете подождать 7 дней без отключения питания, пока функция 
+автокалибровки не приведёт показания датчика в норму или выполнить <a href="#Датчик_CO2">принудительную калибровку</a>.
+</p><p><br>
+</p>
+<h3><span id=".D0.9A.D0.B0.D0.BA_.D0.BE.D1.82.D0.BA.D1.80.D1.8B.D1.82.D1.8C_.D0.BA.D0.BE.D1.80.D0.BF.D1.83.D1.81_.D0.B4.D0.B0.D1.82.D1.87.D0.B8.D0.BA.D0.B0"></span><span class="mw-headline" id="Как_открыть_корпус_датчика">Как открыть корпус датчика</span></h3>
+<ul class="gallery mw-gallery-traditional">
+		<li class="gallerybox" style="width: 295px"><div style="width: 295px">
+			<div class="thumb" style="width: 290px;"><div style="margin:15px auto;"><a href="https://wirenboard.com/wiki/index.php?title=%D0%A4%D0%B0%D0%B9%D0%BB:WB-MSW4-OPEN_1.jpg&amp;filetimestamp=20230407114712&amp;" class="image"><img alt="" src="%D0%A3%D0%BD%D0%B8%D0%B2%D0%B5%D1%80%D1%81%D0%B0%D0%BB%D1%8C%D0%BD%D1%8B%D0%B9%20%D0%BD%D0%B0%D1%81%D1%82%D0%B5%D0%BD%D0%BD%D1%8B%D0%B9%20%D0%B4%D0%B0%D1%82%D1%87%D0%B8%D0%BA%20WB-MSW%20v.4%20-%20Wiren%20Board_files/174px-WB-MSW4-OPEN_1.jpg" decoding="async" width="174" height="200" srcset="%D0%A3%D0%BD%D0%B8%D0%B2%D0%B5%D1%80%D1%81%D0%B0%D0%BB%D1%8C%D0%BD%D1%8B%D0%B9%20%D0%BD%D0%B0%D1%81%D1%82%D0%B5%D0%BD%D0%BD%D1%8B%D0%B9%20%D0%B4%D0%B0%D1%82%D1%87%D0%B8%D0%BA%20WB-MSW%20v.4%20-%20Wiren%20Board_files/261px-WB-MSW4-OPEN_1.jpg 1.5x, %D0%A3%D0%BD%D0%B8%D0%B2%D0%B5%D1%80%D1%81%D0%B0%D0%BB%D1%8C%D0%BD%D1%8B%D0%B9%20%D0%BD%D0%B0%D1%81%D1%82%D0%B5%D0%BD%D0%BD%D1%8B%D0%B9%20%D0%B4%D0%B0%D1%82%D1%87%D0%B8%D0%BA%20WB-MSW%20v.4%20-%20Wiren%20Board_files/348px-WB-MSW4-OPEN_1.jpg 2x" data-file-width="1740" data-file-height="2000"></a></div></div>
+			<div class="gallerytext">
+<p>1. Возьмите корпус в две руки
+</p>
+			</div>
+		</div></li>
+		<li class="gallerybox" style="width: 295px"><div style="width: 295px">
+			<div class="thumb" style="width: 290px;"><div style="margin:42px auto;"><a href="https://wirenboard.com/wiki/index.php?title=%D0%A4%D0%B0%D0%B9%D0%BB:WB-MSW4-OPEN_2.jpg&amp;filetimestamp=20230407114719&amp;" class="image"><img alt="" src="%D0%A3%D0%BD%D0%B8%D0%B2%D0%B5%D1%80%D1%81%D0%B0%D0%BB%D1%8C%D0%BD%D1%8B%D0%B9%20%D0%BD%D0%B0%D1%81%D1%82%D0%B5%D0%BD%D0%BD%D1%8B%D0%B9%20%D0%B4%D0%B0%D1%82%D1%87%D0%B8%D0%BA%20WB-MSW%20v.4%20-%20Wiren%20Board_files/260px-WB-MSW4-OPEN_2.jpg" decoding="async" width="260" height="146" srcset="%D0%A3%D0%BD%D0%B8%D0%B2%D0%B5%D1%80%D1%81%D0%B0%D0%BB%D1%8C%D0%BD%D1%8B%D0%B9%20%D0%BD%D0%B0%D1%81%D1%82%D0%B5%D0%BD%D0%BD%D1%8B%D0%B9%20%D0%B4%D0%B0%D1%82%D1%87%D0%B8%D0%BA%20WB-MSW%20v.4%20-%20Wiren%20Board_files/390px-WB-MSW4-OPEN_2.jpg 1.5x, %D0%A3%D0%BD%D0%B8%D0%B2%D0%B5%D1%80%D1%81%D0%B0%D0%BB%D1%8C%D0%BD%D1%8B%D0%B9%20%D0%BD%D0%B0%D1%81%D1%82%D0%B5%D0%BD%D0%BD%D1%8B%D0%B9%20%D0%B4%D0%B0%D1%82%D1%87%D0%B8%D0%BA%20WB-MSW%20v.4%20-%20Wiren%20Board_files/520px-WB-MSW4-OPEN_2.jpg 2x" data-file-width="2000" data-file-height="1125"></a></div></div>
+			<div class="gallerytext">
+<p>2. Слегка надавите на обе половинки и снимите крышку
+</p>
+			</div>
+		</div></li>
+</ul>
+<p><br>
+</p>
+<h2><span id=".D0.9F.D1.80.D0.B5.D0.B4.D1.81.D1.82.D0.B0.D0.B2.D0.BB.D0.B5.D0.BD.D0.B8.D0.B5_.D0.B2_.D0.B2.D0.B5.D0.B1-.D0.B8.D0.BD.D1.82.D0.B5.D1.80.D1.84.D0.B5.D0.B9.D1.81.D0.B5_.D0.BA.D0.BE.D0.BD.D1.82.D1.80.D0.BE.D0.BB.D0.BB.D0.B5.D1.80.D0.B0_WB"></span><span class="mw-headline" id="Представление_в_веб-интерфейсе_контроллера_WB">Представление в веб-интерфейсе контроллера WB</span></h2>
+<h3><span id=".D0.92.D1.8B.D0.B1.D0.BE.D1.80_.D1.88.D0.B0.D0.B1.D0.BB.D0.BE.D0.BD.D0.B0"></span><span class="mw-headline" id="Выбор_шаблона">Выбор шаблона</span></h3>
+<p>Чтобы устройство появилось на вкладке <i>Устройства</i> в веб-интерфейсе контроллера Wiren Board, <a href="https://wirenboard.com/wiki/RS-485:Configuration_via_Web_Interface" title="RS-485:Configuration via Web Interface"> добавьте новое serial-устройство</a> и&nbsp;выберите шаблон <b>WB-MSW v.4</b>.
+</p><p><br>
+</p>
+<h3><span id=".D0.A3.D0.BF.D1.80.D0.B0.D0.B2.D0.BB.D0.B5.D0.BD.D0.B8.D0.B5_.D1.83.D1.81.D1.82.D1.80.D0.BE.D0.B9.D1.81.D1.82.D0.B2.D0.BE.D0.BC_.D0.B8_.D0.BF.D1.80.D0.BE.D1.81.D0.BC.D0.BE.D1.82.D1.80_.D0.B7.D0.BD.D0.B0.D1.87.D0.B5.D0.BD.D0.B8.D0.B9"></span><span class="mw-headline" id="Управление_устройством_и_просмотр_значений">Управление устройством и просмотр значений</span></h3>
+<div class="thumb tright"><div class="thumbinner" style="width:602px;"><a href="https://wirenboard.com/wiki/index.php?title=%D0%A4%D0%B0%D0%B9%D0%BB:WB-MSW4-WEB.png&amp;filetimestamp=20230407115919&amp;" class="image"><img alt="" src="%D0%A3%D0%BD%D0%B8%D0%B2%D0%B5%D1%80%D1%81%D0%B0%D0%BB%D1%8C%D0%BD%D1%8B%D0%B9%20%D0%BD%D0%B0%D1%81%D1%82%D0%B5%D0%BD%D0%BD%D1%8B%D0%B9%20%D0%B4%D0%B0%D1%82%D1%87%D0%B8%D0%BA%20WB-MSW%20v.4%20-%20Wiren%20Board_files/600px-WB-MSW4-WEB.png" decoding="async" width="600" height="391" class="thumbimage" srcset="%D0%A3%D0%BD%D0%B8%D0%B2%D0%B5%D1%80%D1%81%D0%B0%D0%BB%D1%8C%D0%BD%D1%8B%D0%B9%20%D0%BD%D0%B0%D1%81%D1%82%D0%B5%D0%BD%D0%BD%D1%8B%D0%B9%20%D0%B4%D0%B0%D1%82%D1%87%D0%B8%D0%BA%20WB-MSW%20v.4%20-%20Wiren%20Board_files/WB-MSW4-WEB.png 1.5x" data-file-width="701" data-file-height="457"></a>  <div class="thumbcaption"><div class="magnify"><a href="https://wirenboard.com/wiki/index.php?title=%D0%A4%D0%B0%D0%B9%D0%BB:WB-MSW4-WEB.png&amp;filetimestamp=20230407115919" class="internal" title="Enlarge"></a></div>Элементы управления и индикации модуля WB-MSW v.4 в веб-интерфейсе контроллера Wiren Board</div></div></div>
+<p>В веб-интерфейсе вы можете управлять выходами устройства и 
+просматривать полученные с него значения. Список отображаемых каналов 
+можно изменить через настройки устройства, доступные на <a href="https://wirenboard.com/wiki/RS-485:Configuration_via_Web_Interface#%D0%9E%D1%82%D0%BA%D0%BB%D1%8E%D1%87%D0%B5%D0%BD%D0%B8%D0%B5_%D0%BA%D0%B0%D0%BD%D0%B0%D0%BB%D0%BE%D0%B2,_%D1%81%D0%BC%D0%B5%D0%BD%D0%B0_%D1%80%D0%B5%D0%B6%D0%B8%D0%BC%D0%BE%D0%B2_%D0%B8_%D0%BD%D0%B0%D1%81%D1%82%D1%80%D0%BE%D0%B9%D0%BA%D0%B0_%D0%BF%D0%B0%D1%80%D0%B0%D0%BC%D0%B5%D1%82%D1%80%D0%BE%D0%B2" title="RS-485:Configuration via Web Interface"> странице выбора шаблона</a>.
+</p><p>При подключении к контроллеру Wiren Board есть возможность 
+создавать интересные сценарии, используя данные с датчика. Например, 
+сигнализировать светодиодами о превышении значения СО2 или VOC, включать
+ кондиционер, если жарко или увлажнитель воздуха, если воздух слишком 
+сухой. Правила создаются индивидуально под задачи. Некоторые примеры 
+можно посмотреть в статье <a href="https://wirenboard.com/wiki/Rule_Examples" title="Rule Examples">примеры правил</a>.
+</p><p><br>
+</p>
+<h2><span id=".D0.9D.D0.B0.D1.81.D1.82.D1.80.D0.BE.D0.B9.D0.BA.D0.B0"></span><span class="mw-headline" id="Настройка">Настройка</span></h2>
+<h3><span id=".D0.A1.D0.BF.D0.BE.D1.81.D0.BE.D0.B1.D1.8B_.D0.BD.D0.B0.D1.81.D1.82.D1.80.D0.BE.D0.B9.D0.BA.D0.B8"></span><span class="mw-headline" id="Способы_настройки">Способы настройки</span></h3>
+<ol><li>Указать параметры в веб-интерфейсе контроллера Wiren Board. Перейдите на <a href="https://wirenboard.com/wiki/RS-485:Configuration_via_Web_Interface" title="RS-485:Configuration via Web Interface">страницу настройки serial-устройств</a>,
+ выберите порт, найдите или добавьте устройство и измените параметры. 
+Если нужный параметр отсутствует в шаблоне, его можно задать через 
+пользовательские параметры.</li>
+<li>Записать настройки в <a href="#Карта_регистров">Modbus-регистры</a> модуля из консоли контроллера с помощью утилиты <a href="https://wirenboard.com/wiki/Modbus%C2%AD_client" class="mw-redirect" title="Modbus­ client">modbus­_client</a>.</li>
+<li>Eсли нет контроллера Wiren Board, используйте компьютер с преобразователем интерфейсов <a href="https://wirenboard.com/wiki/WB-USB485_v.1_Interface_Converter" title="WB-USB485 v.1 Interface Converter"> USB-RS485</a>.</li></ol>
+<p>Мы постоянно совершенствуем наши устройства, поэтому, если вы не 
+нашли описанных в документации настроек — обновите прошивку устройства и
+ программное обеспечение контроллера.
+</p><p><br>
+</p>
+<ul class="gallery mw-gallery-packed">
+	<li class="gallerycaption">Настройка WB-MSW v.4 через веб-интерфейс контроллера Wiren Board</li>
+		<li class="gallerybox" style="width: 305.021px;"><div style="width: 305.021px;">
+			<div class="thumb" style="width: 303.354px;"><div style="margin:0px auto;"><a href="https://wirenboard.com/wiki/index.php?title=%D0%A4%D0%B0%D0%B9%D0%BB:WebUI_WB-MSW_v.4_Air_Quality_Settings.png&amp;filetimestamp=20230407120152&amp;" class="image"><img alt="" src="%D0%A3%D0%BD%D0%B8%D0%B2%D0%B5%D1%80%D1%81%D0%B0%D0%BB%D1%8C%D0%BD%D1%8B%D0%B9%20%D0%BD%D0%B0%D1%81%D1%82%D0%B5%D0%BD%D0%BD%D1%8B%D0%B9%20%D0%B4%D0%B0%D1%82%D1%87%D0%B8%D0%BA%20WB-MSW%20v.4%20-%20Wiren%20Board_files/310px-WebUI_WB-MSW_v.4_Air_Quality_Settings.png" decoding="async" width="303" height="219" srcset="%D0%A3%D0%BD%D0%B8%D0%B2%D0%B5%D1%80%D1%81%D0%B0%D0%BB%D1%8C%D0%BD%D1%8B%D0%B9%20%D0%BD%D0%B0%D1%81%D1%82%D0%B5%D0%BD%D0%BD%D1%8B%D0%B9%20%D0%B4%D0%B0%D1%82%D1%87%D0%B8%D0%BA%20WB-MSW%20v.4%20-%20Wiren%20Board_files/466px-WebUI_WB-MSW_v.4_Air_Quality_Settings.png 1.5x, %D0%A3%D0%BD%D0%B8%D0%B2%D0%B5%D1%80%D1%81%D0%B0%D0%BB%D1%8C%D0%BD%D1%8B%D0%B9%20%D0%BD%D0%B0%D1%81%D1%82%D0%B5%D0%BD%D0%BD%D1%8B%D0%B9%20%D0%B4%D0%B0%D1%82%D1%87%D0%B8%D0%BA%20WB-MSW%20v.4%20-%20Wiren%20Board_files/621px-WebUI_WB-MSW_v.4_Air_Quality_Settings.png 2x" data-file-width="979" data-file-height="710"></a></div></div>
+			<div class="gallerytext">
+<p>Датчик климата
+</p>
+			</div>
+		</div></li>
+		<li class="gallerybox" style="width: 372.433px;"><div style="width: 372.433px;">
+			<div class="thumb" style="width: 370.766px;"><div style="margin:0px auto;"><a href="https://wirenboard.com/wiki/index.php?title=%D0%A4%D0%B0%D0%B9%D0%BB:WebUI_WB-MSW_v.4_Sound_Settings.png&amp;filetimestamp=20230407120222&amp;" class="image"><img alt="" src="%D0%A3%D0%BD%D0%B8%D0%B2%D0%B5%D1%80%D1%81%D0%B0%D0%BB%D1%8C%D0%BD%D1%8B%D0%B9%20%D0%BD%D0%B0%D1%81%D1%82%D0%B5%D0%BD%D0%BD%D1%8B%D0%B9%20%D0%B4%D0%B0%D1%82%D1%87%D0%B8%D0%BA%20WB-MSW%20v.4%20-%20Wiren%20Board_files/379px-WebUI_WB-MSW_v.4_Sound_Settings.png" decoding="async" width="370" height="219" srcset="%D0%A3%D0%BD%D0%B8%D0%B2%D0%B5%D1%80%D1%81%D0%B0%D0%BB%D1%8C%D0%BD%D1%8B%D0%B9%20%D0%BD%D0%B0%D1%81%D1%82%D0%B5%D0%BD%D0%BD%D1%8B%D0%B9%20%D0%B4%D0%B0%D1%82%D1%87%D0%B8%D0%BA%20WB-MSW%20v.4%20-%20Wiren%20Board_files/570px-WebUI_WB-MSW_v.4_Sound_Settings.png 1.5x, %D0%A3%D0%BD%D0%B8%D0%B2%D0%B5%D1%80%D1%81%D0%B0%D0%BB%D1%8C%D0%BD%D1%8B%D0%B9%20%D0%BD%D0%B0%D1%81%D1%82%D0%B5%D0%BD%D0%BD%D1%8B%D0%B9%20%D0%B4%D0%B0%D1%82%D1%87%D0%B8%D0%BA%20WB-MSW%20v.4%20-%20Wiren%20Board_files/758px-WebUI_WB-MSW_v.4_Sound_Settings.png 2x" data-file-width="975" data-file-height="579"></a></div></div>
+			<div class="gallerytext">
+<p>Датчик шума
+</p>
+			</div>
+		</div></li>
+		<li class="gallerybox" style="width: 413.466px;"><div style="width: 413.466px;">
+			<div class="thumb" style="width: 411.799px;"><div style="margin:0px auto;"><a href="https://wirenboard.com/wiki/index.php?title=%D0%A4%D0%B0%D0%B9%D0%BB:WebUI_WB-MSW_v.4_Motion_Settings.png&amp;filetimestamp=20230407120244&amp;" class="image"><img alt="" src="%D0%A3%D0%BD%D0%B8%D0%B2%D0%B5%D1%80%D1%81%D0%B0%D0%BB%D1%8C%D0%BD%D1%8B%D0%B9%20%D0%BD%D0%B0%D1%81%D1%82%D0%B5%D0%BD%D0%BD%D1%8B%D0%B9%20%D0%B4%D0%B0%D1%82%D1%87%D0%B8%D0%BA%20WB-MSW%20v.4%20-%20Wiren%20Board_files/421px-WebUI_WB-MSW_v.4_Motion_Settings.png" decoding="async" width="411" height="219" srcset="%D0%A3%D0%BD%D0%B8%D0%B2%D0%B5%D1%80%D1%81%D0%B0%D0%BB%D1%8C%D0%BD%D1%8B%D0%B9%20%D0%BD%D0%B0%D1%81%D1%82%D0%B5%D0%BD%D0%BD%D1%8B%D0%B9%20%D0%B4%D0%B0%D1%82%D1%87%D0%B8%D0%BA%20WB-MSW%20v.4%20-%20Wiren%20Board_files/632px-WebUI_WB-MSW_v.4_Motion_Settings.png 1.5x, %D0%A3%D0%BD%D0%B8%D0%B2%D0%B5%D1%80%D1%81%D0%B0%D0%BB%D1%8C%D0%BD%D1%8B%D0%B9%20%D0%BD%D0%B0%D1%81%D1%82%D0%B5%D0%BD%D0%BD%D1%8B%D0%B9%20%D0%B4%D0%B0%D1%82%D1%87%D0%B8%D0%BA%20WB-MSW%20v.4%20-%20Wiren%20Board_files/841px-WebUI_WB-MSW_v.4_Motion_Settings.png 2x" data-file-width="977" data-file-height="523"></a></div></div>
+			<div class="gallerytext">
+<p>Датчик движения
+</p>
+			</div>
+		</div></li>
+</ul>
+<p><br>
+</p>
+<h3><span id=".D0.A3.D0.BF.D1.80.D0.B0.D0.B2.D0.BB.D0.B5.D0.BD.D0.B8.D0.B5_.D1.82.D0.B5.D1.85.D0.BD.D0.B8.D0.BA.D0.BE.D0.B9_.D0.BF.D0.BE_.D0.98.D0.9A"></span><span class="mw-headline" id="Управление_техникой_по_ИК">Управление техникой по ИК</span></h3>
+<p><a href="https://wirenboard.com/wiki/%D0%A1%D0%BB%D1%83%D0%B6%D0%B5%D0%B1%D0%BD%D0%B0%D1%8F:%D0%9C%D0%BE%D0%B9_%D1%8F%D0%B7%D1%8B%D0%BA/WB-MSx_Consumer_IR_Manual" title="Служебная:Мой язык/WB-MSx Consumer IR Manual"> Инструкция по работе с ИК-приёмопередатчиком</a>
+</p><p><br>
+</p>
+<h2><span id=".D0.A0.D0.B0.D0.B1.D0.BE.D1.82.D0.B0_.D0.BF.D0.BE_Modbus"></span><span class="mw-headline" id="Работа_по_Modbus"> Работа по Modbus </span></h2>
+<div class="anchor" id="modbus"></div>
+<p>Устройства Wiren Board управляются по протоколу Modbus RTU.
+На физическом уровне подключаются через интерфейс <a href="https://wirenboard.com/wiki/RS-485" title="RS-485">RS-485</a>. 
+</p><p>Поддерживаются все основные команды чтения и записи одного или нескольких регистров. Смотрите список доступных команд в <a href="https://wirenboard.com/wiki/%D0%9F%D1%80%D0%BE%D1%82%D0%BE%D0%BA%D0%BE%D0%BB_Modbus#%D0%9A%D0%BE%D0%B4%D1%8B_%D1%84%D1%83%D0%BD%D0%BA%D1%86%D0%B8%D0%B9_%D1%87%D1%82%D0%B5%D0%BD%D0%B8%D1%8F_%D0%B8_%D0%B7%D0%B0%D0%BF%D0%B8%D1%81%D0%B8_%D1%80%D0%B5%D0%B3%D0%B8%D1%81%D1%82%D1%80%D0%BE%D0%B2" class="mw-redirect" title="Протокол Modbus">описании протокола Modbus</a>.
+</p><p>Настроить параметры модуля можно в веб-интерфейсе контроллера Wiren Board, или через <a href="https://wirenboard.com/wiki/Working_with_WB_devices_without_a_controller" title="Working with WB devices without a controller">сторонние программы</a>.
+</p>
+<h3><span id=".D0.9F.D0.B0.D1.80.D0.B0.D0.BC.D0.B5.D1.82.D1.80.D1.8B_.D0.BF.D0.BE.D1.80.D1.82.D0.B0_.D0.BF.D0.BE_.D1.83.D0.BC.D0.BE.D0.BB.D1.87.D0.B0.D0.BD.D0.B8.D1.8E"></span><span class="mw-headline" id="Параметры_порта_по_умолчанию"> Параметры порта по умолчанию </span></h3>
+<table border="1" class="wikitable noclear">
+<tbody><tr>
+<th>Значение<br>по умолчанию</th>
+<th>Название параметра<br>в веб-интерфейсе</th>
+<th>Параметр
+</th></tr>
+<tr>
+<td>9600</td>
+<td>Baud rate</td>
+<td>Скорость, бит/с
+</td></tr>
+<tr>
+<td>8</td>
+<td>Data bits</td>
+<td>Количество битов данных
+</td></tr>
+<tr>
+<td>None</td>
+<td>Parity</td>
+<td>Бит чётности
+</td></tr>
+<tr>
+<td>2</td>
+<td>Stop bits</td>
+<td>Количество стоповых битов
+</td></tr>
+
+</tbody></table>
+<p>В актуальной версии прошивки устанавливать параметр <i>Stop bits</i> 
+необязательно — устройство будет работать без ошибок и в случае, когда 
+количество стоповых битов не совпадает с настройками Modbus-мастер.
+</p><p>Для ускорения отклика устройств <b>рекомендуем поднять скорость обмена до 115 200 бит/с</b>, см. <a href="https://wirenboard.com/wiki/UART_Communication_Settings" title="UART Communication Settings">Настройка параметров обмена данными</a>
+</p>
+<h3><span id="Modbus-.D0.B0.D0.B4.D1.80.D0.B5.D1.81"></span><span class="mw-headline" id="Modbus-адрес"> Modbus-адрес </span></h3>
+<div class="thumb tright"><div class="thumbinner" style="width:202px;"><a href="https://wirenboard.com/wiki/index.php?title=%D0%A4%D0%B0%D0%B9%D0%BB:Modbus_address_mr14.png&amp;filetimestamp=20200429082450&amp;" class="image"><img alt="" src="%D0%A3%D0%BD%D0%B8%D0%B2%D0%B5%D1%80%D1%81%D0%B0%D0%BB%D1%8C%D0%BD%D1%8B%D0%B9%20%D0%BD%D0%B0%D1%81%D1%82%D0%B5%D0%BD%D0%BD%D1%8B%D0%B9%20%D0%B4%D0%B0%D1%82%D1%87%D0%B8%D0%BA%20WB-MSW%20v.4%20-%20Wiren%20Board_files/200px-Modbus_address_mr14.png" decoding="async" width="200" height="102" class="thumbimage" srcset="%D0%A3%D0%BD%D0%B8%D0%B2%D0%B5%D1%80%D1%81%D0%B0%D0%BB%D1%8C%D0%BD%D1%8B%D0%B9%20%D0%BD%D0%B0%D1%81%D1%82%D0%B5%D0%BD%D0%BD%D1%8B%D0%B9%20%D0%B4%D0%B0%D1%82%D1%87%D0%B8%D0%BA%20WB-MSW%20v.4%20-%20Wiren%20Board_files/300px-Modbus_address_mr14.png 1.5x, %D0%A3%D0%BD%D0%B8%D0%B2%D0%B5%D1%80%D1%81%D0%B0%D0%BB%D1%8C%D0%BD%D1%8B%D0%B9%20%D0%BD%D0%B0%D1%81%D1%82%D0%B5%D0%BD%D0%BD%D1%8B%D0%B9%20%D0%B4%D0%B0%D1%82%D1%87%D0%B8%D0%BA%20WB-MSW%20v.4%20-%20Wiren%20Board_files/400px-Modbus_address_mr14.png 2x" data-file-width="733" data-file-height="372"></a>  <div class="thumbcaption"><div class="magnify"><a href="https://wirenboard.com/wiki/index.php?title=%D0%A4%D0%B0%D0%B9%D0%BB:Modbus_address_mr14.png&amp;filetimestamp=20200429082450" class="internal" title="Enlarge"></a></div>Modbus-адрес, установленный на производстве</div></div></div>
+<p>Каждое устройство на линии имеет уникальный адрес в диапазоне от 1 до
+ 247. Адрес устройства, установленный на заводе, указан на отдельной 
+наклейке со штрихкодом. На заводе устройствам Wirenboard в одной партии 
+присваиваются разные адреса, поэтому в вашем заказе, скорее всего, 
+адреса не будут повторяться. 
+</p><p>О том, как узнать, изменить или сбросить Modbus-адрес устройства, читайте в статье <a href="https://wirenboard.com/wiki/Wiren_Board_Device_Modbus_Address" title="Wiren Board Device Modbus Address">Modbus-адрес устройства Wiren Board</a>.
+</p>
+<h3><span id=".D0.A0.D0.B0.D1.81.D1.88.D0.B8.D1.80.D0.B5.D0.BD.D0.B8.D0.B5_.D0.91.D1.8B.D1.81.D1.82.D1.80.D1.8B.D0.B9_Modbus"></span><span class="mw-headline" id="Расширение_Быстрый_Modbus">Расширение Быстрый Modbus</span></h3>
+<p><span role="note" class="note note-note"> Начиная с версии прошивки <b>4.23.0</b> устройство поддерживает расширение Быстрый Modbus.</span>
+</p><p>Быстрый Modbus добавляет стандартному протоколу Modbus новые 
+полезные функции: быстрое сканирование устройств Wiren Board на шине 
+RS-485 и опрос событий.
+</p><p>Дополнительные возможности активируются специальной командой с 
+мастера. Поэтому устройства Wiren Board можно без проблем использовать с
+ любым сторонним оборудованием.
+</p><p>Подробнее про расширение читайте на странице <b><a href="https://wirenboard.com/wiki/Fast_Modbus" title="Fast Modbus">Быстрый Modbus</a></b>.
+</p>
+<h3><span id=".D0.9A.D0.B0.D1.80.D1.82.D0.B0_.D1.80.D0.B5.D0.B3.D0.B8.D1.81.D1.82.D1.80.D0.BE.D0.B2"></span><span class="mw-headline" id="Карта_регистров">Карта регистров</span></h3>
+<p><a href="https://wirenboard.com/wiki/%D0%A1%D0%BB%D1%83%D0%B6%D0%B5%D0%B1%D0%BD%D0%B0%D1%8F:%D0%9C%D0%BE%D0%B9_%D1%8F%D0%B7%D1%8B%D0%BA/WB-MSWv_4_registers" title="Служебная:Мой язык/WB-MSWv 4 registers"><b>Карта регистров датчика WB-MSW v.4</b></a>
+</p><p><br>
+</p>
+<h2><span id=".D0.9E.D0.B1.D0.BD.D0.BE.D0.B2.D0.BB.D0.B5.D0.BD.D0.B8.D0.B5_.D0.BF.D1.80.D0.BE.D1.88.D0.B8.D0.B2.D0.BA.D0.B8_.D0.B8_.D1.81.D0.B1.D1.80.D0.BE.D1.81_.D0.BD.D0.B0.D1.81.D1.82.D1.80.D0.BE.D0.B5.D0.BA"></span><span class="mw-headline" id="Обновление_прошивки_и_сброс_настроек">Обновление прошивки и сброс настроек</span></h2>
+<p>В устройствах Wiren Board можно обновлять прошивку по протоколу 
+Modbus. Это даёт возможность устранять найденные в прошивке ошибки на 
+месте монтажа, а иногда и добавлять новые функции, если это возможно 
+технически.
+</p>
+<p>Инструкции:</p>
+<ul><li><a href="https://wirenboard.com/wiki/WB_Modbus_Devices_Firmware_Update" title="WB Modbus Devices Firmware Update">Обновление прошивки</a></li>
+<li><a href="https://wirenboard.com/wiki/UART_Communication_Settings" title="UART Communication Settings">Настройка параметров подключения</a></li>
+<li><a href="https://wirenboard.com/wiki/Wiren_Board_Device_Modbus_Address" title="Wiren Board Device Modbus Address"> Modbus-адрес: узнать, сбросить или изменить </a></li>
+<li><a href="https://wirenboard.com/wiki/Wb-mcu-fw-updater#update-bl" title="Wb-mcu-fw-updater"> Обновление загрузчика</a></li></ul>
+<p>Узнать о выходе новой версии прошивки можно в <a href="https://wirenboard.com/wiki/WB-MSW_v.4:_Changelog" title="WB-MSW v.4: Changelog"> Журнале изменений в прошивке</a>.
+</p><p><br>
+</p>
+<h2><span id=".D0.9F.D1.80.D0.B8.D0.BC.D0.B5.D1.80.D1.8B_.D0.BF.D1.80.D0.B0.D0.B2.D0.B8.D0.BB"></span><span class="mw-headline" id="Примеры_правил">Примеры правил</span></h2>
+<p>Для работы в составе «умного дома» лучше использовать определенные правила. Их можно посмотреть в статье <a href="https://wirenboard.com/wiki/Rule_Examples#.D0.94.D0.B0.D1.82.D1.87.D0.B8.D0.BA_MSW_v.3" title="Rule Examples">Примеры правил</a>
+</p><p><br>
+</p>
+<h2><span id=".D0.98.D0.B7.D0.B2.D0.B5.D1.81.D1.82.D0.BD.D1.8B.D0.B5_.D0.BD.D0.B5.D0.B8.D1.81.D0.BF.D1.80.D0.B0.D0.B2.D0.BD.D0.BE.D1.81.D1.82.D0.B8"></span><span class="mw-headline" id="Известные_неисправности">Известные неисправности</span></h2>
+<p><a href="https://wirenboard.com/wiki/WB-MSW_v.4:_Errata" title="WB-MSW v.4: Errata"> Аппаратные ошибки/особенности WB-MSW v.4</a>, найденные при эксплуатации устройства.
+</p><p><br>
+</p>
+<h2><span id=".D0.A0.D0.B5.D0.B2.D0.B8.D0.B7.D0.B8.D0.B8_.D1.83.D1.81.D1.82.D1.80.D0.BE.D0.B9.D1.81.D1.82.D0.B2.D0.B0"></span><span class="mw-headline" id="Ревизии_устройства">Ревизии устройства</span></h2>
+<p><a href="https://wirenboard.com/wiki/WB-MSW_v.4_Modbus_Sensor_Revisions" title="WB-MSW v.4 Modbus Sensor Revisions"> Список ревизий</a>
+</p>
+<h2><span id=".D0.98.D0.B7.D0.BE.D0.B1.D1.80.D0.B0.D0.B6.D0.B5.D0.BD.D0.B8.D1.8F_.D0.B8_.D1.87.D0.B5.D1.80.D1.82.D0.B5.D0.B6.D0.B8_.D1.83.D1.81.D1.82.D1.80.D0.BE.D0.B9.D1.81.D1.82.D0.B2.D0.B0"></span><span class="mw-headline" id="Изображения_и_чертежи_устройства">Изображения и чертежи устройства</span></h2>
+<p><b>Corel Draw 2018 (шрифт — Ubuntu):</b> <a href="https://wirenboard.com/wiki/%D0%A4%D0%B0%D0%B9%D0%BB:WB-Library.cdr.zip" title="Файл:WB-Library.cdr.zip">Файл:WB-Library.cdr.zip</a>
+</p><p><b>Corel Draw PDF:</b> <a href="https://wirenboard.com/wiki/images/d/dc/WB-MSW-v.4.cdr.pdf" class="internal" title="WB-MSW-v.4.cdr.pdf">Media:WB-MSW-v.4.cdr.pdf</a>
+</p><p><b>Autocad 2013 DXF:</b> <a href="https://wirenboard.com/wiki/%D0%A4%D0%B0%D0%B9%D0%BB:WB-MSW-v.4.dxf.zip" title="Файл:WB-MSW-v.4.dxf.zip">Файл:WB-MSW-v.4.dxf.zip</a>
+</p><p><b>Autocad PDF:</b> <a href="https://wirenboard.com/wiki/images/4/41/WB-MSW-v.4.pdf" class="internal" title="WB-MSW-v.4.pdf">Media:WB-MSW-v.4.pdf</a>
+</p><p><b>Габаритный чертеж PDF:</b> <a href="https://wirenboard.com/wiki/images/b/b4/WB-MSW-v.4_overall_drawing.pdf" class="internal" title="WB-MSW-v.4 overall drawing.pdf">Media:WB-MSW-v.4_overall_drawing.pdf</a>
+</p><p><b>База УГО для AutoCAD Electrical</b>: <a href="https://wirenboard.com/wiki/%D0%A4%D0%B0%D0%B9%D0%BB:Wirenboard-AE-base.zip" title="Файл:Wirenboard-AE-base.zip">Файл:Wirenboard-AE-base.zip</a>
+</p>
+<!-- 
+NewPP limit report
+Cached time: 20231222133538
+Cache expiry: 86400
+Reduced expiry: false
+Complications: []
+CPU time usage: 0.371 seconds
+Real time usage: 0.501 seconds
+Preprocessor visited node count: 426/1000000
+Post‐expand include size: 45568/2097152 bytes
+Template argument size: 451/2097152 bytes
+Highest expansion depth: 6/40
+Expensive parser function count: 0/100
+Unstrip recursion depth: 0/20
+Unstrip post‐expand size: 6589/5000000 bytes
+-->
+<!--
+Transclusion expansion time report (%,ms,calls,template)
+100.00%  248.138      1 -total
+  7.10%   17.623      1 Wbincludes:WB-MSW_v.4_CO2_Manual_calibration
+  7.02%   17.431      1 Wbincludes:VOC_WB-MSW_v.4
+  5.78%   14.336      1 Wbincludes:Control
+  5.36%   13.304      1 Wbincludes:WB-MSW_v.4_How_To_Disassemble
+  5.03%   12.484      1 Wbincludes:Modbus
+  4.97%   12.324      1 Wbincludes:WB-MSW_v.3_IR
+  4.41%   10.932      1 Wbincludes:Operating_conditions
+  4.22%   10.469      1 Wbincludes:WB-MSW_v.4_Images
+  3.83%    9.514      1 Wbincludes:WB-MSW_v.4_CO2
+-->
+
+<!-- Saved in parser cache with key wirenru_mw822-mw_:pcache:idhash:20119-0!userlang=en and timestamp 20231222133538 and revision id 77345. Serialized with JSON.
+ -->
+</div>
+<div class="printfooter">Retrieved from "<a dir="ltr" href="https://wirenboard.com/wiki/index.php?title=WB-MSW_v.4_Modbus_Sensor&amp;oldid=77345">https://wirenboard.com/wiki/index.php?title=WB-MSW_v.4_Modbus_Sensor&amp;oldid=77345</a>"</div></div>
+		<div id="catlinks" class="catlinks catlinks-allhidden" data-mw="interface"></div>
+	</div>
+
+
+</main>
+
+	</div> 
+</div> 
+
+<div class="mw-workspace-container mw-footer-container">
+	<div class="mw-content-container">
+		<footer id="footer" class="mw-footer" role="contentinfo" lang="en" dir="ltr">
+	<ul id="footer-info">
+	<li id="footer-info-lastmod"> This page was last edited on 13 November 2023, at 16:42.</li>
+</ul>
+
+	<ul id="footer-places">
+	<li id="footer-places-privacy"><a href="https://wirenboard.com/wiki/%D0%91%D0%B5%D1%81%D0%BA%D0%BE%D0%BD%D1%82%D0%B0%D0%BA%D1%82%D0%BD%D1%8B%D0%B5_%D1%83%D1%81%D1%82%D1%80%D0%BE%D0%B9%D1%81%D1%82%D0%B2%D0%B0:%D0%9F%D0%BE%D0%BB%D0%B8%D1%82%D0%B8%D0%BA%D0%B0_%D0%BA%D0%BE%D0%BD%D1%84%D0%B8%D0%B4%D0%B5%D0%BD%D1%86%D0%B8%D0%B0%D0%BB%D1%8C%D0%BD%D0%BE%D1%81%D1%82%D0%B8" title="Бесконтактные устройства:Политика конфиденциальности">Privacy policy</a></li>
+	<li id="footer-places-about"><a href="https://wirenboard.com/wiki/%D0%91%D0%B5%D1%81%D0%BA%D0%BE%D0%BD%D1%82%D0%B0%D0%BA%D1%82%D0%BD%D1%8B%D0%B5_%D1%83%D1%81%D1%82%D1%80%D0%BE%D0%B9%D1%81%D1%82%D0%B2%D0%B0:%D0%9E%D0%BF%D0%B8%D1%81%D0%B0%D0%BD%D0%B8%D0%B5" class="mw-redirect" title="Бесконтактные устройства:Описание">About Wiren Board</a></li>
+	<li id="footer-places-disclaimer"><a href="https://wirenboard.com/wiki/%D0%91%D0%B5%D1%81%D0%BA%D0%BE%D0%BD%D1%82%D0%B0%D0%BA%D1%82%D0%BD%D1%8B%D0%B5_%D1%83%D1%81%D1%82%D1%80%D0%BE%D0%B9%D1%81%D1%82%D0%B2%D0%B0:%D0%9E%D1%82%D0%BA%D0%B0%D0%B7_%D0%BE%D1%82_%D0%BE%D1%82%D0%B2%D0%B5%D1%82%D1%81%D1%82%D0%B2%D0%B5%D0%BD%D0%BD%D0%BE%D1%81%D1%82%D0%B8" title="Бесконтактные устройства:Отказ от ответственности">Disclaimers</a></li>
+	<li id="footer-places-mobileview"><a href="https://wirenboard.com/wiki/index.php?title=WB-MSW_v.4_Modbus_Sensor&amp;mobileaction=toggle_view_mobile" class="noprint stopMobileRedirectToggle">Mobile view</a></li>
+</ul>
+
+	<ul id="footer-icons" class="noprint">
+	<li id="footer-poweredbyico"><a href="https://www.mediawiki.org/" target="_blank"><img src="%D0%A3%D0%BD%D0%B8%D0%B2%D0%B5%D1%80%D1%81%D0%B0%D0%BB%D1%8C%D0%BD%D1%8B%D0%B9%20%D0%BD%D0%B0%D1%81%D1%82%D0%B5%D0%BD%D0%BD%D1%8B%D0%B9%20%D0%B4%D0%B0%D1%82%D1%87%D0%B8%D0%BA%20WB-MSW%20v.4%20-%20Wiren%20Board_files/poweredby_mediawiki_88x31.png" alt="Powered by MediaWiki" srcset="%D0%A3%D0%BD%D0%B8%D0%B2%D0%B5%D1%80%D1%81%D0%B0%D0%BB%D1%8C%D0%BD%D1%8B%D0%B9%20%D0%BD%D0%B0%D1%81%D1%82%D0%B5%D0%BD%D0%BD%D1%8B%D0%B9%20%D0%B4%D0%B0%D1%82%D1%87%D0%B8%D0%BA%20WB-MSW%20v.4%20-%20Wiren%20Board_files/poweredby_mediawiki_132x47.png 1.5x, %D0%A3%D0%BD%D0%B8%D0%B2%D0%B5%D1%80%D1%81%D0%B0%D0%BB%D1%8C%D0%BD%D1%8B%D0%B9%20%D0%BD%D0%B0%D1%81%D1%82%D0%B5%D0%BD%D0%BD%D1%8B%D0%B9%20%D0%B4%D0%B0%D1%82%D1%87%D0%B8%D0%BA%20WB-MSW%20v.4%20-%20Wiren%20Board_files/poweredby_mediawiki_176x62.png 2x" width="88" height="31" loading="lazy"></a></li>
+</ul>
+
+</footer>
+
+	</div>
+</div>
+	</div> 
+</div> 
+
+<!-- Yandex.Metrika counter -->
+<script type="text/javascript">
+   (function(m,e,t,r,i,k,a){m[i]=m[i]||function(){(m[i].a=m[i].a||[]).push(arguments)};
+   m[i].l=1*new Date();k=e.createElement(t),a=e.getElementsByTagName(t)[0],k.async=1,k.src=r,a.parentNode.insertBefore(k,a)})
+   (window, document, "script", "https://mc.yandex.ru/metrika/tag.js", "ym");
+
+   ym(48377798, "init", {
+        clickmap:true,
+        trackLinks:true,
+        accurateTrackBounce:true,
+        webvisor:true,
+        trackHash:true,
+        ecommerce:"dataLayer"
+   });
+</script>
+<noscript><div><img src="https://mc.yandex.ru/watch/48377798" style="position:absolute; left:-9999px;" alt="" /></div></noscript>
+<!-- /Yandex.Metrika counter -->
+<script>(RLQ=window.RLQ||[]).push(function(){mw.config.set({"wgPageParseReport":{"limitreport":{"cputime":"0.371","walltime":"0.501","ppvisitednodes":{"value":426,"limit":1000000},"postexpandincludesize":{"value":45568,"limit":2097152},"templateargumentsize":{"value":451,"limit":2097152},"expansiondepth":{"value":6,"limit":40},"expensivefunctioncount":{"value":0,"limit":100},"unstrip-depth":{"value":0,"limit":20},"unstrip-size":{"value":6589,"limit":5000000},"timingprofile":["100.00%  248.138      1 -total","  7.10%   17.623      1 Wbincludes:WB-MSW_v.4_CO2_Manual_calibration","  7.02%   17.431      1 Wbincludes:VOC_WB-MSW_v.4","  5.78%   14.336      1 Wbincludes:Control","  5.36%   13.304      1 Wbincludes:WB-MSW_v.4_How_To_Disassemble","  5.03%   12.484      1 Wbincludes:Modbus","  4.97%   12.324      1 Wbincludes:WB-MSW_v.3_IR","  4.41%   10.932      1 Wbincludes:Operating_conditions","  4.22%   10.469      1 Wbincludes:WB-MSW_v.4_Images","  3.83%    9.514      1 Wbincludes:WB-MSW_v.4_CO2"]},"cachereport":{"timestamp":"20231222133538","ttl":86400,"transientcontent":false}}});});</script>
+<!-- No web analytics configured. -->
+
+<script>(RLQ=window.RLQ||[]).push(function(){mw.config.set({"wgBackendResponseTime":149});});</script>
+</body></html>

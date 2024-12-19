@@ -1,0 +1,22 @@
+.LinkBar{
+    margin: 0px 10px;
+    font-size: 18px;
+    line-height: 26px;
+}
+.LinkBar .text{
+    margin: 0px 5px;
+}
+.LinkBar .link{
+    text-transform: uppercase;
+    color: #1e789b;
+
+}
+
+
+@media screen and (min-width:360px) and (max-width:1000px) { 
+    .LinkBar{
+        margin: 0px 10px;
+        font-size: 16px;
+        line-height: 24px;
+    }
+}
